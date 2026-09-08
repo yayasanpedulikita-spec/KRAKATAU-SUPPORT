@@ -351,3 +351,644 @@ button:focus-visible {
 
   outline-offset: 4px;
 }
+/* =========================================================
+   BANTU KRAKATAU 2026
+   STYLE.CSS — BAGIAN 2
+   HEADER + NAVBAR + HERO
+   ========================================================= */
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: var(--header-height);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(7, 7, 7, 0.72);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  flex-shrink: 0;
+
+  font-size: 0.95rem;
+  font-weight: 850;
+
+  letter-spacing: -0.02em;
+}
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff8a3d,
+      #df4308
+    );
+
+  color: #ffffff;
+
+  font-size: 1.05rem;
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 25px
+    rgba(255, 91, 18, 0.22);
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 28px;
+
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.desktop-nav a {
+  position: relative;
+
+  color: var(--text-soft);
+
+  font-size: 0.82rem;
+  font-weight: 650;
+
+  transition:
+    color 180ms ease;
+}
+
+.desktop-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -7px;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+
+  transform:
+    scaleX(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 180ms ease;
+}
+
+.desktop-nav a:hover {
+  color: #ffffff;
+}
+
+.desktop-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   HEADER DONATE BUTTON
+   ========================================================= */
+
+.header-donate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #111111;
+
+  font-size: 0.78rem;
+  font-weight: 850;
+
+  white-space: nowrap;
+}
+
+.header-donate:hover {
+  transform: translateY(-1px);
+
+  background: var(--accent);
+  color: #ffffff;
+
+  box-shadow:
+    0 10px 28px
+    rgba(255, 91, 18, 0.24);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    calc(var(--header-height) + 80px)
+    0
+    90px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 5, 0.97) 0%,
+      rgba(5, 5, 5, 0.82) 40%,
+      rgba(5, 5, 5, 0.38) 72%,
+      rgba(5, 5, 5, 0.65) 100%
+    ),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain,_5_September_2026.jpg")
+    center center / cover no-repeat;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+   ========================================================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.55)
+    );
+
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  right: -240px;
+  bottom: -260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 106, 26, 0.18),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO INNER
+   ========================================================= */
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 790px;
+}
+
+
+/* =========================================================
+   HERO BADGE
+   ========================================================= */
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 24px;
+
+  padding: 8px 13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 999px;
+
+  background:
+    rgba(0, 0, 0, 0.34);
+
+  color: #ffffff;
+
+  font-size: 0.72rem;
+  font-weight: 750;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(12px);
+}
+
+.hero-badge::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ff7b32;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(255, 123, 50, 0.12);
+}
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.hero h1 {
+  max-width: 850px;
+
+  margin: 0 0 24px;
+
+  font-size:
+    clamp(3.2rem, 8vw, 7.5rem);
+
+  font-weight: 850;
+
+  letter-spacing: -0.065em;
+  line-height: 0.91;
+
+  text-wrap: balance;
+}
+
+.hero h1 span {
+  display: block;
+
+  color: var(--accent-light);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.hero p {
+  max-width: 650px;
+
+  margin-bottom: 32px;
+
+  color:
+    rgba(247, 244, 237, 0.78);
+
+  font-size:
+    clamp(1rem, 1.5vw, 1.18rem);
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 48px;
+}
+
+
+/* =========================================================
+   HERO STATS
+   ========================================================= */
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0;
+
+  max-width: 720px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  padding-top: 24px;
+}
+
+.hero-stat {
+  min-width: 160px;
+
+  padding-right: 28px;
+  margin-right: 28px;
+
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.13);
+}
+
+.hero-stat:last-child {
+  border-right: 0;
+  margin-right: 0;
+}
+
+.hero-stat strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.hero-stat span {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   HERO MOBILE TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .desktop-nav {
+    gap: 16px;
+  }
+
+  .desktop-nav a {
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    min-height: 820px;
+
+    background-position:
+      62% center;
+  }
+
+  .hero h1 {
+    max-width: 720px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+  :root {
+    --header-height: 68px;
+  }
+
+  .container {
+    width: min(
+      calc(100% - 28px),
+      var(--container)
+    );
+  }
+
+  .site-header {
+    height: var(--header-height);
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .logo {
+    font-size: 0.88rem;
+  }
+
+  .logo-mark {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 10px;
+  }
+
+  .header-donate {
+    min-height: 38px;
+
+    padding: 0 15px;
+
+    font-size: 0.72rem;
+  }
+
+  .hero {
+    min-height: 100svh;
+
+    padding:
+      calc(var(--header-height) + 54px)
+      0
+      70px;
+
+    align-items: flex-end;
+
+    background-position:
+      58% center;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(5, 5, 5, 0.40) 0%,
+        rgba(5, 5, 5, 0.68) 42%,
+        rgba(5, 5, 5, 0.96) 88%
+      ),
+      url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain,_5_September_2026.jpg");
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    margin-bottom: 18px;
+
+    font-size: 0.65rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 20px;
+
+    font-size:
+      clamp(3.25rem, 17vw, 5.4rem);
+
+    letter-spacing: -0.07em;
+
+    line-height: 0.9;
+  }
+
+  .hero p {
+    margin-bottom: 26px;
+
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    margin-bottom: 34px;
+
+    width: 100%;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    flex: 1 1 100%;
+
+    width: 100%;
+  }
+
+  .hero-stats {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    padding-top: 20px;
+  }
+
+  .hero-stat {
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    border-right: 0;
+  }
+
+  .hero-stat strong {
+    font-size: 0.9rem;
+  }
+
+  .hero-stat span {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .header-donate {
+    padding-inline: 12px;
+
+    font-size: 0.68rem;
+  }
+
+  .logo {
+    gap: 8px;
+
+    font-size: 0.78rem;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero {
+    padding-bottom: 55px;
+  }
+
+  .hero h1 {
+    font-size: 3.15rem;
+  }
+
+  .hero-badge {
+    padding: 7px 10px;
+
+    font-size: 0.59rem;
+  }
+}
