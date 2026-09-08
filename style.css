@@ -992,3 +992,494 @@ button:focus-visible {
     font-size: 0.59rem;
   }
 }
+/* =========================================================
+   BANTU KRAKATAU 2026
+   STYLE.CSS — BAGIAN 3
+   DONATION SECTION
+   ========================================================= */
+
+
+/* =========================================================
+   DONATION SECTION
+   ========================================================= */
+
+.donation-section {
+  position: relative;
+
+  padding: 90px 0 110px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #070707 0%,
+      #0b0b0b 100%
+    );
+}
+
+
+/* =========================================================
+   DONATION CARD
+   ========================================================= */
+
+.donation-card {
+  position: relative;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.10);
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+}
+
+.donation-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  top: -180px;
+  right: -120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 106, 26, 0.16),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.donation-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  left: -140px;
+  bottom: -160px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.055),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DONATION CARD INNER
+   ========================================================= */
+
+.donation-card-inner {
+  position: relative;
+  z-index: 2;
+
+  padding: 46px;
+}
+
+
+/* =========================================================
+   DONATION HEADING
+   ========================================================= */
+
+.donation-card-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 34px;
+}
+
+.donation-card-heading h2 {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-size:
+    clamp(2rem, 4vw, 3.5rem);
+
+  font-weight: 850;
+
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.donation-card-heading p {
+  max-width: 320px;
+
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   AMOUNT GRID
+   ========================================================= */
+
+.amount-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   AMOUNT BUTTON
+   ========================================================= */
+
+.amount-grid button {
+  position: relative;
+
+  min-height: 64px;
+
+  padding: 0 15px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.amount-grid button:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(255, 145, 80, 0.55);
+
+  background:
+    rgba(255, 106, 26, 0.08);
+
+  box-shadow:
+    0 10px 28px
+    rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   SELECTED AMOUNT
+   ========================================================= */
+
+.amount-grid button.selected,
+.amount-grid button.active {
+  border-color:
+    var(--accent);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 106, 26, 0.20),
+      rgba(255, 106, 26, 0.07)
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 10px 30px
+    rgba(255, 106, 26, 0.14);
+}
+
+.amount-grid button.selected::after,
+.amount-grid button.active::after {
+  content: "✓";
+
+  position: absolute;
+
+  top: 7px;
+  right: 9px;
+
+  color: var(--accent-light);
+
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   SELECTED AMOUNT DISPLAY
+   ========================================================= */
+
+.selected-amount {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+
+  padding: 0 20px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+}
+
+.selected-amount span {
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.selected-amount strong {
+  color: #ffffff;
+
+  font-size:
+    clamp(1.25rem, 3vw, 1.75rem);
+
+  font-weight: 850;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   DONATION ACTION
+   ========================================================= */
+
+.donation-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.donation-action .btn-primary {
+  flex: 1;
+}
+
+.donation-action .btn-secondary {
+  flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   DONATION NOTE
+   ========================================================= */
+
+.donation-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 18px;
+
+  color: var(--text-muted);
+
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.donation-note::before {
+  content: "ⓘ";
+
+  flex-shrink: 0;
+
+  color: var(--accent-light);
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DONATION SECTION RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .donation-section {
+    padding:
+      70px 0
+      90px;
+  }
+
+  .donation-card-inner {
+    padding: 32px;
+  }
+
+  .donation-card-heading {
+    display: block;
+
+    margin-bottom: 28px;
+  }
+
+  .donation-card-heading h2 {
+    margin-bottom: 12px;
+  }
+
+  .donation-card-heading p {
+    max-width: 600px;
+  }
+
+  .amount-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE DONATION
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .donation-section {
+    padding:
+      56px 0
+      76px;
+  }
+
+  .donation-card {
+    border-radius: 22px;
+  }
+
+  .donation-card-inner {
+    padding: 24px 18px;
+  }
+
+  .donation-card-heading {
+    margin-bottom: 22px;
+  }
+
+  .donation-card-heading h2 {
+    font-size: 2rem;
+
+    line-height: 1.04;
+  }
+
+  .donation-card-heading p {
+    font-size: 0.82rem;
+  }
+
+  .amount-grid {
+    gap: 9px;
+  }
+
+  .amount-grid button {
+    min-height: 58px;
+
+    padding-inline: 8px;
+
+    border-radius: 13px;
+
+    font-size: 0.8rem;
+  }
+
+  .selected-amount {
+    min-height: 64px;
+
+    padding-inline: 15px;
+
+    border-radius: 13px;
+  }
+
+  .selected-amount span {
+    font-size: 0.72rem;
+  }
+
+  .selected-amount strong {
+    font-size: 1.25rem;
+  }
+
+  .donation-action {
+    flex-direction: column;
+  }
+
+  .donation-action .btn-primary,
+  .donation-action .btn-secondary {
+    width: 100%;
+    flex: none;
+  }
+
+  .donation-note {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .donation-card-inner {
+    padding: 20px 14px;
+  }
+
+  .amount-grid button {
+    min-height: 54px;
+
+    font-size: 0.74rem;
+  }
+
+  .selected-amount {
+    gap: 10px;
+  }
+
+  .selected-amount strong {
+    font-size: 1.08rem;
+  }
+}
