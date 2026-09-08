@@ -4742,3 +4742,340 @@ button:focus-visible {
     transition: none;
   }
 }
+/* =========================================================
+   BAGIAN 14 — PENUTUP / FINAL POLISH
+   ========================================================= */
+
+/* =========================================================
+   GLOBAL SMOOTH SCROLL
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(255, 106, 26, 0.28);
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO ANIMATION
+   ========================================================= */
+
+.hero-content > * {
+  animation: heroFadeUp 0.75s ease both;
+}
+
+.hero-content .hero-badge {
+  animation-delay: 0.05s;
+}
+
+.hero-content h1 {
+  animation-delay: 0.12s;
+}
+
+.hero-content > p {
+  animation-delay: 0.19s;
+}
+
+.hero-content .hero-actions {
+  animation-delay: 0.26s;
+}
+
+.hero-content .hero-stats {
+  animation-delay: 0.33s;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   SECTION REVEAL
+   ========================================================= */
+
+.section,
+.donation-section,
+.situation-section,
+.impact-section,
+.story-section,
+.needs-section,
+.how-section,
+.gallery-section,
+.transparency-section,
+.testimonial-section,
+.share-section,
+.sources-section {
+  scroll-margin-top: 90px;
+}
+
+
+/* =========================================================
+   CARD MICRO INTERACTION
+   ========================================================= */
+
+.situation-card,
+.impact-card,
+.need-card,
+.how-card,
+.gallery-item,
+.transparency-card {
+  will-change: transform;
+}
+
+
+/* =========================================================
+   GALLERY IMAGE POLISH
+   ========================================================= */
+
+.gallery-item img {
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.045);
+}
+
+.gallery-item::after {
+  transition: opacity 0.35s ease;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   IMAGE SAFETY
+   ========================================================= */
+
+img {
+  max-width: 100%;
+}
+
+.story-image img,
+.gallery-item img,
+.qris-image {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+  .situation-card:hover,
+  .impact-card:hover,
+  .need-card:hover,
+  .how-card:hover,
+  .gallery-item:hover,
+  .transparency-card:hover,
+  .testimonial-card:hover,
+  .source-card:hover {
+    transform: none;
+  }
+
+  .gallery-item:hover img {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   FINAL IPHONE / SMALL SCREEN POLISH
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 11vw, 52px);
+    letter-spacing: -0.045em;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hero-stat {
+    padding: 15px 17px;
+  }
+
+  .donation-card {
+    border-radius: 20px;
+  }
+
+  .amount-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .selected-amount {
+    font-size: 25px;
+  }
+
+  .section-heading h2 {
+    font-size: 29px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-large {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .transparency-numbers {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-donation {
+    bottom: calc(10px + env(safe-area-inset-bottom));
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .container {
+    width: min(100% - 24px, var(--container));
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .amount-grid {
+    gap: 8px;
+  }
+
+  .amount-grid button {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 12px;
+  }
+
+  .sticky-donation {
+    left: 8px;
+    right: 8px;
+    padding-left: 11px;
+    padding-right: 8px;
+  }
+
+  .sticky-donation-text span {
+    display: none;
+  }
+
+  .sticky-donation .btn-primary {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+}
+
+
+/* =========================================================
+   SAFE AREA UNTUK IPHONE
+   ========================================================= */
+
+@supports (padding: max(0px)) {
+  .site-footer {
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
+  }
+
+  .sticky-donation {
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION — ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-content > * {
+    opacity: 1;
+    transform: none;
+  }
+
+  .gallery-item:hover img {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   END — KRAKATAU 2026
+   ========================================================= */
