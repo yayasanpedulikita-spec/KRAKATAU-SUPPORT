@@ -3,50 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Bantu Krakatau 2026 — Peduli Sesama</title>
 
-  <meta
-    name="description"
-    content="Bersama bantu masyarakat terdampak aktivitas Gunung Anak Krakatau."
-  >
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
   <style>
-
-    :root{
-      --black:#07090b;
-      --black-2:#0d1115;
-      --black-3:#11171d;
-
-      --panel:#151b21;
-      --panel-2:#1b232b;
-
-      --white:#f5f7f8;
-      --text:#eef1f3;
-      --muted:#98a2ad;
-
-      --line:rgba(255,255,255,.09);
-
-      --coral:#ff6b4a;
-      --coral-dark:#e95536;
-      --peach:#ffb49d;
-
-      --green:#52a878;
-      --green-soft:#173326;
-
-      --shadow:0 22px 60px rgba(0,0,0,.38);
-
-      --radius:26px;
-    }
-
     *{
       box-sizing:border-box;
       margin:0;
@@ -58,11 +17,10 @@
     }
 
     body{
-      font-family:"DM Sans",sans-serif;
-      background:var(--black);
-      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#050505;
+      color:#f5f5f5;
       line-height:1.6;
-      overflow-x:hidden;
     }
 
     a{
@@ -74,44 +32,28 @@
       font:inherit;
     }
 
-    .container{
-      width:min(1120px,92%);
-      margin:auto;
-    }
-
-    /* =========================
-       TOPBAR
-    ========================= */
-
     .topbar{
-      background:#0b0f13;
-      border-bottom:1px solid var(--line);
-      padding:10px 0;
+      padding:10px 20px;
+      background:#0b0b0b;
+      border-bottom:1px solid #1b1b1b;
       text-align:center;
       font-size:13px;
-      font-weight:700;
-      color:#cbd2d8;
+      color:#aaa;
     }
-
-    .topbar span{
-      color:var(--coral);
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
 
     header{
       position:sticky;
       top:0;
-      z-index:100;
-      background:rgba(7,9,11,.88);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--line);
+      z-index:50;
+      background:rgba(5,5,5,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid #171717;
     }
 
     .nav{
-      height:72px;
+      max-width:1180px;
+      margin:auto;
+      padding:16px 20px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -119,69 +61,41 @@
     }
 
     .brand{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:-.5px;
+      font-size:18px;
     }
 
-    .brand-mark{
-      width:38px;
-      height:38px;
-      border-radius:12px;
-      background:var(--coral);
-      color:#fff;
-      display:grid;
-      place-items:center;
-      font-weight:800;
-      box-shadow:0 8px 25px rgba(255,107,74,.2);
+    .brand span{
+      color:#aaa;
     }
 
     .nav-links{
       display:flex;
-      gap:25px;
-      align-items:center;
-      color:#aeb7bf;
+      gap:24px;
+      color:#aaa;
       font-size:14px;
-      font-weight:600;
-    }
-
-    .nav-links a{
-      transition:.2s;
     }
 
     .nav-links a:hover{
       color:#fff;
     }
 
-    .nav-cta{
-      background:var(--coral);
-      color:#fff;
-      border:0;
+    .nav-donate{
+      border:1px solid #fff;
+      padding:9px 15px;
       border-radius:999px;
-      padding:11px 18px;
+      font-size:13px;
       font-weight:800;
-      cursor:pointer;
-      transition:.2s;
     }
-
-    .nav-cta:hover{
-      background:var(--coral-dark);
-      transform:translateY(-1px);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
 
     .hero{
       min-height:680px;
-      display:flex;
-      align-items:center;
       position:relative;
       overflow:hidden;
-      background:#020304;
+      display:flex;
+      align-items:center;
+      background:#000;
     }
 
     .hero-bg{
@@ -192,603 +106,339 @@
       object-fit:cover;
       object-position:center center;
       opacity:.70;
-      filter:
-        saturate(1.25)
-        contrast(1.18)
-        brightness(.72);
+      filter:saturate(1.25) contrast(1.18) brightness(.72);
     }
 
     .hero::after{
       content:"";
       position:absolute;
       inset:0;
-
       background:
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,.93) 0%,
-          rgba(0,0,0,.72) 42%,
-          rgba(0,0,0,.30) 100%
-        ),
-        linear-gradient(
-          0deg,
-          #07090b 0%,
-          transparent 35%,
-          rgba(0,0,0,.25) 100%
-        );
+        linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.70) 48%,rgba(0,0,0,.30) 100%),
+        linear-gradient(0deg,#050505 0%,transparent 35%,rgba(0,0,0,.25) 100%);
     }
 
     .hero-content{
       position:relative;
       z-index:2;
-      max-width:720px;
-      padding:90px 0;
+      max-width:1180px;
+      width:100%;
+      margin:auto;
+      padding:90px 20px;
     }
 
     .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      color:var(--peach);
-      font-size:13px;
+      padding:7px 12px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.35);
+      border-radius:999px;
+      color:#ddd;
+      font-size:12px;
       font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:1.4px;
-      margin-bottom:18px;
+      margin-bottom:22px;
     }
 
     .eyebrow::before{
       content:"";
-      width:28px;
-      height:2px;
-      background:var(--coral);
+      width:7px;
+      height:7px;
+      background:#fff;
+      border-radius:50%;
     }
 
-    h1{
-      font-size:clamp(42px,7vw,78px);
-      line-height:1.02;
-      letter-spacing:-3px;
+    .hero h1{
+      max-width:800px;
+      font-size:clamp(42px,7vw,82px);
+      line-height:.98;
+      letter-spacing:-4px;
       margin-bottom:24px;
-      color:#fff;
     }
 
     .hero p{
-      font-size:18px;
-      color:#c1c8ce;
       max-width:650px;
-      margin-bottom:32px;
+      color:#d0d0d0;
+      font-size:18px;
+      margin-bottom:30px;
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
+      margin-bottom:38px;
     }
 
     .btn{
-      border:0;
-      border-radius:999px;
-      padding:14px 23px;
-      font-weight:800;
+      border:1px solid #fff;
+      background:#fff;
+      color:#000;
+      padding:13px 20px;
+      border-radius:10px;
+      font-weight:900;
       cursor:pointer;
       transition:.2s;
     }
 
-    .btn-primary{
-      background:var(--coral);
-      color:#fff;
-      box-shadow:0 12px 30px rgba(255,107,74,.2);
-    }
-
-    .btn-primary:hover{
-      background:var(--coral-dark);
+    .btn:hover{
       transform:translateY(-2px);
     }
 
-    .btn-dark{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.14);
+    .btn.secondary{
+      background:rgba(0,0,0,.45);
       color:#fff;
-    }
-
-    .btn-dark:hover{
-      background:rgba(255,255,255,.13);
+      border-color:#555;
     }
 
     .hero-meta{
-      display:flex;
-      gap:28px;
-      flex-wrap:wrap;
-      margin-top:45px;
-      padding-top:24px;
-      border-top:1px solid rgba(255,255,255,.12);
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      max-width:760px;
+      border-top:1px solid rgba(255,255,255,.18);
+      padding-top:22px;
+      gap:20px;
     }
 
-    .meta-item strong{
-      display:block;
-      font-size:16px;
-      color:#fff;
+    .meta-label{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:#888;
+      margin-bottom:4px;
     }
 
-    .meta-item span{
-      color:#89939d;
-      font-size:12px;
+    .meta-value{
+      font-weight:800;
     }
-
-    /* =========================
-       GENERAL
-    ========================= */
 
     section{
-      padding:90px 0;
+      padding:85px 20px;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:auto;
     }
 
     .section-head{
-      max-width:700px;
-      margin-bottom:40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:30px;
+      margin-bottom:35px;
     }
 
-    .section-kicker{
-      color:var(--coral);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:1.5px;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
-
-    h2{
-      font-size:clamp(30px,5vw,48px);
-      line-height:1.1;
-      letter-spacing:-1.8px;
-      color:#fff;
+    .section-head h2{
+      font-size:clamp(30px,4vw,48px);
+      letter-spacing:-2px;
+      line-height:1;
     }
 
     .section-head p{
-      margin-top:14px;
-      color:var(--muted);
-    }
-
-    /* =========================
-       FUNDRAISING
-    ========================= */
-
-    .fund-section{
-      background:var(--black-2);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .fund-grid{
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:22px;
+      max-width:520px;
+      color:#999;
     }
 
     .fund-card{
-      background:
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(255,107,74,.12),
-          transparent 35%
-        ),
-        var(--panel);
-
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:35px;
-      box-shadow:var(--shadow);
-    }
-
-    .fund-label{
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:8px;
+      background:#0c0c0c;
+      border:1px solid #202020;
+      border-radius:24px;
+      padding:30px;
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      gap:35px;
     }
 
     .fund-number{
-      font-size:clamp(38px,6vw,64px);
+      font-size:clamp(30px,4.5vw,48px);
       line-height:1;
-      letter-spacing:-2px;
+      letter-spacing:-1.5px;
       font-weight:800;
       color:#fff;
+    }
+
+    .fund-label{
+      color:#888;
+      font-size:14px;
+      margin-top:8px;
     }
 
     .fund-target{
-      margin-top:12px;
-      color:#aab3ba;
+      margin-top:22px;
     }
 
     .progress{
-      height:10px;
-      background:#252d34;
+      height:12px;
+      background:#222;
       border-radius:999px;
       overflow:hidden;
-      margin:25px 0 12px;
+      margin-top:10px;
     }
 
-    .progress-bar{
+    .progress span{
+      display:block;
       width:15.47%;
       height:100%;
-      background:
-        linear-gradient(
-          90deg,
-          var(--coral),
-          #ff947c
-        );
-      border-radius:999px;
-    }
-
-    .progress-info{
-      display:flex;
-      justify-content:space-between;
-      color:#a8b0b7;
-      font-size:13px;
+      background:#fff;
     }
 
     .fund-side{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
+      border-left:1px solid #222;
+      padding-left:30px;
     }
 
-    .mini-card{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:25px;
-      height:100%;
-    }
-
-    .mini-card .mini-label{
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .mini-card strong{
+    .fund-side strong{
       display:block;
       font-size:25px;
-      color:#fff;
-      margin-top:5px;
+      margin-bottom:5px;
     }
 
-    .countdown{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:8px;
-      margin-top:16px;
+    .muted{
+      color:#888;
     }
 
-    .count-box{
-      background:#0b0f13;
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px 5px;
-      text-align:center;
-    }
-
-    .count-box strong{
-      font-size:20px;
-      margin:0;
-    }
-
-    .count-box span{
-      display:block;
-      color:#7f8992;
-      font-size:10px;
-      text-transform:uppercase;
-    }
-
-    /* =========================
-       SITUATION
-    ========================= */
-
-    .situation{
-      background:var(--black);
-    }
-
-    .warning{
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255,107,74,.1),
-          rgba(255,107,74,.03)
-        ),
-        var(--panel);
-
-      border:1px solid rgba(255,107,74,.2);
-      border-radius:var(--radius);
-      padding:30px;
-    }
-
-    .warning-title{
-      color:var(--coral);
-      font-weight:800;
-      margin-bottom:8px;
-    }
-
-    .warning p{
-      color:#b7c0c7;
-    }
-
-    .cards-3{
+    .grid-3{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:16px;
-      margin-top:20px;
     }
 
-    .info-card{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:22px;
+    .card{
+      background:#0b0b0b;
+      border:1px solid #1d1d1d;
+      border-radius:20px;
       padding:25px;
     }
 
-    .info-icon{
-      width:42px;
-      height:42px;
-      display:grid;
-      place-items:center;
-      border-radius:13px;
-      background:rgba(255,107,74,.1);
-      color:var(--coral);
-      margin-bottom:17px;
-      font-size:20px;
+    .card-number{
+      font-size:13px;
+      color:#777;
+      margin-bottom:30px;
     }
 
-    .info-card h3{
-      color:#fff;
-      margin-bottom:8px;
-      font-size:18px;
+    .card h3{
+      margin-bottom:10px;
+      font-size:21px;
     }
 
-    .info-card p{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* =========================
-       IMPACT
-    ========================= */
-
-    .impact-section{
-      background:var(--black-2);
-    }
-
-    .impact-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
-    }
-
-    .impact{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:28px;
-    }
-
-    .impact strong{
-      display:block;
-      color:#fff;
-      font-size:19px;
-      margin-bottom:8px;
-    }
-
-    .impact p{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* =========================
-       STORY
-    ========================= */
-
-    .story-section{
-      background:var(--black);
+    .card p{
+      color:#999;
     }
 
     .story{
       display:grid;
       grid-template-columns:1fr 1fr;
-      overflow:hidden;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:var(--panel);
+      gap:45px;
+      align-items:center;
     }
 
     .story-image{
-      min-height:430px;
-      position:relative;
-    }
-
-    .story-image img{
       width:100%;
-      height:100%;
+      height:500px;
       object-fit:cover;
-      display:block;
-      filter:saturate(.85);
+      border-radius:24px;
+      border:1px solid #222;
     }
 
-    .story-content{
-      padding:45px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+    .story h2{
+      font-size:clamp(34px,5vw,60px);
+      line-height:1;
+      letter-spacing:-2.5px;
+      margin-bottom:22px;
     }
 
-    .story-content p{
-      color:#aeb7be;
-      margin-top:18px;
+    .story p{
+      color:#aaa;
+      margin-bottom:16px;
     }
-
-    .story-quote{
-      margin-top:25px;
-      padding:18px;
-      border-left:3px solid var(--coral);
-      background:rgba(255,107,74,.06);
-      color:#d8dde1;
-      font-weight:600;
-    }
-
-    /* =========================
-       NEEDS
-    ========================= */
 
     .needs{
-      background:var(--black-2);
-    }
-
-    .needs-list{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
     }
 
     .need{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:22px;
-      display:flex;
-      gap:16px;
-      align-items:flex-start;
+      padding:25px;
+      border:1px solid #202020;
+      border-radius:18px;
+      background:#0a0a0a;
     }
 
-    .need-number{
-      min-width:38px;
-      height:38px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      background:var(--coral);
-      color:#fff;
-      font-weight:800;
+    .need strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
     }
 
-    .need h3{
-      color:#fff;
-      font-size:17px;
-      margin-bottom:5px;
-    }
-
-    .need p{
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    /* =========================
-       STEPS
-    ========================= */
-
-    .steps-section{
-      background:var(--black);
+    .need span{
+      color:#888;
+      font-size:14px;
     }
 
     .steps{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:16px;
+      gap:15px;
     }
 
     .step{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:28px;
+      border-top:1px solid #444;
+      padding-top:18px;
     }
 
-    .step-num{
-      color:var(--coral);
+    .step b{
       font-size:13px;
-      font-weight:800;
-      margin-bottom:15px;
+      color:#777;
     }
 
     .step h3{
-      color:#fff;
-      margin-bottom:8px;
+      margin:12px 0 8px;
     }
 
     .step p{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* =========================
-       GALLERY
-    ========================= */
-
-    .gallery-section{
-      background:var(--black-2);
+      color:#888;
     }
 
     .gallery{
       display:flex;
-      gap:14px;
-
+      gap:16px;
       overflow-x:auto;
-      overflow-y:hidden;
-
-      padding:4px 2px 16px;
-
       scroll-snap-type:x mandatory;
-      scroll-behavior:smooth;
-
-      -webkit-overflow-scrolling:touch;
-
+      padding-bottom:12px;
       scrollbar-width:thin;
-      scrollbar-color:
-        var(--coral)
-        rgba(255,255,255,.08);
     }
 
     .gallery::-webkit-scrollbar{
-      height:8px;
+      height:7px;
     }
 
     .gallery::-webkit-scrollbar-track{
-      background:rgba(255,255,255,.06);
-      border-radius:999px;
+      background:#111;
     }
 
     .gallery::-webkit-scrollbar-thumb{
-      background:var(--coral);
-      border-radius:999px;
+      background:#444;
+      border-radius:10px;
     }
 
     .gallery-item{
-      position:relative;
-
-      flex:0 0 clamp(250px,34vw,360px);
-
-      height:280px;
-
-      border-radius:22px;
-      overflow:hidden;
-
-      border:1px solid var(--line);
-
-      background:var(--panel);
-
+      flex:0 0 min(78vw,380px);
       scroll-snap-align:start;
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      border:1px solid #222;
+      background:#0a0a0a;
     }
 
     .gallery-item img{
       width:100%;
-      height:100%;
-      object-fit:cover;
+      height:420px;
       display:block;
-
-      transition:.35s;
-
-      filter:saturate(.85);
-    }
-
-    .gallery-item:hover img{
-      transform:scale(1.04);
-      filter:saturate(1);
+      object-fit:cover;
     }
 
     .gallery-caption{
@@ -796,194 +446,121 @@
       left:0;
       right:0;
       bottom:0;
-
-      padding:40px 18px 17px;
-
-      background:
-        linear-gradient(
-          transparent,
-          rgba(0,0,0,.92)
-        );
-
-      color:#fff;
-      font-size:13px;
-      font-weight:700;
+      padding:45px 18px 18px;
+      background:linear-gradient(transparent,rgba(0,0,0,.95));
+      font-weight:800;
     }
-
-    /* =========================
-       OFFICIAL
-    ========================= */
 
     .official{
-      background:var(--black);
-    }
-
-    .official-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:15px;
     }
 
-    .official-card{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:22px;
+    .official a{
+      display:block;
+      background:#0b0b0b;
+      border:1px solid #202020;
+      border-radius:18px;
+      padding:24px;
       transition:.2s;
     }
 
-    .official-card:hover{
-      border-color:rgba(255,107,74,.35);
+    .official a:hover{
+      border-color:#555;
       transform:translateY(-2px);
     }
 
-    .official-card strong{
-      color:#fff;
+    .official small{
+      color:#777;
       display:block;
-      margin-bottom:7px;
+      margin-bottom:8px;
     }
 
-    .official-card span{
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .official-card small{
+    .official strong{
       display:block;
-      margin-top:15px;
-      color:var(--coral);
-      font-weight:800;
+      margin-bottom:8px;
     }
 
-    .source-note{
-      margin-top:18px;
-      color:#78828b;
-      font-size:12px;
+    .official span{
+      color:#999;
+      font-size:14px;
     }
 
-    /* =========================
-       SHARE
-    ========================= */
-
-    .share-section{
-      background:var(--black-2);
+    .share{
+      text-align:center;
+      background:#0b0b0b;
+      border-top:1px solid #191919;
+      border-bottom:1px solid #191919;
     }
 
-    .share-box{
-      background:
-        radial-gradient(
-          circle at 90% 0,
-          rgba(255,107,74,.12),
-          transparent 35%
-        ),
-        var(--panel);
-
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:38px;
-
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-
-      gap:25px;
+    .share h2{
+      font-size:clamp(30px,5vw,55px);
+      letter-spacing:-2px;
+      margin-bottom:12px;
     }
 
-    .share-box p{
-      color:var(--muted);
-      margin-top:8px;
+    .share p{
+      color:#999;
+      max-width:600px;
+      margin:0 auto 25px;
     }
 
     .share-actions{
       display:flex;
+      justify-content:center;
       gap:10px;
       flex-wrap:wrap;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer{
-      background:#040506;
-      border-top:1px solid var(--line);
-      padding:45px 0 100px;
-
-      color:#747e87;
+      padding:35px 20px 100px;
+      background:#050505;
+      color:#777;
       font-size:13px;
     }
 
-    .footer-main{
+    .footer-inner{
+      max-width:1180px;
+      margin:auto;
       display:flex;
       justify-content:space-between;
-      gap:25px;
+      gap:20px;
     }
-
-    .footer-brand{
-      color:#fff;
-      font-weight:800;
-      margin-bottom:8px;
-    }
-
-    .footer-disclaimer{
-      max-width:520px;
-    }
-
-    /* =========================
-       STICKY DONATE
-    ========================= */
 
     .sticky-donate{
       position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-
-      z-index:120;
-
-      background:rgba(5,6,7,.93);
-      backdrop-filter:blur(15px);
-
-      border-top:1px solid var(--line);
-
-      padding:12px;
-    }
-
-    .sticky-inner{
-      width:min(900px,92%);
-      margin:auto;
-
+      left:20px;
+      right:20px;
+      bottom:18px;
+      z-index:100;
       display:flex;
-      align-items:center;
       justify-content:center;
-
-      gap:14px;
+      pointer-events:none;
     }
 
-    .sticky-text{
-      color:#b8c0c6;
-      font-size:13px;
+    .sticky-donate button{
+      pointer-events:auto;
+      background:#fff;
+      color:#000;
+      border:0;
+      border-radius:999px;
+      padding:15px 28px;
+      font-weight:900;
+      box-shadow:0 10px 40px rgba(0,0,0,.6);
+      cursor:pointer;
     }
-
-    /* =========================
-       MODAL
-    ========================= */
 
     .modal{
       position:fixed;
       inset:0;
-
       z-index:200;
-
-      background:rgba(0,0,0,.78);
-
-      backdrop-filter:blur(8px);
-
       display:none;
       align-items:center;
       justify-content:center;
-
       padding:20px;
+      background:rgba(0,0,0,.82);
+      backdrop-filter:blur(8px);
     }
 
     .modal.active{
@@ -992,1612 +569,896 @@
 
     .modal-box{
       width:min(520px,100%);
-      max-height:90vh;
-
-      overflow:auto;
-
-      background:var(--panel);
-
-      border:1px solid var(--line);
-
-      border-radius:28px;
-
-      padding:30px;
-
-      box-shadow:
-        0 30px 90px rgba(0,0,0,.55);
-
+      background:#0c0c0c;
+      border:1px solid #292929;
+      border-radius:24px;
+      padding:28px;
       position:relative;
+      max-height:90vh;
+      overflow:auto;
     }
 
     .modal-close{
       position:absolute;
-
-      top:17px;
-      right:17px;
-
+      top:15px;
+      right:15px;
       width:36px;
       height:36px;
-
       border-radius:50%;
-
-      border:1px solid var(--line);
-
-      background:#0b0f13;
-
+      border:1px solid #333;
+      background:#111;
       color:#fff;
-
       cursor:pointer;
     }
 
-    .modal-box h2{
+    .modal h2{
       font-size:30px;
-      padding-right:45px;
+      letter-spacing:-1px;
+      margin-bottom:8px;
     }
 
-    .modal-box > p{
-      color:var(--muted);
-      margin:8px 0 22px;
-      font-size:14px;
+    .modal-sub{
+      color:#888;
+      margin-bottom:25px;
     }
 
-    /* =========================
-       AMOUNT
-    ========================= */
-
-    .amount-display{
-      background:#0b0f13;
-
-      border:1px solid var(--line);
-
-      border-radius:18px;
-
-      padding:18px;
-
-      text-align:center;
-
-      margin-bottom:15px;
-    }
-
-    .amount-display span{
-      color:#7e8992;
-      font-size:12px;
-    }
-
-    .amount-display strong{
-      display:block;
-      color:#fff;
-      font-size:30px;
-      margin-top:2px;
-    }
-
-    .amount-options{
+    .amount-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-
-      gap:8px;
-
-      margin-bottom:18px;
+      gap:10px;
+      margin-bottom:20px;
     }
 
-    .amount-btn{
-      border:1px solid var(--line);
-
-      background:#0b0f13;
-
-      color:#cdd3d8;
-
-      border-radius:13px;
-
-      padding:12px 5px;
-
-      cursor:pointer;
-
-      font-weight:700;
-    }
-
-    .amount-btn:hover,
-    .amount-btn.selected{
-      background:rgba(255,107,74,.1);
-      border-color:var(--coral);
+    .amount{
+      border:1px solid #292929;
+      background:#111;
       color:#fff;
+      border-radius:12px;
+      padding:13px 8px;
+      cursor:pointer;
+      font-weight:800;
     }
 
-    .modal-actions{
-      display:flex;
-      gap:9px;
+    .amount:hover,
+    .amount.active{
+      background:#fff;
+      color:#000;
+      border-color:#fff;
     }
 
-    .modal-actions .btn{
-      flex:1;
+    .input{
+      width:100%;
+      padding:14px;
+      background:#111;
+      color:#fff;
+      border:1px solid #292929;
+      border-radius:10px;
+      margin-bottom:12px;
+      outline:none;
     }
 
-    /* =========================
-       QRIS
-    ========================= */
+    .input:focus{
+      border-color:#777;
+    }
 
     .qris-wrap{
-      background:#0b0f13;
-
-      border:1px solid var(--line);
-
-      border-radius:22px;
-
-      padding:18px;
-
       text-align:center;
     }
 
     .qris-image{
-      width:100%;
-      max-width:330px;
-
-      border-radius:14px;
-
-      background:#fff;
-
-      padding:8px;
-
+      width:min(330px,100%);
+      border-radius:15px;
       display:block;
-
-      margin:0 auto 15px;
+      margin:20px auto;
+      background:#fff;
     }
 
-    .qris-name{
-      color:#fff;
-      font-weight:800;
-      font-size:16px;
-    }
-
-    .qris-id{
-      color:#909aa3;
-      font-size:12px;
-      margin-top:3px;
-    }
-
-    .thank-note{
-      background:var(--green-soft);
-
-      border:1px solid rgba(82,168,120,.2);
-
-      color:#bce2cc;
-
-      border-radius:16px;
-
-      padding:16px;
-
+    .qris-info{
+      color:#999;
       font-size:13px;
-
-      margin-top:16px;
     }
 
-    /* =========================
-       TOAST
-    ========================= */
+    .countdown{
+      display:flex;
+      gap:10px;
+      margin-top:25px;
+      flex-wrap:wrap;
+    }
+
+    .count-box{
+      min-width:85px;
+      padding:12px;
+      border:1px solid #242424;
+      border-radius:12px;
+      background:#0b0b0b;
+    }
+
+    .count-box strong{
+      display:block;
+      font-size:24px;
+    }
+
+    .count-box span{
+      font-size:11px;
+      color:#777;
+      text-transform:uppercase;
+    }
 
     .toast{
       position:fixed;
-
       left:50%;
-      bottom:90px;
-
-      transform:
-        translate(-50%,20px);
-
-      z-index:300;
-
-      background:#151b21;
-
-      border:1px solid var(--line);
-
-      color:#fff;
-
+      bottom:85px;
+      transform:translateX(-50%) translateY(20px);
+      background:#fff;
+      color:#000;
+      padding:12px 18px;
       border-radius:999px;
-
-      padding:11px 17px;
-
       font-size:13px;
-      font-weight:700;
-
+      font-weight:800;
       opacity:0;
       pointer-events:none;
-
       transition:.25s;
-
-      box-shadow:
-        0 15px 40px rgba(0,0,0,.4);
+      z-index:300;
     }
 
     .toast.show{
       opacity:1;
-
-      transform:
-        translate(-50%,0);
+      transform:translateX(-50%) translateY(0);
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
     @media(max-width:850px){
-
       .nav-links{
         display:none;
       }
 
-      .fund-grid,
+      .hero{
+        min-height:650px;
+      }
+
+      .hero h1{
+        letter-spacing:-2.5px;
+      }
+
+      .hero-meta{
+        grid-template-columns:1fr;
+      }
+
+      .fund-card{
+        grid-template-columns:1fr;
+      }
+
+      .fund-side{
+        border-left:0;
+        border-top:1px solid #222;
+        padding-left:0;
+        padding-top:25px;
+      }
+
+      .grid-3,
+      .official,
+      .steps{
+        grid-template-columns:1fr;
+      }
+
       .story{
         grid-template-columns:1fr;
       }
 
       .story-image{
-        min-height:300px;
+        height:360px;
       }
 
-      .cards-3,
-      .official-grid,
-      .steps{
-        grid-template-columns:1fr;
+      .needs{
+        grid-template-columns:repeat(2,1fr);
       }
-
-      .impact-grid,
-      .needs-list{
-        grid-template-columns:1fr;
-      }
-
-      .share-box{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-    }
-
-    @media(max-width:620px){
 
       section{
-        padding:70px 0;
+        padding:65px 20px;
       }
+    }
 
-      .hero{
-        min-height:640px;
-      }
-
-      .hero-bg{
-        object-position:center center;
-        opacity:.72;
-      }
-
+    @media(max-width:500px){
       .hero-content{
-        padding:70px 0;
-      }
-
-      h1{
-        letter-spacing:-2px;
+        padding:70px 20px;
       }
 
       .hero p{
         font-size:16px;
       }
 
-      .fund-card{
-        padding:25px;
+      .needs{
+        grid-template-columns:1fr;
       }
 
-      .countdown{
-        gap:5px;
-      }
-
-      .gallery-item{
-        flex:0 0 84vw;
-        height:300px;
-      }
-
-      .share-box{
-        padding:28px;
-      }
-
-      .sticky-text{
-        display:none;
-      }
-
-      .sticky-inner{
-        width:100%;
-      }
-
-      .sticky-inner .btn{
-        width:100%;
-      }
-
-      .amount-options{
+      .amount-grid{
         grid-template-columns:repeat(2,1fr);
       }
 
-      .modal-box{
-        padding:24px 18px;
-        border-radius:23px;
+      .fund-card{
+        padding:22px;
       }
 
-    }
+      .gallery-item{
+        flex-basis:82vw;
+      }
 
+      .gallery-item img{
+        height:360px;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       TOPBAR
-  ========================= -->
-
   <div class="topbar">
-    <span>Peduli Krakatau</span>
-    — Satu bantuan kecil, berarti besar.
+    Peduli Krakatau — Satu bantuan kecil, berarti besar.
   </div>
 
-
-  <!-- =========================
-       HEADER
-  ========================= -->
-
   <header>
-
-    <div class="container nav">
-
+    <nav class="nav">
       <a href="#" class="brand">
-
-        <div class="brand-mark">
-          ♡
-        </div>
-
-        <span>
-          Bantu Krakatau 2026
-        </span>
-
+        Peduli <span>Krakatau</span>
       </a>
 
+      <div class="nav-links">
+        <a href="#situasi">Situasi</a>
+        <a href="#dampak">Dampak</a>
+        <a href="#kebutuhan">Kebutuhan</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#transparansi">Transparansi</a>
+      </div>
 
-      <nav class="nav-links">
-
-        <a href="#situasi">
-          Situasi
-        </a>
-
-        <a href="#dampak">
-          Dampak
-        </a>
-
-        <a href="#kebutuhan">
-          Kebutuhan
-        </a>
-
-        <a href="#galeri">
-          Galeri
-        </a>
-
-        <a href="#transparansi">
-          Transparansi
-        </a>
-
-      </nav>
-
-
-      <button
-        class="nav-cta"
-        onclick="openDonation()"
-      >
+      <button class="nav-donate" onclick="openDonation()">
         Donasi
       </button>
-
-    </div>
-
+    </nav>
   </header>
 
+  <main>
 
-  <!-- =========================
-       HERO
-  ========================= -->
+    <section class="hero">
+      <img
+        class="hero-bg"
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg"
+        alt="Gunung Anak Krakatau dengan semburan api"
+      >
 
-  <section class="hero">
+      <div class="hero-content">
 
-    <img
-      class="hero-bg"
-      src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg"
-      alt="Gunung Anak Krakatau dengan semburan api"
-    >
-
-
-    <div class="container hero-content">
-
-      <div class="eyebrow">
-        Bersama untuk Krakatau
-      </div>
-
-
-      <h1>
-        Saat alam berubah,<br>
-        kita hadir untuk sesama.
-      </h1>
-
-
-      <p>
-        Mari ikut membantu kebutuhan masyarakat yang terdampak
-        aktivitas Gunung Anak Krakatau. Bantuan Anda akan menjadi
-        bagian dari dukungan nyata di masa siaga.
-      </p>
-
-
-      <div class="hero-actions">
-
-        <button
-          class="btn btn-primary"
-          onclick="openDonation()"
-        >
-          Donasi Sekarang →
-        </button>
-
-
-        <a
-          href="#situasi"
-          class="btn btn-dark"
-        >
-          Lihat Situasi
-        </a>
-
-      </div>
-
-
-      <div class="hero-meta">
-
-        <div class="meta-item">
-
-          <strong>
-            Siaga
-          </strong>
-
-          <span>
-            Pantauan Badan Geologi
-          </span>
-
+        <div class="eyebrow">
+          Bersama untuk Krakatau
         </div>
 
-
-        <div class="meta-item">
-
-          <strong>
-            2026
-          </strong>
-
-          <span>
-            Periode kampanye
-          </span>
-
-        </div>
-
-
-        <div class="meta-item">
-
-          <strong>
-            100%
-          </strong>
-
-          <span>
-            Fokus kebutuhan kemanusiaan
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FUNDRAISING
-  ========================= -->
-
-  <section class="fund-section">
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <div class="section-kicker">
-          Perjalanan Donasi
-        </div>
-
-        <h2>
-          Setiap rupiah membawa kita lebih dekat.
-        </h2>
+        <h1>
+          Saat alam berubah,<br>
+          kita hadir untuk sesama.
+        </h1>
 
         <p>
-          Dana yang terkumpul akan diarahkan untuk mendukung
-          kebutuhan masyarakat terdampak dan kegiatan bantuan
-          kemanusiaan.
+          Ketika aktivitas Gunung Anak Krakatau meningkat,
+          kebutuhan masyarakat di sekitar wilayah terdampak
+          ikut berubah. Mari bantu kebutuhan kemanusiaan
+          agar dukungan bisa hadir lebih cepat dan tepat.
         </p>
 
+        <div class="hero-actions">
+          <button class="btn" onclick="openDonation()">
+            Donasi Sekarang
+          </button>
+
+          <a href="#situasi" class="btn secondary">
+            Lihat Situasi
+          </a>
+        </div>
+
+        <div class="hero-meta">
+
+          <div>
+            <div class="meta-label">Status</div>
+            <div class="meta-value">Siaga</div>
+            <div class="muted">Pantauan Badan Geologi</div>
+          </div>
+
+          <div>
+            <div class="meta-label">Periode</div>
+            <div class="meta-value">2026</div>
+            <div class="muted">Periode kampanye</div>
+          </div>
+
+          <div>
+            <div class="meta-label">Fokus</div>
+            <div class="meta-value">100%</div>
+            <div class="muted">Kebutuhan kemanusiaan</div>
+          </div>
+
+        </div>
+
       </div>
+    </section>
 
 
-      <div class="fund-grid">
+    <section>
+      <div class="container">
 
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Perkembangan Donasi</div>
+            <h2>Bersama kita bergerak.</h2>
+          </div>
+
+          <p>
+            Setiap bantuan dicatat dan diarahkan untuk mendukung
+            kebutuhan kemanusiaan selama periode kampanye.
+          </p>
+        </div>
 
         <div class="fund-card">
 
-          <div class="fund-label">
-            Dana terkumpul
-          </div>
+          <div>
 
-
-          <div class="fund-number">
-            Rp4.640.000
-          </div>
-
-
-          <div class="fund-target">
-            dari target Rp30.000.000
-          </div>
-
-
-          <div class="progress">
-
-            <div class="progress-bar"></div>
-
-          </div>
-
-
-          <div class="progress-info">
-
-            <span>
-              15,47% tercapai
-            </span>
-
-            <span>
-              Rp25.360.000 tersisa
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="fund-side">
-
-
-          <div class="mini-card">
-
-            <div class="mini-label">
-              Target bantuan
+            <div class="fund-number">
+              Rp4.640.000
             </div>
 
-            <strong>
-              Rp30.000.000
-            </strong>
+            <div class="fund-label">
+              Dana terkumpul
+            </div>
+
+            <div class="fund-target">
+              <div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;">
+                <span>Target Rp30.000.000</span>
+                <strong>15,47%</strong>
+              </div>
+
+              <div class="progress">
+                <span></span>
+              </div>
+            </div>
 
           </div>
 
-
-          <div class="mini-card">
-
-            <div class="mini-label">
-              Kampanye berakhir dalam
+          <div class="fund-side">
+            <strong>Rp25.360.000</strong>
+            <div class="muted">
+              Masih dibutuhkan untuk mencapai target.
             </div>
-
 
             <div class="countdown">
-
               <div class="count-box">
-
-                <strong id="days">
-                  0
-                </strong>
-
-                <span>
-                  Hari
-                </span>
-
+                <strong id="days">0</strong>
+                <span>Hari</span>
               </div>
 
-
               <div class="count-box">
-
-                <strong id="hours">
-                  0
-                </strong>
-
-                <span>
-                  Jam
-                </span>
-
+                <strong id="hours">0</strong>
+                <span>Jam</span>
               </div>
 
-
               <div class="count-box">
-
-                <strong id="minutes">
-                  0
-                </strong>
-
-                <span>
-                  Menit
-                </span>
-
+                <strong id="minutes">0</strong>
+                <span>Menit</span>
               </div>
 
-
               <div class="count-box">
-
-                <strong id="seconds">
-                  0
-                </strong>
-
-                <span>
-                  Detik
-                </span>
-
+                <strong id="seconds">0</strong>
+                <span>Detik</span>
               </div>
-
             </div>
-
           </div>
 
         </div>
 
       </div>
+    </section>
 
-    </div>
 
-  </section>
+    <section id="situasi">
+      <div class="container">
 
-
-  <!-- =========================
-       SITUASI
-  ========================= -->
-
-  <section
-    class="situation"
-    id="situasi"
-  >
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <div class="section-kicker">
-          Situasi
-        </div>
-
-        <h2>
-          Memahami kondisi sebelum membantu.
-        </h2>
-
-        <p>
-          Informasi mengenai aktivitas gunung dan kondisi sekitar
-          perlu selalu mengikuti sumber resmi pemerintah.
-        </p>
-
-      </div>
-
-
-      <div class="warning">
-
-        <div class="warning-title">
-          ⚠ Perhatian
-        </div>
-
-        <p>
-          Aktivitas Gunung Anak Krakatau berada dalam pemantauan.
-          Masyarakat diimbau mengikuti informasi resmi dan tidak
-          mempercayai kabar yang belum terverifikasi.
-        </p>
-
-      </div>
-
-
-      <div class="cards-3">
-
-
-        <div class="info-card">
-
-          <div class="info-icon">
-            ◉
-          </div>
-
-          <h3>
-            Zona aman
-          </h3>
-
-          <p>
-            Patuhi radius dan rekomendasi keselamatan yang ditetapkan
-            oleh otoritas terkait.
-          </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-          <div class="info-icon">
-            ♨
-          </div>
-
-          <h3>
-            Abu vulkanik
-          </h3>
-
-          <p>
-            Abu dapat mengganggu aktivitas masyarakat dan kesehatan,
-            sehingga perlindungan pernapasan menjadi penting.
-          </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-          <div class="info-icon">
-            ✓
-          </div>
-
-          <h3>
-            Informasi resmi
-          </h3>
-
-          <p>
-            Gunakan sumber resmi Badan Geologi, BMKG, BNPB dan
-            instansi pemerintah terkait.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       DAMPAK
-  ========================= -->
-
-  <section
-    class="impact-section"
-    id="dampak"
-  >
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <div class="section-kicker">
-          Dampak
-        </div>
-
-        <h2>
-          Mengapa bantuan Anda penting?
-        </h2>
-
-      </div>
-
-
-      <div class="impact-grid">
-
-
-        <div class="impact">
-
-          <strong>
-            Kebutuhan dasar
-          </strong>
-
-          <p>
-            Dukungan untuk kebutuhan sehari-hari masyarakat
-            yang terdampak situasi darurat.
-          </p>
-
-        </div>
-
-
-        <div class="impact">
-
-          <strong>
-            Perlindungan kesehatan
-          </strong>
-
-          <p>
-            Bantuan perlindungan dari paparan abu dan kebutuhan
-            kesehatan dasar.
-          </p>
-
-        </div>
-
-
-        <div class="impact">
-
-          <strong>
-            Logistik
-          </strong>
-
-          <p>
-            Mendukung pengadaan serta distribusi kebutuhan bantuan
-            kepada penerima manfaat.
-          </p>
-
-        </div>
-
-
-        <div class="impact">
-
-          <strong>
-            Dukungan pemulihan
-          </strong>
-
-          <p>
-            Membantu masyarakat melewati masa sulit dan memulai
-            proses pemulihan.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       STORY
-  ========================= -->
-
-  <section class="story-section">
-
-    <div class="container">
-
-      <div class="story">
-
-
-        <div class="story-image">
-
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau.jpg"
-            alt="Gunung Anak Krakatau"
-          >
-
-        </div>
-
-
-        <div class="story-content">
-
-          <div class="section-kicker">
-            Tentang Kampanye
-          </div>
-
-          <h2>
-            Kita mungkin jauh dari lokasi,
-            tetapi kepedulian tidak mengenal jarak.
-          </h2>
-
-          <p>
-            Ketika masyarakat menghadapi kondisi yang tidak menentu,
-            bantuan dari banyak orang dapat menjadi kekuatan yang besar.
-          </p>
-
-          <p>
-            Kampanye ini dibuat sebagai ruang untuk menggalang dukungan
-            dan mengarahkan bantuan kepada kebutuhan kemanusiaan.
-          </p>
-
-          <div class="story-quote">
-            “Bersama, bantuan kecil dapat menjadi pertolongan yang berarti.”
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       KEBUTUHAN
-  ========================= -->
-
-  <section
-    class="needs"
-    id="kebutuhan"
-  >
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <div class="section-kicker">
-          Kebutuhan
-        </div>
-
-        <h2>
-          Prioritas bantuan yang ingin didukung.
-        </h2>
-
-      </div>
-
-
-      <div class="needs-list">
-
-
-        <div class="need">
-
-          <div class="need-number">
-            01
-          </div>
-
+        <div class="section-head">
           <div>
-
-            <h3>
-              Makanan & kebutuhan pokok
-            </h3>
-
-            <p>
-              Mendukung kebutuhan dasar masyarakat selama masa terdampak.
-            </p>
-
+            <div class="eyebrow">Situasi</div>
+            <h2>Apa yang terjadi?</h2>
           </div>
-
-        </div>
-
-
-        <div class="need">
-
-          <div class="need-number">
-            02
-          </div>
-
-          <div>
-
-            <h3>
-              Air & kebutuhan kebersihan
-            </h3>
-
-            <p>
-              Mendukung kebutuhan air bersih dan perlengkapan kebersihan.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="need">
-
-          <div class="need-number">
-            03
-          </div>
-
-          <div>
-
-            <h3>
-              Masker & perlindungan
-            </h3>
-
-            <p>
-              Membantu menyediakan perlindungan terhadap paparan abu vulkanik.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="need">
-
-          <div class="need-number">
-            04
-          </div>
-
-          <div>
-
-            <h3>
-              Logistik bantuan
-            </h3>
-
-            <p>
-              Mendukung proses pengadaan dan distribusi bantuan.
-            </p>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CARA MEMBANTU
-  ========================= -->
-
-  <section class="steps-section">
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <div class="section-kicker">
-          Cara Membantu
-        </div>
-
-        <h2>
-          Tiga langkah sederhana.
-        </h2>
-
-      </div>
-
-
-      <div class="steps">
-
-
-        <div class="step">
-
-          <div class="step-num">
-            LANGKAH 01
-          </div>
-
-          <h3>
-            Pilih nominal
-          </h3>
 
           <p>
-            Tentukan nominal donasi sesuai kemampuan Anda.
+            Aktivitas Gunung Anak Krakatau masih menjadi perhatian.
+            Informasi kondisi harus selalu mengikuti sumber resmi.
           </p>
+        </div>
+
+        <div class="grid-3">
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <h3>Aktivitas Vulkanik</h3>
+            <p>
+              Gunung Anak Krakatau berada pada status Level III
+              atau Siaga berdasarkan informasi Badan Geologi.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <h3>Abu Vulkanik</h3>
+            <p>
+              Sebaran abu vulkanik dapat mengganggu aktivitas
+              masyarakat dan transportasi di wilayah terdampak.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <h3>Tetap Waspada</h3>
+            <p>
+              Masyarakat diminta mengikuti informasi resmi dan
+              tidak mudah percaya pada kabar yang belum terverifikasi.
+            </p>
+          </div>
 
         </div>
 
+      </div>
+    </section>
 
-        <div class="step">
 
-          <div class="step-num">
-            LANGKAH 02
+    <section id="dampak">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Dampak</div>
+            <h2>Yang perlu kita bantu.</h2>
           </div>
-
-          <h3>
-            Bayar melalui QRIS
-          </h3>
 
           <p>
-            Gunakan aplikasi pembayaran yang mendukung QRIS.
+            Dukungan diarahkan kepada kebutuhan praktis
+            yang membantu masyarakat menghadapi kondisi darurat.
           </p>
-
         </div>
 
+        <div class="grid-3">
 
-        <div class="step">
-
-          <div class="step-num">
-            LANGKAH 03
+          <div class="card">
+            <div class="card-number">01</div>
+            <h3>Kebutuhan Harian</h3>
+            <p>
+              Dukungan kebutuhan dasar seperti makanan,
+              air minum, perlengkapan kebersihan, dan kebutuhan keluarga.
+            </p>
           </div>
 
-          <h3>
-            Selesaikan donasi
-          </h3>
+          <div class="card">
+            <div class="card-number">02</div>
+            <h3>Perlengkapan Perlindungan</h3>
+            <p>
+              Dukungan perlengkapan yang dibutuhkan masyarakat
+              ketika harus beraktivitas di tengah kondisi abu vulkanik.
+            </p>
+          </div>
 
-          <p>
-            Setelah pembayaran dilakukan, ikuti instruksi
-            pada halaman donasi.
-          </p>
+          <div class="card">
+            <div class="card-number">03</div>
+            <h3>Dukungan Lapangan</h3>
+            <p>
+              Membantu kebutuhan operasional kemanusiaan
+              sesuai kondisi dan kebutuhan yang ditemukan.
+            </p>
+          </div>
 
         </div>
-
 
       </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- =========================
-       GALERI
-  ========================= -->
+    <section>
+      <div class="container story">
 
-  <section
-    class="gallery-section"
-    id="galeri"
-  >
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <div class="section-kicker">
-          Galeri
-        </div>
-
-        <h2>
-          Melihat Krakatau dari dekat.
-        </h2>
-
-        <p>
-          Geser secara horizontal untuk melihat seluruh foto.
-        </p>
-
-      </div>
-
-
-      <div class="gallery">
-
-
-        <div class="gallery-item">
-
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg"
-            alt="Aktivitas Gunung Anak Krakatau"
-          >
-
-          <div class="gallery-caption">
-            Aktivitas Anak Krakatau — September 2026
-          </div>
-
-        </div>
-
-
-        <div class="gallery-item">
-
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau.jpg"
-            alt="Gunung Anak Krakatau"
-          >
-
-          <div class="gallery-caption">
-            Gunung Anak Krakatau
-          </div>
-
-        </div>
-
-
-        <div class="gallery-item">
-
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau_volcano_%2850984292248%29.jpg"
-            alt="Anak Krakatau volcano"
-          >
-
-          <div class="gallery-caption">
-            Lanskap Anak Krakatau
-          </div>
-
-        </div>
-
-
-        <div class="gallery-item">
-
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau_volcanic_island%2C_Indonesia_-_15_December_2022_%2852564396577%29.jpg"
-            alt="Pulau vulkanik Anak Krakatau"
-          >
-
-          <div class="gallery-caption">
-            Pulau vulkanik Anak Krakatau
-          </div>
-
-        </div>
-
-
-        <div class="gallery-item">
-
-          <img
-            src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau_Crater.JPG"
-            alt="Kawah Anak Krakatau"
-          >
-
-          <div class="gallery-caption">
-            Kawah Anak Krakatau
-          </div>
-
-        </div>
-
-
-      </div>
-
-
-      <div class="source-note">
-        Sumber foto: Wikimedia Commons — Category: Anak Krakatoa.
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SUMBER RESMI
-  ========================= -->
-
-  <section
-    class="official"
-    id="transparansi"
-  >
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <div class="section-kicker">
-          Sumber Informasi
-        </div>
-
-        <h2>
-          Utamakan informasi resmi.
-        </h2>
-
-        <p>
-          Kondisi gunung dan keselamatan masyarakat dapat berubah.
-          Selalu periksa pembaruan dari instansi resmi.
-        </p>
-
-      </div>
-
-
-      <div class="official-grid">
-
-
-        <a
-          class="official-card"
-          href="https://geologi.esdm.go.id/media-center/perkembangan-erupsi-gunungapi-anak-krakatau-tanggal-7-september-2026"
-          target="_blank"
-          rel="noopener"
+        <img
+          class="story-image"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau.jpg"
+          alt="Gunung Anak Krakatau"
         >
-
-          <strong>
-            Badan Geologi
-          </strong>
-
-          <span>
-            Perkembangan erupsi Gunungapi Anak Krakatau.
-          </span>
-
-          <small>
-            LIHAT SUMBER →
-          </small>
-
-        </a>
-
-
-        <a
-          class="official-card"
-          href="https://www.bmkg.go.id/"
-          target="_blank"
-          rel="noopener"
-        >
-
-          <strong>
-            BMKG
-          </strong>
-
-          <span>
-            Informasi cuaca, gempa, tsunami dan kondisi terkait.
-          </span>
-
-          <small>
-            LIHAT SUMBER →
-          </small>
-
-        </a>
-
-
-        <a
-          class="official-card"
-          href="https://www.bnpb.go.id/berita"
-          target="_blank"
-          rel="noopener"
-        >
-
-          <strong>
-            BNPB
-          </strong>
-
-          <span>
-            Informasi penanganan bencana dan perkembangan lapangan.
-          </span>
-
-          <small>
-            LIHAT SUMBER →
-          </small>
-
-        </a>
-
-
-      </div>
-
-
-      <div class="source-note">
-        Situs kampanye ini menggunakan sumber informasi publik
-        dan bukan pengganti informasi resmi pemerintah.
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SHARE
-  ========================= -->
-
-  <section class="share-section">
-
-    <div class="container">
-
-      <div class="share-box">
-
 
         <div>
 
-          <div class="section-kicker">
-            Sebarkan Kepedulian
-          </div>
+          <div class="eyebrow">Mengapa Kita Peduli?</div>
 
           <h2>
-            Belum bisa berdonasi?
+            Karena di balik berita,
+            ada manusia.
           </h2>
 
           <p>
-            Membagikan kampanye juga merupakan bentuk bantuan.
+            Erupsi dan aktivitas vulkanik bukan hanya tentang
+            gunung. Ada keluarga, pekerja, nelayan, pelaku usaha,
+            dan masyarakat yang harus beradaptasi dengan keadaan.
           </p>
+
+          <p>
+            Dukungan kecil yang diberikan hari ini dapat menjadi
+            bantuan nyata bagi seseorang yang sedang menghadapi
+            situasi sulit.
+          </p>
+
+          <button class="btn" onclick="openDonation()">
+            Saya Ingin Membantu
+          </button>
 
         </div>
 
+      </div>
+    </section>
+
+
+    <section id="kebutuhan">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Kebutuhan</div>
+            <h2>Prioritas bantuan.</h2>
+          </div>
+
+          <p>
+            Prioritas dapat berubah mengikuti kondisi lapangan
+            dan kebutuhan masyarakat.
+          </p>
+        </div>
+
+        <div class="needs">
+
+          <div class="need">
+            <strong>Pangan</strong>
+            <span>Makanan dan kebutuhan konsumsi dasar.</span>
+          </div>
+
+          <div class="need">
+            <strong>Air Bersih</strong>
+            <span>Kebutuhan minum dan kebersihan.</span>
+          </div>
+
+          <div class="need">
+            <strong>Perlengkapan</strong>
+            <span>Kebutuhan perlindungan dan perlengkapan dasar.</span>
+          </div>
+
+          <div class="need">
+            <strong>Operasional</strong>
+            <span>Dukungan distribusi dan kebutuhan lapangan.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section>
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Cara Membantu</div>
+            <h2>Sederhana dan langsung.</h2>
+          </div>
+        </div>
+
+        <div class="steps">
+
+          <div class="step">
+            <b>01</b>
+            <h3>Pilih Nominal</h3>
+            <p>
+              Tentukan nominal donasi sesuai kemampuan.
+            </p>
+          </div>
+
+          <div class="step">
+            <b>02</b>
+            <h3>Bayar melalui QRIS</h3>
+            <p>
+              Gunakan aplikasi pembayaran yang mendukung QRIS.
+            </p>
+          </div>
+
+          <div class="step">
+            <b>03</b>
+            <h3>Simpan Bukti</h3>
+            <p>
+              Simpan bukti transaksi untuk pencatatan donasi.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="galeri">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Galeri</div>
+            <h2>Krakatau dalam bingkai.</h2>
+          </div>
+
+          <p>
+            Geser ke samping untuk melihat foto lainnya.
+          </p>
+        </div>
+
+        <div class="gallery">
+
+          <div class="gallery-item">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg"
+              alt="Erupsi Gunung Anak Krakatau"
+            >
+            <div class="gallery-caption">
+              Aktivitas erupsi Gunung Anak Krakatau
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau.jpg"
+              alt="Gunung Anak Krakatau"
+            >
+            <div class="gallery-caption">
+              Gunung Anak Krakatau
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau_volcano_%2850984292248%29.jpg"
+              alt="Gunung Anak Krakatau"
+            >
+            <div class="gallery-caption">
+              Lanskap Anak Krakatau
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau_volcanic_island%2C_Indonesia_-_15_December_2022_%2852564396577%29.jpg"
+              alt="Pulau vulkanik Anak Krakatau"
+            >
+            <div class="gallery-caption">
+              Pulau vulkanik Anak Krakatau
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau_Crater.JPG"
+              alt="Kawah Anak Krakatau"
+            >
+            <div class="gallery-caption">
+              Kawah Anak Krakatau
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="transparansi">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Transparansi</div>
+            <h2>Ikuti sumber resmi.</h2>
+          </div>
+
+          <p>
+            Informasi mengenai aktivitas gunung api dan kondisi
+            wilayah harus selalu merujuk kepada sumber resmi.
+          </p>
+        </div>
+
+        <div class="official">
+
+          <a
+            href="https://geologi.esdm.go.id/media-center/perkembangan-erupsi-gunungapi-anak-krakatau-tanggal-7-september-2026"
+            target="_blank"
+            rel="noopener"
+          >
+            <small>BADAN GEOLOGI</small>
+            <strong>Perkembangan Erupsi Gunungapi Anak Krakatau</strong>
+            <span>
+              Informasi status dan perkembangan aktivitas vulkanik.
+            </span>
+          </a>
+
+          <a
+            href="https://www.bmkg.go.id/siaran-pers/imbas-sebaran-abu-vulknaik-anak-krakatau-8-bandara-ditutup-sementara-bmkg-minta-waspada-dan-tenang"
+            target="_blank"
+            rel="noopener"
+          >
+            <small>BMKG</small>
+            <strong>Informasi Abu Vulkanik</strong>
+            <span>
+              Informasi mengenai dampak sebaran abu vulkanik.
+            </span>
+          </a>
+
+          <a
+            href="https://www.bmkg.go.id/artikel/hasil-pemantauan-multi-sensor-inatews-di-sekitar-selat-sunda-tidak-terdeteksi-anomali-muka-laut-dan-meteotsunami-di-selat-sunda"
+            target="_blank"
+            rel="noopener"
+          >
+            <small>BMKG</small>
+            <strong>Pemantauan Multi-Sensor</strong>
+            <span>
+              Informasi pemantauan kondisi sekitar Selat Sunda.
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="share">
+      <div class="container">
+
+        <div class="eyebrow">Sebarkan Kebaikan</div>
+
+        <h2>
+          Satu share juga bisa berarti.
+        </h2>
+
+        <p>
+          Kalau belum bisa berdonasi, bantu sebarkan halaman ini
+          agar semakin banyak orang mengetahui dan dapat membantu.
+        </p>
 
         <div class="share-actions">
 
-          <button
-            class="btn btn-primary"
-            onclick="shareCampaign()"
-          >
-            Bagikan Kampanye
+          <button class="btn" onclick="shareCampaign()">
+            Bagikan
           </button>
 
-
-          <button
-            class="btn btn-dark"
-            onclick="copyCampaign()"
-          >
+          <button class="btn secondary" onclick="copyLink()">
             Salin Link
           </button>
 
         </div>
 
-
       </div>
+    </section>
 
-    </div>
+  </main>
 
-  </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
 
   <footer>
-
-    <div class="container footer-main">
-
+    <div class="footer-inner">
 
       <div>
-
-        <div class="footer-brand">
-          Bantu Krakatau 2026
-        </div>
-
-        <div>
-          Bersama untuk sesama.
-        </div>
-
+        <strong style="color:#fff;">
+          Peduli Krakatau 2026
+        </strong>
+        <br>
+        Kampanye bantuan kemanusiaan.
       </div>
 
-
-      <div class="footer-disclaimer">
-
+      <div>
         Situs kampanye ini bukan kanal resmi PVMBG/BMKG/BNPB.
-        Informasi kondisi bencana harus selalu merujuk pada
-        sumber resmi pemerintah.
-
       </div>
-
 
     </div>
-
   </footer>
 
 
-  <!-- =========================
-       STICKY DONATE
-  ========================= -->
-
   <div class="sticky-donate">
-
-    <div class="sticky-inner">
-
-      <div class="sticky-text">
-        Yuk ikut membantu masyarakat terdampak.
-      </div>
-
-
-      <button
-        class="btn btn-primary"
-        onclick="openDonation()"
-      >
-        Donasi Sekarang
-      </button>
-
-    </div>
-
+    <button onclick="openDonation()">
+      Donasi Sekarang
+    </button>
   </div>
 
 
-  <!-- =========================
-       DONATION MODAL
-  ========================= -->
+  <!-- DONATION MODAL -->
 
-  <div
-    class="modal"
-    id="donationModal"
-  >
+  <div class="modal" id="donationModal">
 
     <div class="modal-box">
 
-
-      <button
-        class="modal-close"
-        onclick="closeDonation()"
-      >
+      <button class="modal-close" onclick="closeDonation()">
         ×
       </button>
 
+      <h2>Berikan Dukungan</h2>
 
-      <div class="section-kicker">
-        Dukung Krakatau
+      <div class="modal-sub">
+        Pilih nominal donasi sesuai kemampuan Anda.
       </div>
 
+      <div class="amount-grid">
 
-      <h2>
-        Pilih nominal donasi
-      </h2>
+        <button class="amount" data-amount="10000">
+          Rp10.000
+        </button>
 
+        <button class="amount" data-amount="25000">
+          Rp25.000
+        </button>
 
-      <p>
-        Setiap bantuan berarti. Pilih nominal yang paling nyaman bagi Anda.
-      </p>
+        <button class="amount" data-amount="50000">
+          Rp50.000
+        </button>
 
-
-      <div class="amount-display">
-
-        <span>
-          Nominal donasi
-        </span>
-
-        <strong id="selectedAmount">
-          Rp100.000
-        </strong>
-
-      </div>
-
-
-      <div class="amount-options">
-
-
-        <button
-          class="amount-btn selected"
-          data-amount="100000"
-        >
+        <button class="amount" data-amount="100000">
           Rp100.000
         </button>
 
-
-        <button
-          class="amount-btn"
-          data-amount="250000"
-        >
+        <button class="amount" data-amount="250000">
           Rp250.000
         </button>
 
-
-        <button
-          class="amount-btn"
-          data-amount="500000"
-        >
+        <button class="amount" data-amount="500000">
           Rp500.000
         </button>
 
-
-        <button
-          class="amount-btn"
-          data-amount="1000000"
-        >
-          Rp1.000.000
-        </button>
-
-
-        <button
-          class="amount-btn"
-          data-amount="2500000"
-        >
-          Rp2.500.000
-        </button>
-
-
-        <button
-          class="amount-btn"
-          data-amount="5000000"
-        >
-          Rp5.000.000
-        </button>
-
-
       </div>
 
+      <input
+        class="input"
+        id="donorName"
+        type="text"
+        placeholder="Nama Anda"
+      >
 
-      <div class="modal-actions">
+      <input
+        class="input"
+        id="donorAmount"
+        type="number"
+        placeholder="Nominal donasi"
+      >
 
-        <button
-          class="btn btn-primary"
-          onclick="showQRIS()"
-        >
-          Lanjut Donasi →
-        </button>
-
-      </div>
+      <button
+        class="btn"
+        style="width:100%;"
+        onclick="finishDonation()"
+      >
+        Lanjutkan Donasi
+      </button>
 
     </div>
 
   </div>
 
 
-  <!-- =========================
-       QRIS MODAL
-  ========================= -->
+  <!-- QRIS MODAL -->
 
-  <div
-    class="modal"
-    id="qrisModal"
-  >
+  <div class="modal" id="qrisModal">
 
     <div class="modal-box">
 
-
-      <button
-        class="modal-close"
-        onclick="closeQRIS()"
-      >
+      <button class="modal-close" onclick="closeQRIS()">
         ×
       </button>
 
-
-      <div class="section-kicker">
-        Pembayaran
-      </div>
-
-
-      <h2>
-        Scan QRIS
-      </h2>
-
-
-      <p>
-        Scan QRIS berikut menggunakan aplikasi pembayaran
-        yang mendukung QRIS.
-      </p>
-
-
       <div class="qris-wrap">
 
+        <h2>Bayar melalui QRIS</h2>
+
+        <div class="modal-sub">
+          Scan QRIS menggunakan aplikasi pembayaran Anda.
+        </div>
 
         <img
           src="IMG_5690.jpeg"
@@ -2605,39 +1466,19 @@
           class="qris-image"
         >
 
-
-        <div class="qris-name">
-          SAKU PEDULI SESAMA
+        <div class="qris-info">
+          <strong>SAKU PEDULI SESAMA</strong><br>
+          NMID: ID1026584497741<br>
+          A01<br><br>
+          SATU QRIS UNTUK SEMUA
         </div>
-
-
-        <div class="qris-id">
-          NMID ID1026584497741 · A01
-        </div>
-
-
-      </div>
-
-
-      <div class="thank-note">
-
-        Setelah melakukan pembayaran, simpan bukti transaksi Anda.
-        Verifikasi pembayaran dilakukan melalui proses administrasi
-        dan pencatatan donasi.
-
-      </div>
-
-
-      <div
-        class="modal-actions"
-        style="margin-top:16px;"
-      >
 
         <button
-          class="btn btn-primary"
-          onclick="finishDonation()"
+          class="btn"
+          style="width:100%;margin-top:20px;"
+          onclick="showThankYou()"
         >
-          Selesai — Terima Kasih
+          Saya Sudah Berdonasi
         </button>
 
       </div>
@@ -2647,436 +1488,260 @@
   </div>
 
 
-  <!-- =========================
-       THANK YOU MODAL
-  ========================= -->
+  <!-- THANK YOU MODAL -->
 
-  <div
-    class="modal"
-    id="thankModal"
-  >
+  <div class="modal" id="thankModal">
 
-    <div
-      class="modal-box"
-      style="text-align:center;"
-    >
+    <div class="modal-box">
 
-
-      <div
-        style="
-          width:60px;
-          height:60px;
-          border-radius:20px;
-          background:var(--green-soft);
-          color:#76d39d;
-          display:grid;
-          place-items:center;
-          margin:0 auto 20px;
-          font-size:27px;
-        "
-      >
-        ✓
-      </div>
-
-
-      <div class="section-kicker">
-        Terima Kasih
-      </div>
-
-
-      <h2>
-        Kepedulian Anda berarti.
-      </h2>
-
-
-      <p>
-        Terima kasih telah mengambil bagian dalam membantu sesama.
-      </p>
-
-
-      <button
-        class="btn btn-primary"
-        onclick="closeThank()"
-        style="width:100%;margin-top:8px;"
-      >
-        Kembali ke Kampanye
+      <button class="modal-close" onclick="closeThankYou()">
+        ×
       </button>
 
+      <h2>Terima kasih.</h2>
+
+      <div class="modal-sub">
+        Terima kasih sudah ikut membantu.
+        Simpan bukti transaksi Anda untuk pencatatan donasi.
+      </div>
+
+      <button
+        class="btn"
+        style="width:100%;"
+        onclick="closeThankYou()"
+      >
+        Selesai
+      </button>
 
     </div>
 
   </div>
 
 
-  <!-- =========================
-       TOAST
-  ========================= -->
-
-  <div
-    class="toast"
-    id="toast"
-  >
+  <div class="toast" id="toast">
     Link berhasil disalin.
   </div>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
   <script>
 
-    /* =========================
-       DONATION
-    ========================= */
-
-    let selectedAmount = 100000;
-
-
-    const donationModal =
-      document.getElementById("donationModal");
-
-
-    const qrisModal =
-      document.getElementById("qrisModal");
-
-
-    const thankModal =
-      document.getElementById("thankModal");
-
-
-    const selectedAmountEl =
-      document.getElementById("selectedAmount");
-
-
-    function formatRupiah(number){
-
-      return new Intl.NumberFormat(
-        "id-ID",
-        {
-          style:"currency",
-          currency:"IDR",
-          maximumFractionDigits:0
-        }
-      ).format(number);
-
-    }
+    let selectedAmount = 0;
 
 
     function openDonation(){
-
-      donationModal.classList.add("active");
-
+      document
+        .getElementById("donationModal")
+        .classList.add("active");
     }
 
 
     function closeDonation(){
-
-      donationModal.classList.remove("active");
-
+      document
+        .getElementById("donationModal")
+        .classList.remove("active");
     }
 
 
     function showQRIS(){
-
-      donationModal.classList.remove("active");
-
-      qrisModal.classList.add("active");
-
+      document
+        .getElementById("qrisModal")
+        .classList.add("active");
     }
 
 
     function closeQRIS(){
+      document
+        .getElementById("qrisModal")
+        .classList.remove("active");
+    }
 
-      qrisModal.classList.remove("active");
 
+    function showThankYou(){
+      closeQRIS();
+
+      document
+        .getElementById("thankModal")
+        .classList.add("active");
+    }
+
+
+    function closeThankYou(){
+      document
+        .getElementById("thankModal")
+        .classList.remove("active");
     }
 
 
     function finishDonation(){
 
-      qrisModal.classList.remove("active");
+      const name =
+        document.getElementById("donorName").value.trim();
 
-      thankModal.classList.add("active");
+      const amount =
+        Number(document.getElementById("donorAmount").value);
+
+      if(!name){
+        showToast("Silakan isi nama Anda.");
+        return;
+      }
+
+      if(!amount || amount < 10000){
+        showToast("Nominal minimum Rp10.000.");
+        return;
+      }
+
+      selectedAmount = amount;
+
+      closeDonation();
+      showQRIS();
 
     }
 
 
-    function closeThank(){
+    document.querySelectorAll(".amount").forEach(button => {
 
-      thankModal.classList.remove("active");
+      button.addEventListener("click", () => {
 
-    }
+        document
+          .querySelectorAll(".amount")
+          .forEach(item => item.classList.remove("active"));
 
+        button.classList.add("active");
 
-    /* =========================
-       AMOUNT BUTTON
-    ========================= */
+        selectedAmount =
+          Number(button.dataset.amount);
 
-    document
-      .querySelectorAll(".amount-btn")
-      .forEach(btn => {
-
-        btn.addEventListener(
-          "click",
-          () => {
-
-            document
-              .querySelectorAll(".amount-btn")
-              .forEach(item => {
-
-                item.classList.remove("selected");
-
-              });
-
-
-            btn.classList.add("selected");
-
-
-            selectedAmount =
-              Number(btn.dataset.amount);
-
-
-            selectedAmountEl.textContent =
-              formatRupiah(selectedAmount);
-
-          }
-        );
+        document.getElementById("donorAmount").value =
+          selectedAmount;
 
       });
-
-
-    /* =========================
-       OUTSIDE CLICK
-    ========================= */
-
-    [
-      donationModal,
-      qrisModal,
-      thankModal
-    ].forEach(modal => {
-
-      modal.addEventListener(
-        "click",
-        e => {
-
-          if(e.target === modal){
-
-            modal.classList.remove("active");
-
-          }
-
-        }
-      );
 
     });
 
 
-    /* =========================
-       ESC
-    ========================= */
+    document.querySelectorAll(".modal").forEach(modal => {
 
-    document.addEventListener(
-      "keydown",
-      e => {
+      modal.addEventListener("click", event => {
 
-        if(e.key === "Escape"){
+        if(event.target === modal){
 
-          donationModal.classList.remove("active");
-
-          qrisModal.classList.remove("active");
-
-          thankModal.classList.remove("active");
+          modal.classList.remove("active");
 
         }
 
+      });
+
+    });
+
+
+    document.addEventListener("keydown", event => {
+
+      if(event.key === "Escape"){
+
+        closeDonation();
+        closeQRIS();
+        closeThankYou();
+
       }
-    );
 
+    });
 
-    /* =========================
-       COUNTDOWN
-    ========================= */
 
     const targetDate =
-      new Date(
-        "2026-12-31T23:59:59+07:00"
-      ).getTime();
+      new Date("2026-12-31T23:59:59+07:00").getTime();
 
 
     function updateCountdown(){
 
-      const now =
-        Date.now();
+      const now = new Date().getTime();
 
-
-      const distance =
-        targetDate - now;
-
+      const distance = targetDate - now;
 
       if(distance <= 0){
 
-        document.getElementById("days")
-          .textContent = "0";
-
-        document.getElementById("hours")
-          .textContent = "0";
-
-        document.getElementById("minutes")
-          .textContent = "0";
-
-        document.getElementById("seconds")
-          .textContent = "0";
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
 
         return;
 
       }
 
-
       const days =
-        Math.floor(
-          distance /
-          (1000 * 60 * 60 * 24)
-        );
-
+        Math.floor(distance / (1000 * 60 * 60 * 24));
 
       const hours =
         Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60 * 24)
-          ) /
-          (1000 * 60 * 60)
+          (distance % (1000 * 60 * 60 * 24))
+          / (1000 * 60 * 60)
         );
-
 
       const minutes =
         Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60)
-          ) /
-          (1000 * 60)
+          (distance % (1000 * 60 * 60))
+          / (1000 * 60)
         );
-
 
       const seconds =
         Math.floor(
-          (
-            distance %
-            (1000 * 60)
-          ) /
-          1000
+          (distance % (1000 * 60))
+          / 1000
         );
 
-
-      document.getElementById("days")
-        .textContent = days;
-
-
-      document.getElementById("hours")
-        .textContent = hours;
-
-
-      document.getElementById("minutes")
-        .textContent = minutes;
-
-
-      document.getElementById("seconds")
-        .textContent = seconds;
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
 
     }
 
 
     updateCountdown();
 
-
-    setInterval(
-      updateCountdown,
-      1000
-    );
+    setInterval(updateCountdown,1000);
 
 
-    /* =========================
-       SHARE
-    ========================= */
-
-    function shareCampaign(){
-
-      const shareData = {
-
-        title:
-          "Bantu Krakatau 2026",
-
-        text:
-          "Mari bantu masyarakat terdampak aktivitas Gunung Anak Krakatau.",
-
-        url:
-          window.location.href
-
-      };
-
+    async function shareCampaign(){
 
       if(navigator.share){
 
-        navigator
-          .share(shareData)
-          .catch(() => {});
+        try{
 
-      }else{
-
-        copyCampaign();
-
-      }
-
-    }
-
-
-    /* =========================
-       COPY LINK
-    ========================= */
-
-    function copyCampaign(){
-
-      if(
-        navigator.clipboard &&
-        navigator.clipboard.writeText
-      ){
-
-        navigator
-          .clipboard
-          .writeText(window.location.href)
-          .then(() => {
-
-            showToast(
-              "Link berhasil disalin."
-            );
-
-          })
-          .catch(() => {
-
-            showToast(
-              "Silakan salin link halaman ini."
-            );
-
+          await navigator.share({
+            title:"Bantu Krakatau 2026",
+            text:"Mari bantu kebutuhan kemanusiaan untuk masyarakat terdampak aktivitas Gunung Anak Krakatau.",
+            url:window.location.href
           });
 
+        }catch(error){}
+
       }else{
 
-        showToast(
-          "Silakan salin link halaman ini."
-        );
+        copyLink();
 
       }
 
     }
 
 
-    /* =========================
-       TOAST
-    ========================= */
+    async function copyLink(){
 
-    let toastTimer;
+      try{
+
+        await navigator.clipboard.writeText(
+          window.location.href
+        );
+
+        showToast("Link berhasil disalin.");
+
+      }catch(error){
+
+        showToast("Gagal menyalin link.");
+
+      }
+
+    }
 
 
     function showToast(message){
@@ -3084,26 +1749,15 @@
       const toast =
         document.getElementById("toast");
 
-
-      toast.textContent =
-        message;
-
+      toast.textContent = message;
 
       toast.classList.add("show");
 
+      setTimeout(() => {
 
-      clearTimeout(toastTimer);
+        toast.classList.remove("show");
 
-
-      toastTimer =
-        setTimeout(
-          () => {
-
-            toast.classList.remove("show");
-
-          },
-          2500
-        );
+      },2500);
 
     }
 
