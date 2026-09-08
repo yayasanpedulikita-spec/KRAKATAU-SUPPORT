@@ -2632,3 +2632,300 @@ button:focus-visible {
     font-size: 1rem;
   }
 }
+/* =========================================================
+   BANTU KRAKATAU 2026
+   STYLE.CSS — BAGIAN 8
+   HOW TO DONATE
+   ========================================================= */
+
+.how-section {
+  position: relative;
+
+  padding: 110px 0;
+
+  background: #0b0b0b;
+}
+
+
+/* =========================================================
+   HOW GRID
+   ========================================================= */
+
+.how-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  counter-reset: donation-step;
+}
+
+
+/* =========================================================
+   HOW CARD
+   ========================================================= */
+
+.how-card {
+  position: relative;
+
+  min-height: 290px;
+
+  padding: 32px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  overflow: hidden;
+
+  counter-increment: donation-step;
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.how-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(255, 255, 255, 0.16);
+
+  box-shadow:
+    var(--shadow-soft);
+}
+
+
+/* =========================================================
+   HOW CARD NUMBER
+   ========================================================= */
+
+.how-card::before {
+  content: "0" counter(donation-step);
+
+  position: absolute;
+
+  top: 22px;
+  right: 25px;
+
+  color:
+    rgba(255, 255, 255, 0.055);
+
+  font-size: 3.8rem;
+
+  font-weight: 900;
+
+  letter-spacing: -0.08em;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HOW ICON
+   ========================================================= */
+
+.how-icon {
+  position: relative;
+  z-index: 1;
+
+  width: 54px;
+  height: 54px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 30px;
+
+  border:
+    1px solid
+    rgba(255, 106, 26, 0.18);
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 106, 26, 0.09);
+
+  color: var(--accent-light);
+
+  font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   HOW CARD TITLE
+   ========================================================= */
+
+.how-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+
+  letter-spacing: -0.035em;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   HOW CARD TEXT
+   ========================================================= */
+
+.how-card p {
+  position: relative;
+  z-index: 1;
+
+  max-width: 390px;
+
+  color: var(--text-soft);
+
+  font-size: 0.86rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HOW CARD EMPHASIS
+   ========================================================= */
+
+.how-card strong {
+  color: #ffffff;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   HOW CARD LINK
+   ========================================================= */
+
+.how-card a {
+  color: var(--accent-light);
+
+  font-weight: 750;
+
+  text-decoration:
+    underline;
+
+  text-decoration-color:
+    rgba(255, 155, 82, 0.35);
+
+  text-underline-offset: 4px;
+
+  transition:
+    color 180ms ease;
+}
+
+.how-card a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HOW RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .how-section {
+    padding: 90px 0;
+  }
+
+  .how-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .how-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .how-section {
+    padding: 72px 0;
+  }
+
+  .how-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .how-card,
+  .how-card:last-child {
+    grid-column: auto;
+
+    min-height: 0;
+
+    padding: 24px;
+  }
+
+  .how-card::before {
+    top: 17px;
+    right: 19px;
+
+    font-size: 3rem;
+  }
+
+  .how-icon {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 23px;
+
+    border-radius: 14px;
+  }
+
+  .how-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .how-card p {
+    font-size: 0.82rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .how-card {
+    padding: 21px;
+  }
+
+  .how-card::before {
+    font-size: 2.6rem;
+  }
+}
