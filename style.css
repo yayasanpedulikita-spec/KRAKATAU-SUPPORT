@@ -2017,3 +2017,265 @@ button:focus-visible {
     font-size: 0.82rem;
   }
 }
+/* =========================================================
+   BANTU KRAKATAU 2026
+   STYLE.CSS — BAGIAN 6
+   STORY / CERITA
+   ========================================================= */
+
+.story-section {
+  position: relative;
+
+  padding: 120px 0;
+
+  background:
+    #0b0b0b;
+}
+
+
+/* =========================================================
+   STORY GRID
+   ========================================================= */
+
+.story-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(0, 0.95fr);
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================================================
+   STORY IMAGE
+   ========================================================= */
+
+.story-image {
+  position: relative;
+
+  min-height: 570px;
+
+  border-radius: var(--radius-lg);
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  background:
+    #111111;
+
+  box-shadow:
+    var(--shadow);
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 570px;
+
+  object-fit: cover;
+
+  transition:
+    transform 700ms cubic-bezier(.2,.7,.2,1);
+}
+
+.story-image:hover img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   STORY IMAGE OVERLAY
+   ========================================================= */
+
+.story-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 45%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   STORY CONTENT
+   ========================================================= */
+
+.story-content {
+  max-width: 570px;
+}
+
+.story-content h2 {
+  margin: 0 0 22px;
+
+  font-size:
+    clamp(2.25rem, 5vw, 4.4rem);
+
+  font-weight: 850;
+
+  letter-spacing: -0.055em;
+
+  line-height: 0.99;
+}
+
+.story-content > p {
+  margin-bottom: 22px;
+
+  color: var(--text-soft);
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   STORY HIGHLIGHT
+   ========================================================= */
+
+.story-highlight {
+  position: relative;
+
+  margin-top: 30px;
+
+  padding: 24px 25px;
+
+  border-left:
+    2px solid
+    var(--accent);
+
+  border-radius:
+    0 16px 16px 0;
+
+  background:
+    rgba(255, 106, 26, 0.055);
+}
+
+.story-highlight p {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 1rem;
+
+  font-weight: 650;
+
+  line-height: 1.7;
+}
+
+.story-highlight strong {
+  color: var(--accent-light);
+}
+
+
+/* =========================================================
+   STORY RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .story-section {
+    padding: 90px 0;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .story-content {
+    max-width: 720px;
+  }
+
+  .story-image {
+    min-height: 480px;
+  }
+
+  .story-image img {
+    min-height: 480px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .story-section {
+    padding: 72px 0;
+  }
+
+  .story-grid {
+    gap: 34px;
+  }
+
+  .story-image {
+    min-height: 380px;
+
+    border-radius: 22px;
+  }
+
+  .story-image img {
+    min-height: 380px;
+  }
+
+  .story-content h2 {
+    font-size: 2.25rem;
+
+    line-height: 1.02;
+  }
+
+  .story-content > p {
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+  }
+
+  .story-highlight {
+    margin-top: 24px;
+
+    padding: 19px 18px;
+  }
+
+  .story-highlight p {
+    font-size: 0.86rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .story-image {
+    min-height: 330px;
+  }
+
+  .story-image img {
+    min-height: 330px;
+  }
+
+  .story-content h2 {
+    font-size: 2rem;
+  }
+}
