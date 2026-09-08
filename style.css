@@ -2279,3 +2279,356 @@ button:focus-visible {
     font-size: 2rem;
   }
 }
+/* =========================================================
+   BANTU KRAKATAU 2026
+   STYLE.CSS — BAGIAN 7
+   NEEDS / KEBUTUHAN BANTUAN
+   ========================================================= */
+
+.needs-section {
+  position: relative;
+
+  padding: 110px 0;
+
+  background: #070707;
+}
+
+
+/* =========================================================
+   NEEDS GRID
+   ========================================================= */
+
+.needs-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   NEED CARD
+   ========================================================= */
+
+.need-card {
+  position: relative;
+
+  min-height: 260px;
+
+  padding: 30px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.need-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -85px;
+  top: -85px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 106, 26, 0.13),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.need-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    var(--shadow-soft);
+}
+
+
+/* =========================================================
+   NEED ICON
+   ========================================================= */
+
+.need-icon {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 27px;
+
+  border:
+    1px solid
+    rgba(255, 106, 26, 0.18);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 106, 26, 0.09);
+
+  color: var(--accent-light);
+
+  font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   NEED CARD TITLE
+   ========================================================= */
+
+.need-card h3 {
+  margin: 0 0 11px;
+
+  color: #ffffff;
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+
+  letter-spacing: -0.035em;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   NEED CARD TEXT
+   ========================================================= */
+
+.need-card p {
+  color: var(--text-soft);
+
+  font-size: 0.86rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   VOLCANIC QUOTE
+   ========================================================= */
+
+.volcanic-quote {
+  position: relative;
+
+  max-width: 900px;
+
+  margin: 70px auto 0;
+
+  padding: 45px 50px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 106, 26, 0.10),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.volcanic-quote::before {
+  content: "“";
+
+  position: absolute;
+
+  top: -42px;
+  left: 28px;
+
+  color:
+    rgba(255, 106, 26, 0.14);
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 12rem;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.volcanic-quote p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(1.25rem, 2.5vw, 1.85rem);
+
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+
+  line-height: 1.45;
+}
+
+.volcanic-quote span {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  margin-top: 18px;
+
+  color: var(--accent-light);
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NEEDS RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .needs-section {
+    padding: 90px 0;
+  }
+
+  .needs-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .need-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .needs-section {
+    padding: 72px 0;
+  }
+
+  .needs-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .need-card,
+  .need-card:last-child {
+    grid-column: auto;
+
+    min-height: 0;
+
+    padding: 24px;
+  }
+
+  .need-icon {
+    width: 47px;
+    height: 47px;
+
+    margin-bottom: 22px;
+
+    border-radius: 13px;
+  }
+
+  .need-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .need-card p {
+    font-size: 0.82rem;
+  }
+
+  .volcanic-quote {
+    margin-top: 42px;
+
+    padding: 32px 22px;
+
+    border-radius: 22px;
+  }
+
+  .volcanic-quote::before {
+    top: -25px;
+    left: 12px;
+
+    font-size: 8rem;
+  }
+
+  .volcanic-quote p {
+    font-size: 1.12rem;
+  }
+
+  .volcanic-quote span {
+    font-size: 0.62rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .need-card {
+    padding: 21px;
+  }
+
+  .volcanic-quote {
+    padding:
+      28px 18px;
+  }
+
+  .volcanic-quote p {
+    font-size: 1rem;
+  }
+}
