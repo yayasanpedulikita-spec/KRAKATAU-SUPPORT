@@ -4,29 +4,98 @@
    ========================================================= */
 
 
-/* =========================================================
-   DONATION STATE
-   ========================================================= */
+/* ================= ELEMENT ================= */
 
-const donationModal = document.getElementById("donationModal");
-const selectedAmount = document.getElementById("selectedAmount");
-const qrisPage = document.getElementById("qrisPage");
+const donationModal =
+  document.getElementById("donationModal");
 
-let currentAmount = 0;
+const selectedAmount =
+  document.getElementById("selectedAmount");
+
+const modalSelectedAmount =
+  document.getElementById("modalSelectedAmount");
+
+const qrisPage =
+  document.getElementById("qrisPage");
+
+const qrisAmount =
+  document.getElementById("qrisAmount");
+
+const toast =
+  document.getElementById("toast");
+
+
+/* ================= STATE ================= */
+
+let currentAmount = 10000;
+
 let toastTimer;
 
 
-/* =========================================================
-   DONATION MODAL
-   ========================================================= */
+/* ================= FORMAT RUPIAH ================= */
+
+function formatRupiah(amount) {
+
+  return "Rp" +
+    Number(amount).toLocaleString("id-ID");
+
+}
+
+
+/* ================= UPDATE NOMINAL ================= */
+
+function updateDonationAmount() {
+
+  const formatted =
+    formatRupiah(currentAmount);
+
+
+  if (selectedAmount) {
+
+    selectedAmount.textContent =
+      formatted;
+
+  }
+
+
+  if (modalSelectedAmount) {
+
+    modalSelectedAmount.textContent =
+      formatted;
+
+  }
+
+
+  if (qrisAmount) {
+
+    qrisAmount.textContent =
+      formatted;
+
+  }
+
+}
+
+
+/* ================= DONATION MODAL ================= */
 
 function openDonation() {
 
   if (!donationModal) return;
 
+
   donationModal.classList.add("active");
 
-  document.body.style.overflow = "hidden";
+  donationModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  document.body.style.overflow =
+    "hidden";
+
+
+  updateDonationAmount();
 
 }
 
@@ -35,193 +104,165 @@ function closeDonation() {
 
   if (!donationModal) return;
 
+
   donationModal.classList.remove("active");
 
-  /*
-   * Jangan langsung mengubah overflow jika
-   * halaman QRIS masih terbuka.
-   */
+  donationModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
 
-  if (!qrisPage || !qrisPage.classList.contains("active")) {
 
-    document.body.style.overflow = "";
-
-  }
+  document.body.style.overflow =
+    "";
 
 }
 
 
-/* =========================================================
-   SELECT DONATION AMOUNT
-   ========================================================= */
+/* ================= SELECT AMOUNT ================= */
 
-function selectAmount(amount) {
+function selectAmount(button, amount) {
 
-  currentAmount = Number(amount) || 0;
+  currentAmount =
+    Number(amount) || 10000;
 
 
-  if (selectedAmount) {
-
-    selectedAmount.textContent =
-      "Rp" + currentAmount.toLocaleString("id-ID");
-
-  }
+  updateDonationAmount();
 
 
   const buttons =
-    document.querySelectorAll(".amount-grid button");
-
-
-  buttons.forEach(function(button) {
-
-    button.classList.remove("selected");
-
-  });
-
-
-  buttons.forEach(function(button) {
-
-    const number =
-      parseInt(
-        button.textContent.replace(/\D/g, ""),
-        10
-      );
-
-
-    if (number === currentAmount) {
-
-      button.classList.add("selected");
-
-    }
-
-  });
-
-}
-
-
-/* =========================================================
-   PAYMENT / QRIS
-   ========================================================= */
-
-function showPaymentMessage() {
-
-  if (currentAmount <= 0) {
-
-    showToast(
-      "Pilih nominal donasi terlebih dahulu ❤️"
+    document.querySelectorAll(
+      ".amount-grid button"
     );
 
-    return;
+
+  buttons.forEach(function(item) {
+
+    item.classList.remove(
+      "selected"
+    );
+
+  });
+
+
+  if (button) {
+
+    button.classList.add(
+      "selected"
+    );
 
   }
 
-
-  openQRPage();
-
 }
 
 
-/* =========================================================
-   OPEN QRIS PAGE
-   ========================================================= */
+/* ================= QRIS PAGE ================= */
 
 function openQRPage() {
 
-  if (!qrisPage) {
+  if (currentAmount <= 0) {
 
-    showToast(
-      "Halaman QRIS belum tersedia."
-    );
-
-    return;
+    currentAmount = 10000;
 
   }
 
 
-  /*
-   * Tampilkan nominal yang dipilih
-   * jika elemen tersedia.
-   */
+  updateDonationAmount();
 
-  const qrisAmount =
-    qrisPage.querySelector(".qris-amount");
-
-
-  if (qrisAmount && currentAmount > 0) {
-
-    qrisAmount.textContent =
-      "Rp" + currentAmount.toLocaleString("id-ID");
-
-  }
-
-
-  /*
-   * Tutup modal donasi sebelum
-   * membuka halaman QRIS.
-   */
 
   if (donationModal) {
 
-    donationModal.classList.remove("active");
+    donationModal.classList.remove(
+      "active"
+    );
+
+    donationModal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
 
   }
 
 
-  qrisPage.classList.add("active");
+  if (qrisPage) {
 
-  document.body.style.overflow = "hidden";
+    qrisPage.classList.add(
+      "active"
+    );
+
+    qrisPage.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+  }
+
+
+  document.body.style.overflow =
+    "hidden";
 
 }
 
-
-/* =========================================================
-   CLOSE QRIS PAGE
-   ========================================================= */
 
 function closeQRPage() {
 
   if (!qrisPage) return;
 
-  qrisPage.classList.remove("active");
 
-  document.body.style.overflow = "";
+  qrisPage.classList.remove(
+    "active"
+  );
+
+  qrisPage.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  document.body.style.overflow =
+    "";
 
 }
 
 
-/* =========================================================
-   TOAST
-   ========================================================= */
+/* ================= TOAST ================= */
 
 function showToast(message) {
 
-  const toast =
+  const toastElement =
     document.getElementById("toast");
 
 
-  if (!toast) return;
+  if (!toastElement) return;
 
 
-  toast.textContent = message;
-
-  toast.classList.add("show");
-
-
-  clearTimeout(toastTimer);
+  toastElement.textContent =
+    message;
 
 
-  toastTimer = setTimeout(function() {
+  toastElement.classList.add(
+    "show"
+  );
 
-    toast.classList.remove("show");
 
-  }, 3200);
+  clearTimeout(
+    toastTimer
+  );
+
+
+  toastTimer =
+    setTimeout(function() {
+
+      toastElement.classList.remove(
+        "show"
+      );
+
+    }, 3200);
 
 }
 
 
-/* =========================================================
-   COPY LINK
-   ========================================================= */
+/* ================= COPY LINK ================= */
 
 function copyLink() {
 
@@ -229,17 +270,13 @@ function copyLink() {
     window.location.href;
 
 
-  /*
-   * Clipboard API
-   */
-
   if (
     navigator.clipboard &&
     window.isSecureContext
   ) {
 
-    navigator.clipboard.writeText(url)
-
+    navigator.clipboard
+      .writeText(url)
       .then(function() {
 
         showToast(
@@ -247,7 +284,6 @@ function copyLink() {
         );
 
       })
-
       .catch(function() {
 
         showToast(
@@ -261,53 +297,20 @@ function copyLink() {
   }
 
 
-  /*
-   * Fallback untuk browser tertentu.
-   */
-
-  try {
-
-    const textarea =
-      document.createElement("textarea");
-
-    textarea.value = url;
-
-    textarea.style.position = "fixed";
-    textarea.style.opacity = "0";
-
-    document.body.appendChild(textarea);
-
-    textarea.focus();
-    textarea.select();
-
-    document.execCommand("copy");
-
-    document.body.removeChild(textarea);
-
-    showToast(
-      "Link berhasil disalin ❤️"
-    );
-
-  } catch (error) {
-
-    showToast(
-      "Silakan salin alamat halaman ini."
-    );
-
-  }
+  showToast(
+    "Silakan salin alamat halaman ini."
+  );
 
 }
 
 
-/* =========================================================
-   WHATSAPP SHARE
-   ========================================================= */
+/* ================= WHATSAPP ================= */
 
 function shareWhatsApp() {
 
   const text =
-    "Mari ikut peduli terhadap Gunung Anak Krakatau dan masyarakat yang terdampak aktivitas erupsi 2026 ❤️\n\n" +
-    "Bantu Anak Krakatau — Peduli dan Bersama\n" +
+    "Mari ikut peduli terhadap Gunung Anak Krakatau dan masyarakat yang membutuhkan dukungan pada 2026 ❤️\n\n" +
+    "Bantu Krakatau 2026 — Peduli Selat Sunda\n\n" +
     window.location.href;
 
 
@@ -325,20 +328,22 @@ function shareWhatsApp() {
 }
 
 
-/* =========================================================
-   ESC KEY
-   ========================================================= */
+/* ================= ESC KEY ================= */
 
 document.addEventListener(
   "keydown",
   function(event) {
 
-    if (event.key !== "Escape") return;
+    if (event.key !== "Escape") {
+      return;
+    }
 
 
     if (
       qrisPage &&
-      qrisPage.classList.contains("active")
+      qrisPage.classList.contains(
+        "active"
+      )
     ) {
 
       closeQRPage();
@@ -350,7 +355,9 @@ document.addEventListener(
 
     if (
       donationModal &&
-      donationModal.classList.contains("active")
+      donationModal.classList.contains(
+        "active"
+      )
     ) {
 
       closeDonation();
@@ -361,9 +368,7 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   CLOSE MODAL BY BACKDROP
-   ========================================================= */
+/* ================= BACKDROP ================= */
 
 if (donationModal) {
 
@@ -387,9 +392,7 @@ if (donationModal) {
 }
 
 
-/* =========================================================
-   IMAGE ERROR HANDLING
-   ========================================================= */
+/* ================= IMAGE ERROR ================= */
 
 document
   .querySelectorAll("img")
@@ -399,12 +402,8 @@ document
       "error",
       function() {
 
-        /*
-         * Jangan merusak ukuran/layout gambar.
-         * Cukup beri fallback background pada parent.
-         */
-
-        this.style.opacity = "0";
+        this.style.opacity =
+          "0";
 
 
         if (this.parentElement) {
@@ -420,15 +419,17 @@ document
   });
 
 
-/* =========================================================
-   ACTIVE NAVIGATION
-   ========================================================= */
+/* ================= ACTIVE NAV ================= */
 
 const navLinks =
-  document.querySelectorAll(".desktop-nav a");
+  document.querySelectorAll(
+    ".desktop-nav a"
+  );
 
 const sections =
-  document.querySelectorAll("section[id]");
+  document.querySelectorAll(
+    "section[id]"
+  );
 
 
 function updateActiveNav() {
@@ -438,14 +439,25 @@ function updateActiveNav() {
 
   sections.forEach(function(section) {
 
+    if (
+      section.id === "qrisPage"
+    ) {
+      return;
+    }
+
+
     const top =
-      section.offsetTop - 160;
+      section.offsetTop - 180;
 
 
-    if (window.scrollY >= top) {
+    if (
+      window.scrollY >= top
+    ) {
 
       current =
-        section.getAttribute("id");
+        section.getAttribute(
+          "id"
+        );
 
     }
 
@@ -454,15 +466,18 @@ function updateActiveNav() {
 
   navLinks.forEach(function(link) {
 
-    link.style.opacity = ".75";
+    link.style.opacity =
+      ".75";
 
 
     if (
-      link.getAttribute("href") ===
-      "#" + current
+      link.getAttribute(
+        "href"
+      ) === "#" + current
     ) {
 
-      link.style.opacity = "1";
+      link.style.opacity =
+        "1";
 
     }
 
@@ -474,80 +489,24 @@ function updateActiveNav() {
 window.addEventListener(
   "scroll",
   updateActiveNav,
-  { passive: true }
+  {
+    passive: true
+  }
 );
 
 
-updateActiveNav();
+/* ================= INITIAL STATE ================= */
 
-
-/* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
-
-const revealElements =
-  document.querySelectorAll(
-    ".testimonial-card"
-  );
-
-
-if (
-  "IntersectionObserver" in window &&
-  revealElements.length
-) {
-
-  const revealObserver =
-    new IntersectionObserver(
-      function(entries, observer) {
-
-        entries.forEach(function(entry) {
-
-          if (!entry.isIntersecting) return;
-
-
-          entry.target.classList.add(
-            "is-visible"
-          );
-
-
-          observer.unobserve(
-            entry.target
-          );
-
-        });
-
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px"
-      }
-    );
-
-
-  revealElements.forEach(function(element) {
-
-    revealObserver.observe(element);
-
-  });
-
-} else {
-
-  revealElements.forEach(function(element) {
-
-    element.classList.add("is-visible");
-
-  });
-
-}
-
-
-/* =========================================================
-   PAGE LOAD
-   ========================================================= */
-
-window.addEventListener(
-  "load",
+document.addEventListener(
+  "DOMContentLoaded",
   function() {
+
+    currentAmount =
+      10000;
+
+
+    updateDonationAmount();
+
 
     updateActiveNav();
 
