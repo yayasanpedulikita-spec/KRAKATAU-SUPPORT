@@ -1776,3 +1776,244 @@ button:focus-visible {
     font-size: 0.82rem;
   }
 }
+/* =========================================================
+   BANTU KRAKATAU 2026
+   STYLE.CSS — BAGIAN 5
+   IMPACT / DAMPAK
+   ========================================================= */
+
+.impact-section {
+  position: relative;
+
+  padding: 110px 0;
+
+  background: #070707;
+}
+
+
+/* =========================================================
+   IMPACT GRID
+   ========================================================= */
+
+.impact-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   IMPACT CARD
+   ========================================================= */
+
+.impact-card {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 32px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.impact-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -120px;
+  bottom: -120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 106, 26, 0.13),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.impact-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    var(--shadow-soft);
+}
+
+
+/* =========================================================
+   IMPACT ICON
+   ========================================================= */
+
+.impact-icon {
+  width: 54px;
+  height: 54px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 30px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 106, 26, 0.10);
+
+  border:
+    1px solid
+    rgba(255, 106, 26, 0.18);
+
+  color: var(--accent-light);
+
+  font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   IMPACT TITLE
+   ========================================================= */
+
+.impact-card h3 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 1.45rem;
+
+  font-weight: 800;
+
+  letter-spacing: -0.035em;
+
+  line-height: 1.12;
+}
+
+
+/* =========================================================
+   IMPACT TEXT
+   ========================================================= */
+
+.impact-card p {
+  max-width: 390px;
+
+  color: var(--text-soft);
+
+  font-size: 0.88rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   IMPACT NUMBER / HIGHLIGHT
+   ========================================================= */
+
+.impact-card strong {
+  display: block;
+
+  margin-top: 24px;
+
+  color: var(--accent-light);
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   IMPACT RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .impact-section {
+    padding: 90px 0;
+  }
+
+  .impact-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .impact-section {
+    padding: 72px 0;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .impact-card,
+  .impact-card:last-child {
+    grid-column: auto;
+
+    min-height: 0;
+
+    padding: 24px;
+  }
+
+  .impact-icon {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 23px;
+
+    border-radius: 14px;
+  }
+
+  .impact-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .impact-card p {
+    font-size: 0.82rem;
+  }
+}
