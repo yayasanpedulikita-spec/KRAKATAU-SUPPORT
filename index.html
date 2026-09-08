@@ -18,7 +18,10 @@
 
     body{
       font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:#050505;
+      background:
+        radial-gradient(circle at 15% 8%,rgba(255,255,255,.035),transparent 28%),
+        radial-gradient(circle at 85% 35%,rgba(255,255,255,.025),transparent 30%),
+        #050505;
       color:#f5f5f5;
       line-height:1.6;
     }
@@ -34,20 +37,21 @@
 
     .topbar{
       padding:10px 20px;
-      background:#0b0b0b;
-      border-bottom:1px solid #1b1b1b;
+      background:#111;
+      border-bottom:1px solid #303030;
       text-align:center;
       font-size:13px;
-      color:#aaa;
+      color:#c8c8c8;
     }
 
     header{
       position:sticky;
       top:0;
       z-index:50;
-      background:rgba(5,5,5,.9);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid #171717;
+      background:rgba(12,12,12,.94);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid #303030;
+      box-shadow:0 8px 30px rgba(0,0,0,.25);
     }
 
     .nav{
@@ -77,8 +81,13 @@
       font-size:14px;
     }
 
+    .nav-links a{
+      transition:.2s;
+    }
+
     .nav-links a:hover{
       color:#fff;
+      transform:translateY(-1px);
     }
 
     .nav-donate{
@@ -87,9 +96,15 @@
       border-radius:999px;
       font-size:13px;
       font-weight:800;
-      background:transparent;
-      color:#fff;
+      background:#fff;
+      color:#000;
       cursor:pointer;
+      transition:.2s;
+    }
+
+    .nav-donate:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 25px rgba(255,255,255,.12);
     }
 
     .hero{
@@ -110,6 +125,7 @@
       object-position:center center;
       opacity:.70;
       filter:saturate(1.25) contrast(1.18) brightness(.72);
+      transform:scale(1.015);
     }
 
     .hero::after{
@@ -135,13 +151,14 @@
       align-items:center;
       gap:8px;
       padding:7px 12px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(15,15,15,.62);
       border-radius:999px;
       color:#ddd;
       font-size:12px;
       font-weight:800;
       margin-bottom:22px;
+      box-shadow:0 6px 25px rgba(0,0,0,.2);
     }
 
     .eyebrow::before{
@@ -150,6 +167,7 @@
       height:7px;
       background:#fff;
       border-radius:50%;
+      box-shadow:0 0 12px rgba(255,255,255,.55);
     }
 
     .hero h1{
@@ -158,6 +176,7 @@
       line-height:.98;
       letter-spacing:-4px;
       margin-bottom:24px;
+      text-shadow:0 5px 30px rgba(0,0,0,.45);
     }
 
     .hero p{
@@ -183,23 +202,30 @@
       font-weight:900;
       cursor:pointer;
       transition:.2s;
+      box-shadow:0 8px 25px rgba(0,0,0,.22);
     }
 
     .btn:hover{
       transform:translateY(-2px);
+      box-shadow:0 12px 30px rgba(255,255,255,.12);
     }
 
     .btn.secondary{
-      background:rgba(0,0,0,.45);
+      background:rgba(15,15,15,.62);
       color:#fff;
       border-color:#555;
+    }
+
+    .btn.secondary:hover{
+      border-color:#888;
+      background:#181818;
     }
 
     .hero-meta{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       max-width:760px;
-      border-top:1px solid rgba(255,255,255,.18);
+      border-top:1px solid rgba(255,255,255,.22);
       padding-top:22px;
       gap:20px;
     }
@@ -208,7 +234,7 @@
       font-size:11px;
       text-transform:uppercase;
       letter-spacing:1px;
-      color:#888;
+      color:#999;
       margin-bottom:4px;
     }
 
@@ -241,17 +267,25 @@
 
     .section-head p{
       max-width:520px;
-      color:#999;
+      color:#aaa;
     }
 
     .fund-card{
-      background:#0c0c0c;
-      border:1px solid #202020;
+      background:
+        linear-gradient(145deg,#151515,#0d0d0d);
+      border:1px solid #353535;
       border-radius:24px;
       padding:30px;
       display:grid;
       grid-template-columns:1.3fr .7fr;
       gap:35px;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
+      transition:.25s;
+    }
+
+    .fund-card:hover{
+      border-color:#4a4a4a;
+      transform:translateY(-2px);
     }
 
     .fund-number{
@@ -263,7 +297,7 @@
     }
 
     .fund-label{
-      color:#888;
+      color:#aaa;
       font-size:14px;
       margin-top:8px;
     }
@@ -274,21 +308,30 @@
 
     .progress{
       height:12px;
-      background:#222;
+      background:#242424;
       border-radius:999px;
       overflow:hidden;
       margin-top:10px;
+      border:1px solid #333;
     }
 
     .progress span{
       display:block;
       width:15.47%;
       height:100%;
-      background:#fff;
+      background:linear-gradient(90deg,#fff,#cfcfcf,#fff);
+      background-size:200% 100%;
+      animation:progressShine 3s linear infinite;
+      border-radius:999px;
+    }
+
+    @keyframes progressShine{
+      0%{background-position:200% 0;}
+      100%{background-position:-200% 0;}
     }
 
     .fund-side{
-      border-left:1px solid #222;
+      border-left:1px solid #303030;
       padding-left:30px;
     }
 
@@ -299,7 +342,7 @@
     }
 
     .muted{
-      color:#888;
+      color:#aaa;
     }
 
     .grid-3{
@@ -309,15 +352,24 @@
     }
 
     .card{
-      background:#0b0b0b;
-      border:1px solid #1d1d1d;
+      background:
+        linear-gradient(145deg,#141414,#0d0d0d);
+      border:1px solid #303030;
       border-radius:20px;
       padding:25px;
+      box-shadow:0 12px 35px rgba(0,0,0,.18);
+      transition:.25s;
+    }
+
+    .card:hover{
+      border-color:#4a4a4a;
+      transform:translateY(-4px);
+      box-shadow:0 18px 45px rgba(0,0,0,.28);
     }
 
     .card-number{
       font-size:13px;
-      color:#777;
+      color:#999;
       margin-bottom:30px;
     }
 
@@ -327,7 +379,7 @@
     }
 
     .card p{
-      color:#999;
+      color:#aaa;
     }
 
     .story{
@@ -342,7 +394,8 @@
       height:500px;
       object-fit:cover;
       border-radius:24px;
-      border:1px solid #222;
+      border:1px solid #303030;
+      box-shadow:0 20px 55px rgba(0,0,0,.28);
     }
 
     .story h2{
@@ -365,9 +418,15 @@
 
     .need{
       padding:25px;
-      border:1px solid #202020;
+      border:1px solid #303030;
       border-radius:18px;
-      background:#0a0a0a;
+      background:linear-gradient(145deg,#131313,#0b0b0b);
+      transition:.25s;
+    }
+
+    .need:hover{
+      border-color:#4a4a4a;
+      transform:translateY(-3px);
     }
 
     .need strong{
@@ -377,7 +436,7 @@
     }
 
     .need span{
-      color:#888;
+      color:#aaa;
       font-size:14px;
     }
 
@@ -388,13 +447,18 @@
     }
 
     .step{
-      border-top:1px solid #444;
+      border-top:1px solid #555;
       padding-top:18px;
+      transition:.2s;
+    }
+
+    .step:hover{
+      border-top-color:#fff;
     }
 
     .step b{
       font-size:13px;
-      color:#777;
+      color:#aaa;
     }
 
     .step h3{
@@ -402,7 +466,7 @@
     }
 
     .step p{
-      color:#888;
+      color:#aaa;
     }
 
     .gallery{
@@ -419,11 +483,12 @@
     }
 
     .gallery::-webkit-scrollbar-track{
-      background:#111;
+      background:#151515;
+      border-radius:10px;
     }
 
     .gallery::-webkit-scrollbar-thumb{
-      background:#444;
+      background:#555;
       border-radius:10px;
     }
 
@@ -433,8 +498,15 @@
       position:relative;
       overflow:hidden;
       border-radius:20px;
-      border:1px solid #222;
+      border:1px solid #303030;
       background:#0a0a0a;
+      box-shadow:0 12px 35px rgba(0,0,0,.25);
+      transition:.25s;
+    }
+
+    .gallery-item:hover{
+      border-color:#555;
+      transform:translateY(-3px);
     }
 
     .gallery-item img{
@@ -442,6 +514,11 @@
       height:420px;
       display:block;
       object-fit:cover;
+      transition:.35s;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.025);
     }
 
     .gallery-caption{
@@ -462,20 +539,21 @@
 
     .official a{
       display:block;
-      background:#0b0b0b;
-      border:1px solid #202020;
+      background:linear-gradient(145deg,#141414,#0d0d0d);
+      border:1px solid #303030;
       border-radius:18px;
       padding:24px;
       transition:.2s;
     }
 
     .official a:hover{
-      border-color:#555;
-      transform:translateY(-2px);
+      border-color:#666;
+      transform:translateY(-3px);
+      box-shadow:0 15px 35px rgba(0,0,0,.25);
     }
 
     .official small{
-      color:#777;
+      color:#999;
       display:block;
       margin-bottom:8px;
     }
@@ -486,15 +564,17 @@
     }
 
     .official span{
-      color:#999;
+      color:#aaa;
       font-size:14px;
     }
 
     .share{
       text-align:center;
-      background:#0b0b0b;
-      border-top:1px solid #191919;
-      border-bottom:1px solid #191919;
+      background:
+        radial-gradient(circle at center top,rgba(255,255,255,.035),transparent 45%),
+        #0b0b0b;
+      border-top:1px solid #292929;
+      border-bottom:1px solid #292929;
     }
 
     .share h2{
@@ -504,7 +584,7 @@
     }
 
     .share p{
-      color:#999;
+      color:#aaa;
       max-width:600px;
       margin:0 auto 25px;
     }
@@ -518,8 +598,8 @@
 
     footer{
       padding:35px 20px 100px;
-      background:#050505;
-      color:#777;
+      background:#070707;
+      color:#888;
       font-size:13px;
     }
 
@@ -552,6 +632,12 @@
       font-weight:900;
       box-shadow:0 10px 40px rgba(0,0,0,.6);
       cursor:pointer;
+      transition:.2s;
+    }
+
+    .sticky-donate button:hover{
+      transform:translateY(-3px) scale(1.01);
+      box-shadow:0 14px 45px rgba(255,255,255,.13);
     }
 
     .modal{
@@ -572,13 +658,15 @@
 
     .modal-box{
       width:min(520px,100%);
-      background:#0c0c0c;
-      border:1px solid #292929;
+      background:
+        linear-gradient(145deg,#151515,#0d0d0d);
+      border:1px solid #3a3a3a;
       border-radius:24px;
       padding:28px;
       position:relative;
       max-height:90vh;
       overflow:auto;
+      box-shadow:0 25px 80px rgba(0,0,0,.55);
     }
 
     .modal-close{
@@ -588,10 +676,16 @@
       width:36px;
       height:36px;
       border-radius:50%;
-      border:1px solid #333;
-      background:#111;
+      border:1px solid #444;
+      background:#181818;
       color:#fff;
       cursor:pointer;
+      transition:.2s;
+    }
+
+    .modal-close:hover{
+      background:#fff;
+      color:#000;
     }
 
     .modal h2{
@@ -601,7 +695,7 @@
     }
 
     .modal-sub{
-      color:#888;
+      color:#aaa;
       margin-bottom:25px;
     }
 
@@ -613,13 +707,14 @@
     }
 
     .amount{
-      border:1px solid #292929;
-      background:#111;
+      border:1px solid #383838;
+      background:#181818;
       color:#fff;
       border-radius:12px;
       padding:13px 8px;
       cursor:pointer;
       font-weight:800;
+      transition:.2s;
     }
 
     .amount:hover,
@@ -627,21 +722,24 @@
       background:#fff;
       color:#000;
       border-color:#fff;
+      transform:translateY(-1px);
     }
 
     .input{
       width:100%;
       padding:14px;
-      background:#111;
+      background:#181818;
       color:#fff;
-      border:1px solid #292929;
+      border:1px solid #383838;
       border-radius:10px;
       margin-bottom:12px;
       outline:none;
+      transition:.2s;
     }
 
     .input:focus{
-      border-color:#777;
+      border-color:#888;
+      background:#1c1c1c;
     }
 
     .qris-wrap{
@@ -654,10 +752,11 @@
       display:block;
       margin:20px auto;
       background:#fff;
+      box-shadow:0 12px 35px rgba(0,0,0,.35);
     }
 
     .qris-info{
-      color:#999;
+      color:#aaa;
       font-size:13px;
     }
 
@@ -671,9 +770,10 @@
     .count-box{
       min-width:85px;
       padding:12px;
-      border:1px solid #242424;
+      border:1px solid #383838;
       border-radius:12px;
-      background:#0b0b0b;
+      background:#151515;
+      box-shadow:0 8px 25px rgba(0,0,0,.15);
     }
 
     .count-box strong{
@@ -683,7 +783,7 @@
 
     .count-box span{
       font-size:11px;
-      color:#777;
+      color:#999;
       text-transform:uppercase;
     }
 
@@ -702,6 +802,7 @@
       pointer-events:none;
       transition:.25s;
       z-index:300;
+      box-shadow:0 10px 35px rgba(0,0,0,.35);
     }
 
     .toast.show{
@@ -732,7 +833,7 @@
 
       .fund-side{
         border-left:0;
-        border-top:1px solid #222;
+        border-top:1px solid #303030;
         padding-left:0;
         padding-top:25px;
       }
@@ -1390,7 +1491,7 @@
         Pilih nominal donasi sesuai kemampuan Anda.
       </div>
 
-      <!-- HANYA BAGIAN INI YANG DIUBAH -->
+      <!-- NOMINAL TETAP -->
 
       <div class="amount-grid">
 
