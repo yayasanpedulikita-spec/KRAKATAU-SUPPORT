@@ -10,65 +10,106 @@
 
   <meta
     name="description"
-    content="Bantu Krakatau 2026 — ruang kepedulian untuk mendukung masyarakat dan lingkungan di sekitar Selat Sunda."
+    content="Bantu Krakatau 2026 — kampanye kepedulian untuk masyarakat di sekitar Selat Sunda."
   >
 
   <meta
     name="theme-color"
-    content="#090909"
+    content="#070707"
   >
 
-  <title>Bantu Krakatau 2026 — Peduli Selat Sunda</title>
+  <title>
+    Bantu Krakatau 2026 — Peduli Selat Sunda
+  </title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
 
 <body>
+
 
   <!-- =====================================================
        HEADER
        ===================================================== -->
 
-  <header class="site-header" id="top">
+  <header class="site-header">
 
     <div class="container header-inner">
 
-      <a href="#top" class="logo" aria-label="Bantu Krakatau 2026">
+      <a
+        href="#tentang"
+        class="logo"
+        aria-label="Bantu Krakatau 2026"
+      >
 
-        <div class="logo-mark">
-          🌋
-        </div>
+        <span class="logo-mark">
+          ♥
+        </span>
 
-        <div>
-          Bantu <span>Krakatau</span>
-        </div>
+        <span>
+          Bantu Krakatau
+        </span>
 
       </a>
 
 
-      <nav class="desktop-nav" aria-label="Navigasi utama">
+      <nav
+        class="desktop-nav"
+        aria-label="Navigasi utama"
+      >
 
-        <a href="#tentang">Tentang</a>
+        <a href="#tentang">
+          Tentang
+        </a>
 
-        <a href="#dampak">Dampak</a>
+        <a href="#situasi">
+          Situasi
+        </a>
 
-        <a href="#kebutuhan">Kebutuhan</a>
+        <a href="#dampak">
+          Dampak
+        </a>
 
-        <a href="#cara">Cara Donasi</a>
+        <a href="#kebutuhan">
+          Kebutuhan
+        </a>
 
-        <a href="#galeri">Galeri</a>
+        <a href="#cara">
+          Cara Donasi
+        </a>
 
-        <a href="#transparansi">Transparansi</a>
+        <a href="#transparansi">
+          Transparansi
+        </a>
 
       </nav>
 
 
       <button
-        class="header-donate"
         type="button"
+        class="btn-primary header-donate"
         onclick="openDonation()"
       >
-        Donasi Sekarang
+        Donasi
       </button>
 
     </div>
@@ -77,92 +118,100 @@
 
 
 
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
-
   <main>
 
-    <section class="hero" id="tentang">
 
-      <div class="hero-inner">
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-        <div class="container">
+    <section
+      id="tentang"
+      class="hero"
+    >
 
-          <div class="hero-content">
+      <div class="container hero-inner">
 
-            <div class="hero-badge">
-              KRAKATAU 2026
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            BANTU KRAKATAU 2026
+          </div>
+
+
+          <h1>
+            Peduli
+            <br>
+            Selat Sunda.
+          </h1>
+
+
+          <p>
+            Ketika aktivitas Gunung Anak Krakatau
+            meningkat, kepedulian kita tidak boleh
+            ikut berhenti. Mari bantu menghadirkan
+            dukungan nyata bagi masyarakat yang
+            membutuhkan.
+          </p>
+
+
+          <div class="hero-actions">
+
+            <button
+              type="button"
+              class="btn-primary"
+              onclick="openDonation()"
+            >
+              Donasi Sekarang
+            </button>
+
+            <a
+              href="#situasi"
+              class="btn-secondary"
+            >
+              Lihat Situasi
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats">
+
+            <div class="hero-stat">
+
+              <strong>
+                Level III
+              </strong>
+
+              <span>
+                Status Siaga
+              </span>
+
             </div>
 
 
-            <h1>
-              Ketika Krakatau
-              <span>bergejolak, kita peduli.</span>
-            </h1>
+            <div class="hero-stat">
 
+              <strong>
+                2026
+              </strong>
 
-            <p>
-              Sebuah ruang kepedulian untuk membantu masyarakat,
-              menjaga lingkungan, dan mendukung kebutuhan kemanusiaan
-              di sekitar kawasan Selat Sunda.
-            </p>
-
-
-            <div class="hero-actions">
-
-              <button
-                class="btn-primary"
-                type="button"
-                onclick="openDonation()"
-              >
-                Donasi Sekarang
-              </button>
-
-
-              <a
-                href="#situasi"
-                class="btn-secondary"
-              >
-                Lihat Situasi
-              </a>
+              <span>
+                Periode kepedulian
+              </span>
 
             </div>
 
 
-            <div class="hero-stats">
+            <div class="hero-stat">
 
-              <div class="hero-stat">
+              <strong>
+                Resmi
+              </strong>
 
-                <strong>2026</strong>
-
-                <span>
-                  Tahun kampanye
-                </span>
-
-              </div>
-
-
-              <div class="hero-stat">
-
-                <strong>Selat Sunda</strong>
-
-                <span>
-                  Kawasan perhatian
-                </span>
-
-              </div>
-
-
-              <div class="hero-stat">
-
-                <strong>24/7</strong>
-
-                <span>
-                  Pemantauan resmi
-                </span>
-
-              </div>
+              <span>
+                Pantauan pemerintah
+              </span>
 
             </div>
 
@@ -177,12 +226,12 @@
 
 
     <!-- =====================================================
-         DONATION CARD
+         DONATION
          ===================================================== -->
 
     <section
-      class="donation-section"
       id="donasi"
+      class="section donation-section"
     >
 
       <div class="container">
@@ -193,17 +242,19 @@
 
             <div class="donation-card-heading">
 
-              <span class="eyebrow">
-                SATU KEBAIKAN
-              </span>
+              <div class="eyebrow">
+                DUKUNG SEKARANG
+              </div>
 
               <h2>
-                Pilih nominal donasi
+                Setiap bantuan
+                punya arti.
               </h2>
 
               <p>
-                Setiap bantuan dapat menjadi bagian dari
-                dukungan bagi masyarakat dan kebutuhan pemulihan.
+                Pilih nominal donasi yang ingin
+                kamu berikan. Setelah itu, lanjutkan
+                pembayaran melalui QRIS.
               </p>
 
             </div>
@@ -218,14 +269,12 @@
                 Rp10.000
               </button>
 
-
               <button
                 type="button"
                 onclick="selectAmount(this, 25000)"
               >
                 Rp25.000
               </button>
-
 
               <button
                 type="button"
@@ -234,7 +283,6 @@
                 Rp50.000
               </button>
 
-
               <button
                 type="button"
                 onclick="selectAmount(this, 100000)"
@@ -242,14 +290,12 @@
                 Rp100.000
               </button>
 
-
               <button
                 type="button"
                 onclick="selectAmount(this, 250000)"
               >
                 Rp250.000
               </button>
-
 
               <button
                 type="button"
@@ -264,7 +310,7 @@
             <div class="selected-amount">
 
               <span>
-                Nominal terpilih
+                Donasi terpilih
               </span>
 
               <strong id="selectedAmount">
@@ -277,8 +323,8 @@
             <div class="donation-action">
 
               <button
-                class="btn-primary"
                 type="button"
+                class="btn-primary"
                 onclick="openQRPage()"
               >
                 Lanjut ke QRIS
@@ -289,11 +335,14 @@
 
             <div class="donation-note">
 
-              <span>🔒</span>
+              <span>
+                ♥
+              </span>
 
               <span>
-                Pembayaran dilakukan melalui QRIS resmi
-                yang ditampilkan pada halaman pembayaran.
+                Donasi akan diarahkan ke halaman QRIS.
+                Pastikan nominal pembayaran sesuai
+                dengan nominal yang kamu pilih.
               </span>
 
             </div>
@@ -309,30 +358,31 @@
 
 
     <!-- =====================================================
-         SITUASI TERKINI
+         SITUATION
          ===================================================== -->
 
     <section
-      class="section situation-section"
       id="situasi"
+      class="section situation-section"
     >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span class="eyebrow">
+          <div class="eyebrow">
             SITUASI TERKINI
-          </span>
+          </div>
 
           <h2>
-            Krakatau 2026
+            Tetap peduli,
+            tetap waspada.
           </h2>
 
           <p>
-            Informasi kampanye ini mengikuti sumber resmi pemerintah
-            dan lembaga pemantauan. Kondisi gunung api dapat berubah,
-            sehingga masyarakat tetap perlu mengikuti informasi terbaru.
+            Informasi kondisi gunung dan wilayah
+            sekitar harus selalu merujuk pada
+            sumber resmi pemerintah.
           </p>
 
         </div>
@@ -340,24 +390,25 @@
 
         <div class="situation-grid">
 
+
           <article class="situation-card">
 
             <div class="situation-icon">
               🌋
             </div>
 
-            <span class="situation-label">
-              STATUS AKTIVITAS
-            </span>
+            <div class="situation-label">
+              AKTIVITAS
+            </div>
 
             <h3>
-              Level III — Siaga
+              Gunung Anak Krakatau
             </h3>
 
             <p>
-              Badan Geologi/PVMBG melaporkan tingkat aktivitas
-              Gunung Anak Krakatau tetap berada pada Level III
-              (Siaga) dalam evaluasi 7 September 2026.
+              Aktivitas vulkanik meningkat dan
+              status berada pada Level III
+              (Siaga).
             </p>
 
             <a
@@ -365,7 +416,38 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Lihat laporan Badan Geologi →
+              Lihat laporan Badan Geologi ↗
+            </a>
+
+          </article>
+
+
+          <article class="situation-card">
+
+            <div class="situation-icon">
+              ☁
+            </div>
+
+            <div class="situation-label">
+              ABU VULKANIK
+            </div>
+
+            <h3>
+              Dampak sebaran abu
+            </h3>
+
+            <p>
+              Sebaran abu vulkanik dapat
+              memengaruhi aktivitas masyarakat
+              dan transportasi udara.
+            </p>
+
+            <a
+              href="https://www.bmkg.go.id/siaran-pers/imbas-sebaran-abu-vulknaik-anak-krakatau-8-bandara-ditutup-sementara-bmkg-minta-waspada-dan-tenang"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Lihat informasi BMKG ↗
             </a>
 
           </article>
@@ -377,18 +459,18 @@
               🌊
             </div>
 
-            <span class="situation-label">
-              PEMANTAUAN LAUT
-            </span>
+            <div class="situation-label">
+              SELAT SUNDA
+            </div>
 
             <h3>
-              Dipantau 24 jam
+              Pantauan laut
             </h3>
 
             <p>
-              BMKG melakukan pemantauan kondisi laut dan potensi
-              dampak aktivitas Gunung Anak Krakatau melalui sistem
-              Indonesia Tsunami Early Warning System.
+              Pantauan multi-sensor BMKG menjadi
+              rujukan penting untuk kondisi laut
+              di sekitar Selat Sunda.
             </p>
 
             <a
@@ -396,41 +478,11 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Lihat informasi BMKG →
+              Lihat informasi BMKG ↗
             </a>
 
           </article>
 
-
-          <article class="situation-card">
-
-            <div class="situation-icon">
-              🛡️
-            </div>
-
-            <span class="situation-label">
-              INFORMASI RESMI
-            </span>
-
-            <h3>
-              Ikuti sumber terpercaya
-            </h3>
-
-            <p>
-              Informasi mengenai status gunung, rekomendasi,
-              keselamatan dan perkembangan aktivitas harus merujuk
-              kepada Badan Geologi/PVMBG, BMKG dan pemerintah daerah.
-            </p>
-
-            <a
-              href="https://geologi.esdm.go.id/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Badan Geologi →
-            </a>
-
-          </article>
 
         </div>
 
@@ -441,31 +493,31 @@
 
 
     <!-- =====================================================
-         DAMPAK / KEPEDULIAN
+         IMPACT
          ===================================================== -->
 
     <section
-      class="section impact-section"
       id="dampak"
+      class="section impact-section"
     >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span class="eyebrow">
-            KENAPA KITA PEDULI
-          </span>
+          <div class="eyebrow">
+            DAMPAK
+          </div>
 
           <h2>
-            Di balik aktivitas gunung,
-            ada manusia yang harus tetap kuat.
+            Bantuan yang tepat
+            sasaran.
           </h2>
 
           <p>
-            Kampanye ini berfokus pada kebutuhan kemanusiaan,
-            kesiapsiagaan, dukungan logistik dan kepedulian
-            terhadap lingkungan sekitar.
+            Dukungan dapat diarahkan untuk
+            kebutuhan dasar dan pemulihan
+            masyarakat terdampak.
           </p>
 
         </div>
@@ -473,20 +525,21 @@
 
         <div class="impact-grid">
 
+
           <article class="impact-card">
 
             <div class="impact-icon">
-              🧑‍🤝‍🧑
+              🥫
             </div>
 
             <h3>
-              Masyarakat
+              Kebutuhan dasar
             </h3>
 
             <p>
-              Dukungan untuk kebutuhan dasar masyarakat yang
-              terdampak atau berada di wilayah yang membutuhkan
-              kesiapsiagaan.
+              Membantu menyediakan kebutuhan
+              sehari-hari yang diperlukan
+              masyarakat.
             </p>
 
           </article>
@@ -495,17 +548,17 @@
           <article class="impact-card">
 
             <div class="impact-icon">
-              💧
+              🏠
             </div>
 
             <h3>
-              Kebutuhan Dasar
+              Dukungan keluarga
             </h3>
 
             <p>
-              Bantuan dapat diarahkan untuk air minum,
-              makanan, perlengkapan kebersihan dan kebutuhan
-              dasar lainnya sesuai kebutuhan lapangan.
+              Membantu keluarga menghadapi
+              situasi darurat dengan lebih
+              tenang.
             </p>
 
           </article>
@@ -514,77 +567,21 @@
           <article class="impact-card">
 
             <div class="impact-icon">
-              😷
+              🤝
             </div>
 
             <h3>
-              Perlindungan
+              Solidaritas
             </h3>
 
             <p>
-              Dukungan terhadap perlengkapan perlindungan
-              dan kebutuhan kesehatan dasar ketika kondisi
-              lingkungan membutuhkan.
+              Menghubungkan kepedulian
+              masyarakat dengan kebutuhan
+              yang nyata.
             </p>
 
           </article>
 
-
-          <article class="impact-card">
-
-            <div class="impact-icon">
-              🚚
-            </div>
-
-            <h3>
-              Logistik
-            </h3>
-
-            <p>
-              Bantuan operasional untuk distribusi kebutuhan
-              secara tertib melalui jalur yang dapat
-              dipertanggungjawabkan.
-            </p>
-
-          </article>
-
-
-          <article class="impact-card">
-
-            <div class="impact-icon">
-              🌱
-            </div>
-
-            <h3>
-              Lingkungan
-            </h3>
-
-            <p>
-              Kepedulian terhadap lingkungan pesisir dan
-              kawasan sekitar Selat Sunda menjadi bagian
-              dari semangat kampanye.
-            </p>
-
-          </article>
-
-
-          <article class="impact-card">
-
-            <div class="impact-icon">
-              📋
-            </div>
-
-            <h3>
-              Transparansi
-            </h3>
-
-            <p>
-              Pengelolaan kampanye diarahkan agar pencatatan
-              donasi dan penggunaannya dapat diperiksa
-              secara jelas.
-            </p>
-
-          </article>
 
         </div>
 
@@ -595,23 +592,24 @@
 
 
     <!-- =====================================================
-         CERITA
+         STORY
          ===================================================== -->
 
     <section
-      class="story-section"
       id="cerita"
+      class="section story-section"
     >
 
       <div class="container">
 
         <div class="story-grid">
 
+
           <div class="story-image">
 
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg"
-              alt="Aktivitas lava Gunung Anak Krakatau pada September 2026"
+              alt="Aktivitas erupsi Gunung Anak Krakatau pada September 2026"
               loading="lazy"
             >
 
@@ -620,47 +618,39 @@
 
           <div class="story-content">
 
-            <span class="eyebrow">
-              KRAKATAU 2026
-            </span>
-
+            <div class="eyebrow">
+              TENTANG KAMPANYE
+            </div>
 
             <h2>
-              Alam berubah.
-              Kepedulian jangan berhenti.
+              Di balik berita,
+              ada manusia.
             </h2>
 
-
             <p>
-              Anak Krakatau berada di kawasan Selat Sunda,
-              di antara Pulau Jawa dan Sumatra. Aktivitas
-              vulkaniknya dipantau oleh lembaga resmi Indonesia.
-            </p>
-
-
-            <p>
-              Pada 2026, aktivitas Gunung Anak Krakatau kembali
-              mendapat perhatian setelah peningkatan aktivitas
-              dan episode erupsi. Karena kondisi dapat berubah,
-              kampanye ini menempatkan keselamatan dan informasi
-              resmi sebagai prioritas.
+              Erupsi dan aktivitas vulkanik bukan
+              hanya tentang angka pengamatan.
+              Ada keluarga, pekerja, nelayan,
+              dan masyarakat yang harus
+              menyesuaikan aktivitas mereka.
             </p>
 
 
             <div class="story-highlight">
 
               <strong>
-                Catatan penting:
+                Kepedulian dimulai dari hal sederhana.
               </strong>
 
-              Informasi mengenai status gunung dan rekomendasi
-              keselamatan bukan berasal dari kampanye ini.
-              Selalu periksa pembaruan resmi Badan Geologi/PVMBG
-              dan BMKG.
+              <span>
+                Satu donasi, satu bentuk dukungan,
+                satu langkah untuk membantu.
+              </span>
 
             </div>
 
           </div>
+
 
         </div>
 
@@ -671,35 +661,60 @@
 
 
     <!-- =====================================================
-         KEBUTUHAN
+         NEEDS
          ===================================================== -->
 
     <section
-      class="section needs-section"
       id="kebutuhan"
+      class="section needs-section"
     >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span class="eyebrow">
-            PRIORITAS BANTUAN
-          </span>
+          <div class="eyebrow">
+            KEBUTUHAN
+          </div>
 
           <h2>
-            Bantuan yang tepat sasaran
+            Fokus pada
+            kebutuhan nyata.
           </h2>
 
           <p>
-            Penggunaan dana harus menyesuaikan kebutuhan nyata
-            di lapangan dan tetap dicatat dengan jelas.
+            Dukungan dapat membantu berbagai
+            kebutuhan masyarakat dalam situasi
+            yang berubah cepat.
           </p>
 
         </div>
 
 
         <div class="needs-grid">
+
+
+          <article class="need-card">
+
+            <div class="need-icon">
+              🍚
+            </div>
+
+            <div>
+
+              <h3>
+                Pangan
+              </h3>
+
+              <p>
+                Dukungan untuk kebutuhan
+                makanan sehari-hari.
+              </p>
+
+            </div>
+
+          </article>
+
 
           <article class="need-card">
 
@@ -710,11 +725,12 @@
             <div>
 
               <h3>
-                Air & kebutuhan dasar
+                Air & kebutuhan harian
               </h3>
 
               <p>
-                Air minum, makanan dan kebutuhan harian.
+                Membantu pemenuhan kebutuhan
+                dasar keluarga.
               </p>
 
             </div>
@@ -731,11 +747,12 @@
             <div>
 
               <h3>
-                Masker & perlindungan
+                Perlindungan
               </h3>
 
               <p>
-                Perlengkapan perlindungan sesuai kondisi.
+                Dukungan perlengkapan yang
+                diperlukan menghadapi abu.
               </p>
 
             </div>
@@ -746,17 +763,18 @@
           <article class="need-card">
 
             <div class="need-icon">
-              🧼
+              🧺
             </div>
 
             <div>
 
               <h3>
-                Kebersihan
+                Perlengkapan keluarga
               </h3>
 
               <p>
-                Sabun, sanitasi dan perlengkapan kebersihan.
+                Kebutuhan rumah tangga
+                dan perlengkapan penting.
               </p>
 
             </div>
@@ -767,17 +785,18 @@
           <article class="need-card">
 
             <div class="need-icon">
-              🚚
+              🛟
             </div>
 
             <div>
 
               <h3>
-                Distribusi
+                Dukungan darurat
               </h3>
 
               <p>
-                Dukungan logistik dan pengiriman bantuan.
+                Membantu respons terhadap
+                kebutuhan yang mendesak.
               </p>
 
             </div>
@@ -788,43 +807,24 @@
           <article class="need-card">
 
             <div class="need-icon">
-              🏥
+              🤲
             </div>
 
             <div>
 
               <h3>
-                Dukungan kesehatan
+                Pemulihan
               </h3>
 
               <p>
-                Kebutuhan kesehatan dasar sesuai prioritas.
+                Mendukung proses pemulihan
+                setelah kondisi membaik.
               </p>
 
             </div>
 
           </article>
 
-
-          <article class="need-card">
-
-            <div class="need-icon">
-              🌱
-            </div>
-
-            <div>
-
-              <h3>
-                Pemulihan lingkungan
-              </h3>
-
-              <p>
-                Kepedulian terhadap lingkungan pesisir.
-              </p>
-
-            </div>
-
-          </article>
 
         </div>
 
@@ -832,13 +832,12 @@
         <div class="volcanic-quote">
 
           <h3>
-            “Kebaikan kecil yang terkumpul
-            dapat menjadi bantuan besar.”
+            Kepedulian kecil
+            bisa menjadi dukungan besar.
           </h3>
 
           <p>
-            Bantu sesuai kemampuan. Salurkan melalui QRIS
-            yang tersedia pada halaman ini.
+            Mari bantu sesuai kemampuan.
           </p>
 
         </div>
@@ -850,34 +849,36 @@
 
 
     <!-- =====================================================
-         CARA DONASI
+         HOW
          ===================================================== -->
 
     <section
-      class="section how-section"
       id="cara"
+      class="section how-section"
     >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span class="eyebrow">
-            MUDAH & CEPAT
-          </span>
+          <div class="eyebrow">
+            CARA DONASI
+          </div>
 
           <h2>
-            Cara berdonasi
+            Tiga langkah sederhana.
           </h2>
 
           <p>
-            Hanya beberapa langkah untuk ikut membantu.
+            Proses dibuat singkat agar kamu
+            dapat segera memberikan dukungan.
           </p>
 
         </div>
 
 
         <div class="how-grid">
+
 
           <article class="how-card">
 
@@ -890,7 +891,8 @@
             </h3>
 
             <p>
-              Tentukan nominal bantuan yang ingin Anda berikan.
+              Tentukan jumlah donasi yang
+              ingin kamu berikan.
             </p>
 
           </article>
@@ -907,7 +909,8 @@
             </h3>
 
             <p>
-              Tekan tombol lanjut untuk membuka halaman QRIS.
+              Tekan tombol lanjut untuk
+              menampilkan QRIS pembayaran.
             </p>
 
           </article>
@@ -920,67 +923,17 @@
             </div>
 
             <h3>
-              Scan QRIS
+              Bayar & simpan bukti
             </h3>
 
             <p>
-              Gunakan aplikasi pembayaran yang mendukung QRIS.
+              Lakukan pembayaran melalui
+              aplikasi pembayaran yang mendukung
+              QRIS dan simpan bukti transaksi.
             </p>
 
           </article>
 
-
-          <article class="how-card">
-
-            <div class="how-icon">
-              04
-            </div>
-
-            <h3>
-              Periksa pembayaran
-            </h3>
-
-            <p>
-              Pastikan transaksi berhasil pada aplikasi pembayaran
-              yang Anda gunakan.
-            </p>
-
-          </article>
-
-
-          <article class="how-card">
-
-            <div class="how-icon">
-              05
-            </div>
-
-            <h3>
-              Simpan bukti
-            </h3>
-
-            <p>
-              Simpan bukti transaksi untuk kebutuhan pencatatan.
-            </p>
-
-          </article>
-
-
-          <article class="how-card">
-
-            <div class="how-icon">
-              06
-            </div>
-
-            <h3>
-              Dana dicatat
-            </h3>
-
-            <p>
-              Donasi dapat dicatat dan diverifikasi pada sistem
-              administrasi kampanye.
-            </p>
-
-          </article>
 
         </div>
 
@@ -991,29 +944,31 @@
 
 
     <!-- =====================================================
-         GALERI
+         GALLERY
          ===================================================== -->
 
     <section
-      class="section gallery-section"
       id="galeri"
+      class="section gallery-section"
     >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span class="eyebrow">
-            GALERI KRAKATAU
-          </span>
+          <div class="eyebrow">
+            GALERI
+          </div>
 
           <h2>
-            Melihat Krakatau lebih dekat
+            Selat Sunda
+            dalam sorotan.
           </h2>
 
           <p>
-            Foto digunakan dari sumber yang dapat ditelusuri.
-            Kredit sumber dicantumkan pada bagian bawah halaman.
+            Dokumentasi dan visual digunakan
+            untuk membantu memahami kondisi
+            Gunung Anak Krakatau.
           </p>
 
         </div>
@@ -1022,63 +977,41 @@
         <div class="gallery-grid">
 
 
-          <!-- FOTO 1 — PEMPROV LAMPUNG / 2026 -->
-
           <figure class="gallery-item gallery-large">
 
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg"
-              alt="Gunung Anak Krakatau dan semburan lava pada September 2026"
+              alt="Erupsi dan lava fountain Gunung Anak Krakatau"
               loading="lazy"
             >
 
             <figcaption class="gallery-caption">
-              Aktivitas Gunung Anak Krakatau — September 2026
+              Aktivitas Gunung Anak Krakatau,
+              September 2026
             </figcaption>
 
           </figure>
 
-
-          <!-- FOTO 2 — COPERNICUS 2026 -->
 
           <figure class="gallery-item">
 
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Ash_plume_rises_from_Anak_Krakatau_Volcano%2C_Indonesia_%28Copernicus_2026-07-02%29.webp"
-              alt="Citra satelit abu Gunung Anak Krakatau 2026"
+              alt="Sebaran abu vulkanik Anak Krakatau"
               loading="lazy"
             >
 
             <figcaption class="gallery-caption">
-              Citra Copernicus Sentinel-2 — 2 Juli 2026
+              Sebaran abu vulkanik
             </figcaption>
 
           </figure>
 
 
-          <!-- FOTO 3 -->
-
           <figure class="gallery-item">
 
             <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau_erupts_in_Indonesia_%28Copernicus_2023-12-16%29.jpg"
-              alt="Citra satelit Gunung Anak Krakatau"
-              loading="lazy"
-            >
-
-            <figcaption class="gallery-caption">
-              Copernicus Sentinel-2
-            </figcaption>
-
-          </figure>
-
-
-          <!-- FOTO 4 -->
-
-          <figure class="gallery-item">
-
-            <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/Anak_Krakatau.jpg"
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg"
               alt="Gunung Anak Krakatau"
               loading="lazy"
             >
@@ -1090,21 +1023,20 @@
           </figure>
 
 
-          <!-- FOTO 5 -->
-
           <figure class="gallery-item">
 
             <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/New_eruption_at_Krakatoa_Volcano_ESA23939618.jpeg"
-              alt="Aktivitas erupsi Krakatau dari citra satelit ESA"
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Ash_plume_rises_from_Anak_Krakatau_Volcano%2C_Indonesia_%28Copernicus_2026-07-02%29.webp"
+              alt="Citra sebaran abu Anak Krakatau"
               loading="lazy"
             >
 
             <figcaption class="gallery-caption">
-              ESA / Copernicus
+              Citra satelit
             </figcaption>
 
           </figure>
+
 
         </div>
 
@@ -1115,29 +1047,30 @@
 
 
     <!-- =====================================================
-         TRANSPARANSI
+         TRANSPARENCY
          ===================================================== -->
 
     <section
-      class="section transparency-section"
       id="transparansi"
+      class="section transparency-section"
     >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span class="eyebrow">
+          <div class="eyebrow">
             TRANSPARANSI
-          </span>
+          </div>
 
           <h2>
-            Donasi harus bisa dipertanggungjawabkan.
+            Terbuka sejak awal.
           </h2>
 
           <p>
-            Sistem kampanye akan memisahkan transaksi yang masuk
-            dengan transaksi yang sudah diverifikasi.
+            Kepercayaan dibangun dengan informasi
+            yang jelas mengenai donasi dan
+            penggunaannya.
           </p>
 
         </div>
@@ -1149,33 +1082,34 @@
           <div class="transparency-card">
 
             <h3>
-              Prinsip pencatatan
+              Prinsip pengelolaan
             </h3>
-
 
             <ul class="transparency-list">
 
               <li>
-                Setiap transaksi dicatat berdasarkan data pembayaran.
+                Data donasi dicatat berdasarkan
+                transaksi yang diterima.
               </li>
 
               <li>
-                Transaksi yang belum terverifikasi tidak dihitung
-                sebagai donasi final.
+                Transaksi dapat dicocokkan dengan
+                bukti pembayaran.
               </li>
 
               <li>
-                Bukti pembayaran dapat digunakan untuk proses
-                pencocokan administrasi.
+                Rekap donasi hanya menghitung
+                transaksi yang telah diverifikasi.
               </li>
 
               <li>
-                Total donasi dihitung berdasarkan transaksi
-                yang telah diverifikasi.
+                Penggunaan dana perlu dicatat
+                dan didokumentasikan.
               </li>
 
               <li>
-                Penggunaan dana dapat dicatat secara terpisah.
+                Informasi resmi mengenai situasi
+                merujuk pada sumber pemerintah.
               </li>
 
             </ul>
@@ -1186,11 +1120,11 @@
           <div class="transparency-card">
 
             <h3>
-              Status kampanye
+              Catatan kampanye
             </h3>
 
-
             <div class="transparency-numbers">
+
 
               <div class="transparency-number">
 
@@ -1199,7 +1133,8 @@
                 </strong>
 
                 <span>
-                  Aktif untuk pembayaran
+                  Kanal pembayaran yang
+                  ditampilkan pada halaman.
                 </span>
 
               </div>
@@ -1208,11 +1143,12 @@
               <div class="transparency-number">
 
                 <strong>
-                  2026
+                  Manual
                 </strong>
 
                 <span>
-                  Periode kampanye
+                  Verifikasi transaksi dilakukan
+                  melalui pencocokan data.
                 </span>
 
               </div>
@@ -1221,11 +1157,12 @@
               <div class="transparency-number">
 
                 <strong>
-                  ✓
+                  Terbuka
                 </strong>
 
                 <span>
-                  Pencatatan transaksi
+                  Rekap dapat dikembangkan
+                  sesuai data transaksi.
                 </span>
 
               </div>
@@ -1234,18 +1171,21 @@
               <div class="transparency-number">
 
                 <strong>
-                  🔎
+                  Resmi
                 </strong>
 
                 <span>
-                  Verifikasi pembayaran
+                  Informasi vulkanik merujuk
+                  sumber pemerintah.
                 </span>
 
               </div>
+
 
             </div>
 
           </div>
+
 
         </div>
 
@@ -1256,55 +1196,60 @@
 
 
     <!-- =====================================================
-         TESTIMONIAL / PESAN
+         TESTIMONIAL
          ===================================================== -->
 
-    <section class="section testimonial-section">
+    <section
+      id="dukungan"
+      class="section testimonial-section"
+    >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span class="eyebrow">
-            PESAN KEPEDULIAN
-          </span>
+          <div class="eyebrow">
+            SUARA KEPEDULIAN
+          </div>
 
           <h2>
-            Kita mungkin jauh dari Krakatau,
-            tetapi kepedulian tidak mengenal jarak.
+            Karena kita tidak
+            sendirian.
           </h2>
+
+          <p>
+            Kepedulian tumbuh ketika lebih banyak
+            orang memilih untuk ikut membantu.
+          </p>
 
         </div>
 
 
         <div class="testimonial-grid">
 
+
           <article class="testimonial-card">
 
-            <div class="testimonial-quote">
-              “
-            </div>
-
             <p>
-              Tidak semua orang bisa berada di lokasi.
-              Tetapi setiap orang dapat mengambil bagian
-              dalam membantu sesama.
+              Semoga bantuan kecil dari banyak
+              orang dapat menjadi dukungan berarti
+              untuk keluarga yang membutuhkan.
             </p>
 
-            <div class="testimonial-person">
+            <div class="testimonial-author">
 
               <div class="testimonial-avatar">
-                K
+                A
               </div>
 
               <div>
 
                 <strong>
-                  Komunitas Peduli
+                  Relawan
                 </strong>
 
                 <span>
-                  Krakatau 2026
+                  Selat Sunda
                 </span>
 
               </div>
@@ -1316,17 +1261,13 @@
 
           <article class="testimonial-card">
 
-            <div class="testimonial-quote">
-              “
-            </div>
-
             <p>
-              Bantuan yang baik bukan hanya tentang jumlah,
-              tetapi tentang ketepatan sasaran dan
-              pertanggungjawaban.
+              Dalam kondisi sulit, yang paling
+              penting adalah saling menjaga dan
+              tidak berhenti peduli.
             </p>
 
-            <div class="testimonial-person">
+            <div class="testimonial-author">
 
               <div class="testimonial-avatar">
                 P
@@ -1339,7 +1280,7 @@
                 </strong>
 
                 <span>
-                  Kampanye 2026
+                  Indonesia
                 </span>
 
               </div>
@@ -1351,29 +1292,26 @@
 
           <article class="testimonial-card">
 
-            <div class="testimonial-quote">
-              “
-            </div>
-
             <p>
-              Bersama-sama menjaga manusia dan lingkungan
-              adalah bentuk kepedulian yang nyata.
+              Mari membantu sesuai kemampuan
+              dan tetap mengikuti informasi dari
+              sumber resmi.
             </p>
 
-            <div class="testimonial-person">
+            <div class="testimonial-author">
 
               <div class="testimonial-avatar">
-                I
+                K
               </div>
 
               <div>
 
                 <strong>
-                  Indonesia Peduli
+                  Komunitas
                 </strong>
 
                 <span>
-                  Selat Sunda
+                  Peduli Krakatau
                 </span>
 
               </div>
@@ -1381,6 +1319,7 @@
             </div>
 
           </article>
+
 
         </div>
 
@@ -1398,17 +1337,17 @@
 
       <div class="container">
 
-        <div class="share-inner">
+        <div class="share-card">
 
           <div class="share-content">
 
             <h2>
-              Ajak lebih banyak orang peduli.
+              Ajak lebih banyak orang.
             </h2>
 
             <p>
-              Satu tautan yang dibagikan dapat memperluas
-              jangkauan bantuan.
+              Satu tautan yang dibagikan dapat
+              memperluas jangkauan kepedulian.
             </p>
 
           </div>
@@ -1418,16 +1357,15 @@
 
             <button
               type="button"
-              class="share-button"
+              class="btn-primary"
               onclick="shareWhatsApp()"
             >
-              WhatsApp
+              Bagikan WhatsApp
             </button>
-
 
             <button
               type="button"
-              class="share-button"
+              class="btn-secondary"
               onclick="copyLink()"
             >
               Salin Link
@@ -1444,192 +1382,95 @@
 
 
     <!-- =====================================================
-         SUMBER RESMI
+         SOURCES
          ===================================================== -->
 
     <section
-      class="section sources-section"
       id="sumber"
+      class="section sources-section"
     >
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span class="eyebrow">
+          <div class="eyebrow">
             SUMBER INFORMASI
-          </span>
+          </div>
 
           <h2>
-            Cek informasi dari sumber resmi.
+            Rujukan resmi.
           </h2>
 
           <p>
-            Jangan mengandalkan kabar yang tidak jelas.
-            Gunakan sumber resmi berikut untuk perkembangan
-            aktivitas Gunung Anak Krakatau.
+            Gunakan sumber resmi untuk informasi
+            terbaru mengenai aktivitas vulkanik,
+            cuaca, dan kondisi wilayah.
           </p>
 
         </div>
 
 
-        <div class="sources-grid">
+        <div class="sources-card">
 
+          <div class="sources-list">
 
-          <article class="source-card">
-
-            <div class="source-icon">
-              🏛️
-            </div>
-
-            <h3>
-              Badan Geologi
-            </h3>
-
-            <p>
-              Informasi aktivitas gunung api dan evaluasi
-              resmi dari Badan Geologi Kementerian ESDM.
-            </p>
 
             <a
               href="https://geologi.esdm.go.id/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Buka Badan Geologi →
+              Badan Geologi
             </a>
 
-          </article>
-
-
-          <article class="source-card">
-
-            <div class="source-icon">
-              🌦️
-            </div>
-
-            <h3>
-              BMKG
-            </h3>
-
-            <p>
-              Informasi cuaca, gempa, tsunami dan pemantauan
-              kondisi laut Indonesia.
-            </p>
 
             <a
               href="https://www.bmkg.go.id/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Buka BMKG →
+              BMKG
             </a>
 
-          </article>
-
-
-          <article class="source-card">
-
-            <div class="source-icon">
-              🚨
-            </div>
-
-            <h3>
-              BNPB
-            </h3>
-
-            <p>
-              Informasi kebencanaan dan perkembangan
-              penanganan bencana di Indonesia.
-            </p>
 
             <a
               href="https://bnpb.go.id/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Buka BNPB →
+              BNPB
             </a>
 
-          </article>
-
-
-          <article class="source-card">
-
-            <div class="source-icon">
-              🗺️
-            </div>
-
-            <h3>
-              MAGMA Indonesia
-            </h3>
-
-            <p>
-              Portal informasi kebencanaan geologi dan
-              aktivitas gunung api Indonesia.
-            </p>
 
             <a
               href="https://magma.esdm.go.id/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Buka MAGMA →
+              MAGMA Indonesia
             </a>
 
-          </article>
-
-
-          <article class="source-card">
-
-            <div class="source-icon">
-              🏢
-            </div>
-
-            <h3>
-              Pemerintah Provinsi Lampung
-            </h3>
-
-            <p>
-              Informasi pemerintah daerah mengenai kondisi
-              dan perkembangan Gunung Anak Krakatau.
-            </p>
 
             <a
               href="https://www.lampungprov.go.id/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Buka Pemprov Lampung →
+              Pemerintah Provinsi Lampung
             </a>
 
-          </article>
-
-
-          <article class="source-card">
-
-            <div class="source-icon">
-              🛰️
-            </div>
-
-            <h3>
-              Copernicus
-            </h3>
-
-            <p>
-              Data pengamatan satelit yang digunakan untuk
-              memantau perubahan lingkungan dan aktivitas vulkanik.
-            </p>
 
             <a
-              href="https://www.copernicus.eu/"
+              href="https://volcano.si.edu/volcano.cfm?vn=262000"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Buka Copernicus →
+              Smithsonian GVP
             </a>
 
-          </article>
+
+          </div>
 
         </div>
 
@@ -1640,252 +1481,191 @@
 
 
     <!-- =====================================================
-         KREDIT FOTO
+         PHOTO CREDIT
          ===================================================== -->
 
-    <section class="photo-credit">
+    <div class="photo-credit">
 
       <div class="container">
 
-        <p>
+        Foto utama:
+        Wikimedia Commons /
+        dokumentasi aktivitas Gunung Anak Krakatau 2026.
+        <br>
 
-          <strong>Kredit foto:</strong>
-
-          Foto aktivitas Gunung Anak Krakatau September 2026
-          bersumber dari Pemprov Lampung melalui Wikimedia Commons.
-          Citra satelit menggunakan materi Copernicus Sentinel.
-          Foto lain berasal dari Wikimedia Commons sesuai
-          lisensi masing-masing.
-
-        </p>
+        Foto satelit:
+        Copernicus Sentinel / Wikimedia Commons.
 
       </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer class="site-footer">
-
-      <div class="container">
-
-        <div class="footer-grid">
-
-
-          <div class="footer-brand">
-
-            <a
-              href="#top"
-              class="logo"
-            >
-
-              <div class="logo-mark">
-                🌋
-              </div>
-
-              <div>
-                Bantu <span>Krakatau</span>
-              </div>
-
-            </a>
-
-
-            <p>
-              Kampanye kepedulian untuk mendukung masyarakat,
-              lingkungan dan kebutuhan kemanusiaan di sekitar
-              kawasan Selat Sunda.
-            </p>
-
-          </div>
-
-
-          <div class="footer-column">
-
-            <h4>
-              Navigasi
-            </h4>
-
-            <ul class="footer-links">
-
-              <li>
-                <a href="#tentang">
-                  Tentang
-                </a>
-              </li>
-
-              <li>
-                <a href="#dampak">
-                  Dampak
-                </a>
-              </li>
-
-              <li>
-                <a href="#kebutuhan">
-                  Kebutuhan
-                </a>
-              </li>
-
-              <li>
-                <a href="#galeri">
-                  Galeri
-                </a>
-              </li>
-
-              <li>
-                <a href="#transparansi">
-                  Transparansi
-                </a>
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="footer-column">
-
-            <h4>
-              Informasi
-            </h4>
-
-            <ul class="footer-links">
-
-              <li>
-                <a href="#sumber">
-                  Sumber Resmi
-                </a>
-              </li>
-
-              <li>
-                <a href="#cara">
-                  Cara Donasi
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="https://geologi.esdm.go.id/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Badan Geologi
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="https://www.bmkg.go.id/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  BMKG
-                </a>
-              </li>
-
-            </ul>
-
-          </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-          <div>
-            © 2026 <strong>Bantu Krakatau</strong>
-          </div>
-
-          <div>
-            Dibangun untuk kepedulian.
-          </div>
-
-        </div>
-
-      </div>
-
-    </footer>
-
-
-
-    <!-- =====================================================
-         STICKY DONATION
-         ===================================================== -->
-
-    <div class="sticky-donation">
-
-      <div class="sticky-donation-text">
-
-        <strong>
-          Mari bantu Krakatau 2026
-        </strong>
-
-        <span>
-          Sedikit dari kita berarti bagi mereka.
-        </span>
-
-      </div>
-
-
-      <button
-        type="button"
-        onclick="openDonation()"
-      >
-        Donasi
-      </button>
 
     </div>
 
 
+  </main>
 
-    <!-- =====================================================
-         DONATION MODAL
-         ===================================================== -->
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+          <a
+            href="#tentang"
+            class="logo"
+          >
+
+            <span class="logo-mark">
+              ♥
+            </span>
+
+            <span>
+              Bantu Krakatau
+            </span>
+
+          </a>
+
+
+          <p>
+            Kampanye kepedulian masyarakat
+            untuk mendukung kebutuhan dan
+            solidaritas di sekitar Selat Sunda.
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="#tentang">
+            Tentang
+          </a>
+
+          <a href="#donasi">
+            Donasi
+          </a>
+
+          <a href="#situasi">
+            Situasi
+          </a>
+
+          <a href="#transparansi">
+            Transparansi
+          </a>
+
+          <a href="#sumber">
+            Sumber
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-disclaimer">
+
+        Situs kampanye ini bukan kanal resmi
+        PVMBG, BMKG, BNPB, Pemerintah Provinsi
+        Lampung, atau lembaga pemerintah lainnya.
+        Informasi kebencanaan pada halaman ini
+        ditampilkan sebagai rujukan dan tetap
+        harus dikonfirmasi melalui sumber resmi.
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       STICKY DONATION
+       ===================================================== -->
+
+  <div class="sticky-donation">
+
+    <div class="sticky-donation-text">
+
+      <strong>
+        Bantu Krakatau 2026
+      </strong>
+
+      <span>
+        Satu kepedulian berarti.
+      </span>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="btn-primary"
+      onclick="openDonation()"
+    >
+      Donasi
+    </button>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       DONATION MODAL
+       ===================================================== -->
+
+  <div
+    id="donationModal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-backdrop"></div>
+
 
     <div
-      class="modal"
-      id="donationModal"
-      aria-hidden="true"
+      class="modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="donationModalTitle"
     >
 
-      <div
-        class="modal-backdrop"
+      <button
+        type="button"
+        class="modal-close"
         onclick="closeDonation()"
-      ></div>
-
-
-      <div
-        class="modal-content"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="donationTitle"
+        aria-label="Tutup"
       >
-
-        <button
-          class="modal-close"
-          type="button"
-          onclick="closeDonation()"
-          aria-label="Tutup"
-        >
-          ×
-        </button>
+        ×
+      </button>
 
 
-        <span class="eyebrow">
+      <div class="modal-inner">
+
+        <div class="eyebrow">
           DONASI
-        </span>
+        </div>
 
 
-        <h2 id="donationTitle">
-          Pilih nominal bantuan
+        <h2 id="donationModalTitle">
+          Pilih nominal bantuan.
         </h2>
 
 
         <p>
-          Pilih nominal sebelum melanjutkan ke QRIS.
+          Tentukan nominal yang ingin kamu
+          donasikan sebelum melanjutkan
+          ke halaman QRIS.
         </p>
 
 
@@ -1893,6 +1673,7 @@
 
           <button
             type="button"
+            class="selected"
             onclick="selectAmount(this, 10000)"
           >
             Rp10.000
@@ -1939,7 +1720,7 @@
         <div class="selected-amount">
 
           <span>
-            Nominal
+            Donasi terpilih
           </span>
 
           <strong id="modalSelectedAmount">
@@ -1952,12 +1733,27 @@
         <div class="donation-action">
 
           <button
-            class="btn-primary"
             type="button"
+            class="btn-primary"
             onclick="openQRPage()"
           >
-            Buka QRIS
+            Tampilkan QRIS
           </button>
+
+        </div>
+
+
+        <div class="donation-note">
+
+          <span>
+            ♥
+          </span>
+
+          <span>
+            Setelah pembayaran, simpan bukti
+            transaksi untuk keperluan pencatatan
+            dan verifikasi donasi.
+          </span>
 
         </div>
 
@@ -1965,131 +1761,129 @@
 
     </div>
 
+  </div>
 
 
-    <!-- =====================================================
-         QRIS PAGE
-         ===================================================== -->
 
-    <section
-      id="qrisPage"
-      aria-hidden="true"
-    >
+  <!-- =====================================================
+       QRIS PAGE
+       ===================================================== -->
 
-      <div class="qris-page">
+  <section
+    id="qrisPage"
+    aria-hidden="true"
+  >
 
-        <button
-          class="modal-close"
-          type="button"
-          onclick="closeQRPage()"
-          aria-label="Tutup QRIS"
-        >
-          ×
-        </button>
+    <div class="qris-page">
+
+      <!-- WRAPPER INI PENTING -->
+      <div class="qris-page-inner">
 
 
-        <span class="eyebrow">
-          PEMBAYARAN QRIS
-        </span>
+        <div class="qris-topbar">
+
+          <span>
+            Pembayaran QRIS
+          </span>
+
+          <button
+            type="button"
+            class="qris-close"
+            onclick="closeQRPage()"
+            aria-label="Tutup QRIS"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <div class="eyebrow">
+          LANGKAH TERAKHIR
+        </div>
 
 
         <h2>
-          Donasi melalui QRIS
+          Scan QRIS.
         </h2>
 
 
-        <p>
-          Scan kode QR berikut menggunakan aplikasi
-          pembayaran yang mendukung QRIS.
+        <p class="qris-page-description">
+          Gunakan aplikasi pembayaran yang
+          mendukung QRIS untuk menyelesaikan
+          donasi kamu.
         </p>
 
 
         <div class="qris-amount">
 
-          <span>
-            Nominal:
-          </span>
-
-          <strong id="qrisAmount">
+          Donasi:
+          <span id="qrisAmount">
             Rp10.000
-          </strong>
-
-        </div>
-
-
-        <!-- =================================================
-             QRIS TERBARU
-             FILE: IMG_5629.jpeg
-             ================================================= -->
-
-        <img
-          src="IMG_5629.jpeg"
-          alt="QRIS Saku Peduli Sesama"
-          class="qris-image"
-        >
-
-
-        <div class="qris-info">
-
-          <strong>
-            SAKU PEDULI SESAMA
-          </strong>
-
-          <span>
-            NMID: ID1026584497741
-          </span>
-
-          <small>
-            A01
-          </small>
-
-        </div>
-
-
-        <div class="qris-warning">
-
-          <strong>
-            Pastikan nama penerima sesuai:
-          </strong>
-
-          <span>
-            SAKU PEDULI SESAMA
           </span>
 
         </div>
 
 
-        <button
-          class="qris-back"
-          type="button"
-          onclick="closeQRPage()"
-        >
-          Kembali ke halaman donasi
-        </button>
+        <div class="qris-card">
+
+          <img
+            src="IMG_5629.jpeg"
+            alt="QRIS Saku Peduli Sesama"
+            class="qris-image"
+          >
+
+        </div>
+
+
+        <div class="qris-instruction">
+
+          <strong>
+            Setelah melakukan pembayaran
+          </strong>
+
+          <p>
+            Pastikan nominal transaksi sesuai
+            dengan nominal donasi yang dipilih.
+            Simpan bukti pembayaran sebagai
+            bukti transaksi.
+          </p>
+
+        </div>
+
+
+        <p class="qris-warning">
+          QRIS digunakan sebagai kanal pembayaran.
+          Verifikasi donasi dilakukan melalui
+          pencocokan transaksi dan pencatatan
+          administrasi.
+        </p>
+
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
 
-    <!-- =====================================================
-         TOAST
-         ===================================================== -->
+  <!-- =====================================================
+       TOAST
+       ===================================================== -->
 
-    <div
-      id="toast"
-      role="status"
-      aria-live="polite"
-    ></div>
-
-
-  </main>
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
 
 
-  <!-- =======================================================
-       SCRIPT
-       ======================================================= -->
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
   <script src="script.js"></script>
 
