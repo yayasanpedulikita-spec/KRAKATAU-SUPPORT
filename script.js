@@ -1,514 +1,129 @@
-/* =========================================================
-   BANTU ANAK KRAKATAU 2026
-   FINAL JAVASCRIPT
-   ========================================================= */
+(() => {
+  "use strict";
 
+  const MIN = 10000;
+  let selectedAmount = 10000;
+  const $ = (s, root = document) => root.querySelector(s);
+  const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
-/* ================= ELEMENT ================= */
-
-const donationModal =
-  document.getElementById("donationModal");
-
-const selectedAmount =
-  document.getElementById("selectedAmount");
-
-const modalSelectedAmount =
-  document.getElementById("modalSelectedAmount");
-
-const qrisPage =
-  document.getElementById("qrisPage");
-
-const qrisAmount =
-  document.getElementById("qrisAmount");
-
-const toast =
-  document.getElementById("toast");
-
-
-/* ================= STATE ================= */
-
-let currentAmount = 10000;
-
-let toastTimer;
-
-
-/* ================= FORMAT RUPIAH ================= */
-
-function formatRupiah(amount) {
-
-  return "Rp" +
-    Number(amount).toLocaleString("id-ID");
-
-}
-
-
-/* ================= UPDATE NOMINAL ================= */
-
-function updateDonationAmount() {
-
-  const formatted =
-    formatRupiah(currentAmount);
-
-
-  if (selectedAmount) {
-
-    selectedAmount.textContent =
-      formatted;
-
+  function rupiah(n) {
+    return "Rp" + Number(n).toLocaleString("id-ID");
   }
 
-
-  if (modalSelectedAmount) {
-
-    modalSelectedAmount.textContent =
-      formatted;
-
+  function track(name, params = {}) {
+    // Siap untuk Meta Pixel. Jika fbq sudah dipasang, event akan dikirim.
+    try {
+      if (typeof window.fbq === "function") window.fbq("trackCustom", name, params);
+    } catch (_) {}
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event: name, ...params});
   }
 
-
-  if (qrisAmount) {
-
-    qrisAmount.textContent =
-      formatted;
-
+  function toast(message) {
+    const el = $("#toast");
+    if (!el) return;
+    el.textContent = message;
+    el.classList.add("show");
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => el.classList.remove("show"), 2800);
   }
 
-}
+  function openModal(id) {
+    const m = document.getElementById(id);
+    if (!m) return;
+    m.classList.add("open");
+    m.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
 
+  function closeModal(m) {
+    const modal = typeof m === "string" ? document.getElementById(m) : m;
+    if (!modal) return;
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    if (!document.querySelector(".modal.open")) document.body.style.overflow = "";
+  }
 
-/* ================= DONATION MODAL ================= */
+  function chooseAmount(amount, buttons) {
+    selectedAmount = Number(amount);
+    buttons.forEach(b => b.classList.toggle("active", Number(b.dataset.amount) === selectedAmount));
+  }
 
-function openDonation() {
-
-  if (!donationModal) return;
-
-
-  donationModal.classList.add("active");
-
-  donationModal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-
-  document.body.style.overflow =
-    "hidden";
-
-
-  updateDonationAmount();
-
-}
-
-
-function closeDonation() {
-
-  if (!donationModal) return;
-
-
-  donationModal.classList.remove("active");
-
-  donationModal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-
-  document.body.style.overflow =
-    "";
-
-}
-
-
-/* ================= SELECT AMOUNT ================= */
-
-function selectAmount(button, amount) {
-
-  currentAmount =
-    Number(amount) || 10000;
-
-
-  updateDonationAmount();
-
-
-  const buttons =
-    document.querySelectorAll(
-      ".amount-grid button"
-    );
-
-
-  buttons.forEach(function(item) {
-
-    item.classList.remove(
-      "selected"
-    );
-
+  const allAmountButtons = $$("[data-amount]");
+  allAmountButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      chooseAmount(btn.dataset.amount, allAmountButtons);
+      const modalInput = $("#modalAmount");
+      const mainInput = $("#customAmount");
+      if (modalInput) modalInput.value = "";
+      if (mainInput) mainInput.value = "";
+      track("DonateAmountSelected", {amount: selectedAmount});
+    });
   });
 
+  $$("[data-open-donate]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      openModal("donationModal");
+      track("DonateInitiated");
+    });
+  });
 
-  if (button) {
-
-    button.classList.add(
-      "selected"
-    );
-
+  function readAmount(inputId) {
+    const raw = Number($(inputId)?.value || 0);
+    if (raw >= MIN) return raw;
+    return selectedAmount >= MIN ? selectedAmount : 0;
   }
 
-}
-
-
-/* ================= QRIS PAGE ================= */
-
-function openQRPage() {
-
-  if (currentAmount <= 0) {
-
-    currentAmount = 10000;
-
-  }
-
-
-  updateDonationAmount();
-
-
-  if (donationModal) {
-
-    donationModal.classList.remove(
-      "active"
-    );
-
-    donationModal.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-  }
-
-
-  if (qrisPage) {
-
-    qrisPage.classList.add(
-      "active"
-    );
-
-    qrisPage.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-  }
-
-
-  document.body.style.overflow =
-    "hidden";
-
-}
-
-
-function closeQRPage() {
-
-  if (!qrisPage) return;
-
-
-  qrisPage.classList.remove(
-    "active"
-  );
-
-  qrisPage.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-
-  document.body.style.overflow =
-    "";
-
-}
-
-
-/* ================= TOAST ================= */
-
-function showToast(message) {
-
-  const toastElement =
-    document.getElementById("toast");
-
-
-  if (!toastElement) return;
-
-
-  toastElement.textContent =
-    message;
-
-
-  toastElement.classList.add(
-    "show"
-  );
-
-
-  clearTimeout(
-    toastTimer
-  );
-
-
-  toastTimer =
-    setTimeout(function() {
-
-      toastElement.classList.remove(
-        "show"
-      );
-
-    }, 3200);
-
-}
-
-
-/* ================= COPY LINK ================= */
-
-function copyLink() {
-
-  const url =
-    window.location.href;
-
-
-  if (
-    navigator.clipboard &&
-    window.isSecureContext
-  ) {
-
-    navigator.clipboard
-      .writeText(url)
-      .then(function() {
-
-        showToast(
-          "Link berhasil disalin ❤️"
-        );
-
-      })
-      .catch(function() {
-
-        showToast(
-          "Silakan salin alamat halaman ini."
-        );
-
-      });
-
-    return;
-
-  }
-
-
-  showToast(
-    "Silakan salin alamat halaman ini."
-  );
-
-}
-
-
-/* ================= WHATSAPP ================= */
-
-function shareWhatsApp() {
-
-  const text =
-    "Mari ikut peduli terhadap Gunung Anak Krakatau dan masyarakat yang membutuhkan dukungan pada 2026 ❤️\n\n" +
-    "Bantu Krakatau 2026 — Peduli Selat Sunda\n\n" +
-    window.location.href;
-
-
-  const whatsapp =
-    "https://wa.me/?text=" +
-    encodeURIComponent(text);
-
-
-  window.open(
-    whatsapp,
-    "_blank",
-    "noopener,noreferrer"
-  );
-
-}
-
-
-/* ================= ESC KEY ================= */
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (event.key !== "Escape") {
+  function goToQRIS(amount) {
+    if (amount < MIN) {
+      toast("Minimal donasi Rp10.000");
       return;
     }
-
-
-    if (
-      qrisPage &&
-      qrisPage.classList.contains(
-        "active"
-      )
-    ) {
-
-      closeQRPage();
-
-      return;
-
-    }
-
-
-    if (
-      donationModal &&
-      donationModal.classList.contains(
-        "active"
-      )
-    ) {
-
-      closeDonation();
-
-    }
-
+    selectedAmount = amount;
+    $("#qrisAmount").textContent = rupiah(amount);
+    closeModal("donationModal");
+    openModal("qrisModal");
+    track("QRISViewed", {amount});
   }
-);
 
+  const mainContinue = $("[data-continue]");
+  if (mainContinue) mainContinue.addEventListener("click", () => goToQRIS(readAmount("#customAmount")));
 
-/* ================= BACKDROP ================= */
+  const modalContinue = $("[data-modal-continue]");
+  if (modalContinue) modalContinue.addEventListener("click", () => goToQRIS(readAmount("#modalAmount")));
 
-if (donationModal) {
-
-  donationModal.addEventListener(
-    "click",
-    function(event) {
-
-      if (
-        event.target.classList.contains(
-          "modal-backdrop"
-        )
-      ) {
-
-        closeDonation();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* ================= IMAGE ERROR ================= */
-
-document
-  .querySelectorAll("img")
-  .forEach(function(img) {
-
-    img.addEventListener(
-      "error",
-      function() {
-
-        this.style.opacity =
-          "0";
-
-
-        if (this.parentElement) {
-
-          this.parentElement.style.background =
-            "linear-gradient(135deg,#25372f,#111916)";
-
-        }
-
-      }
-    );
-
+  $$("[data-close]").forEach(btn => {
+    btn.addEventListener("click", () => closeModal(btn.closest(".modal")));
   });
 
-
-/* ================= ACTIVE NAV ================= */
-
-const navLinks =
-  document.querySelectorAll(
-    ".desktop-nav a"
-  );
-
-const sections =
-  document.querySelectorAll(
-    "section[id]"
-  );
-
-
-function updateActiveNav() {
-
-  let current = "";
-
-
-  sections.forEach(function(section) {
-
-    if (
-      section.id === "qrisPage"
-    ) {
-      return;
-    }
-
-
-    const top =
-      section.offsetTop - 180;
-
-
-    if (
-      window.scrollY >= top
-    ) {
-
-      current =
-        section.getAttribute(
-          "id"
-        );
-
-    }
-
+  $$(".modal").forEach(modal => {
+    modal.addEventListener("click", e => {
+      if (e.target === modal) closeModal(modal);
+    });
   });
 
-
-  navLinks.forEach(function(link) {
-
-    link.style.opacity =
-      ".75";
-
-
-    if (
-      link.getAttribute(
-        "href"
-      ) === "#" + current
-    ) {
-
-      link.style.opacity =
-        "1";
-
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      const open = $(".modal.open");
+      if (open) closeModal(open);
     }
-
   });
 
-}
+  const paid = $("[data-paid]");
+  if (paid) paid.addEventListener("click", () => {
+    track("DonationCompleted", {amount: selectedAmount, method: "QRIS", recipient: "SAKU PEDULI SESAMA"});
+    closeModal("qrisModal");
+    openModal("thanksModal");
+  });
 
+  // PageView: siap dipasangkan dengan Meta Pixel tanpa mengunci ID pixel di source.
+  track("LandingPageView");
 
-window.addEventListener(
-  "scroll",
-  updateActiveNav,
-  {
-    passive: true
-  }
-);
-
-
-/* ================= INITIAL STATE ================= */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
-
-    currentAmount =
-      10000;
-
-
-    updateDonationAmount();
-
-
-    updateActiveNav();
-
-  }
-);
+  // Jika ada gambar eksternal yang gagal, jangan biarkan area menjadi ikon gambar rusak.
+  // CSS background tetap menyisakan tampilan visual; tidak ada <img> eksternal untuk foto.
+  window.addEventListener("error", e => {
+    if (e.target && e.target.tagName === "IMG" && e.target.classList.contains("qris")) {
+      toast("QRIS gagal dimuat. Periksa file assets/qris.jpeg.");
+    }
+  }, true);
+})();
