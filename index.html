@@ -756,3 +756,275 @@
   </div>
 
 </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+      <b>Yayasan Membantu Bersama</b>
+
+      <p>
+        Bersama membantu mereka yang membutuhkan.
+        Bukan kanal resmi PVMBG/BMKG/BNPB.
+      </p>
+    </div>
+
+    <div class="footer-links">
+
+      <a
+        href="https://geologi.esdm.go.id/"
+        target="_blank"
+        rel="noopener">
+        Badan Geologi
+      </a>
+
+      <a
+        href="https://www.bmkg.go.id/"
+        target="_blank"
+        rel="noopener">
+        BMKG
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<div class="sticky-cta">
+
+  <button data-open-donate>
+    ❤ Donasi Sekarang
+  </button>
+
+</div>
+
+
+<!-- POPUP NOMINAL -->
+
+<div
+  class="modal"
+  id="donationModal"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="donationTitle">
+
+  <div class="modal-panel">
+
+    <button
+      class="close"
+      data-close
+      aria-label="Tutup">
+      ×
+    </button>
+
+    <span class="eyebrow">
+      LANGKAH 1 DARI 2
+    </span>
+
+    <h2 id="donationTitle">
+      Pilih nominal donasi
+    </h2>
+
+    <p class="modal-sub">
+      Pilih sesuai kemampuan.
+      Minimal Rp10.000.
+    </p>
+
+    <div class="amount-grid modal-grid">
+
+      <button type="button" data-amount="10000">
+        Rp10.000
+      </button>
+
+      <button type="button" data-amount="25000">
+        Rp25.000
+      </button>
+
+      <button type="button" data-amount="50000">
+        Rp50.000
+      </button>
+
+      <button type="button" data-amount="100000">
+        Rp100.000
+      </button>
+
+      <button type="button" data-amount="250000">
+        Rp250.000
+      </button>
+
+      <button type="button" data-amount="500000">
+        Rp500.000
+      </button>
+
+    </div>
+
+    <label
+      class="custom-label"
+      for="modalAmount">
+      Atau masukkan nominal
+    </label>
+
+    <div class="custom-input">
+
+      <span>Rp</span>
+
+      <input
+        id="modalAmount"
+        type="number"
+        min="10000"
+        inputmode="numeric"
+        placeholder="10.000">
+
+    </div>
+
+    <button
+      class="btn btn-primary full"
+      data-modal-continue>
+      Lanjut ke QRIS →
+    </button>
+
+    <p class="micro">
+      Nama penerima QRIS:
+      <b>SAKU PEDULI SESAMA</b>
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- POPUP QRIS -->
+
+<div
+  class="modal"
+  id="qrisModal"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="qrisTitle">
+
+  <div class="modal-panel qris-panel">
+
+    <button
+      class="close"
+      data-close
+      aria-label="Tutup">
+      ×
+    </button>
+
+    <span class="eyebrow">
+      LANGKAH 2 DARI 2
+    </span>
+
+    <h2 id="qrisTitle">
+      Bayar dengan QRIS
+    </h2>
+
+    <div class="pay-amount">
+      Nominal pilihan:
+      <b id="qrisAmount">Rp10.000</b>
+    </div>
+
+    <img
+      class="qris"
+      src="IMG_5690.jpeg"
+      width="874"
+      height="1240"
+      alt="QRIS SAKU PEDULI SESAMA">
+
+    <ol class="pay-steps">
+
+      <li>
+        Buka aplikasi pembayaran yang mendukung QRIS.
+      </li>
+
+      <li>
+        Scan QRIS dan masukkan nominal pilihanmu.
+      </li>
+
+      <li>
+        Periksa nama penerima
+        <b>SAKU PEDULI SESAMA</b>,
+        lalu bayar.
+      </li>
+
+    </ol>
+
+    <button
+      class="btn btn-primary full"
+      data-paid>
+      ✓ Saya Sudah Berdonasi
+    </button>
+
+    <p class="micro">
+      Jika nama penerima tidak sesuai,
+      jangan lanjutkan pembayaran.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- POPUP TERIMA KASIH -->
+
+<div
+  class="modal"
+  id="thanksModal"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true">
+
+  <div class="modal-panel center">
+
+    <button
+      class="close"
+      data-close
+      aria-label="Tutup">
+      ×
+    </button>
+
+    <div class="thanks-icon">
+      ❤
+    </div>
+
+    <h2>
+      Terima kasih.
+    </h2>
+
+    <p class="modal-sub">
+      Terima kasih telah memilih untuk peduli.
+      Dukunganmu berarti bagi mereka yang membutuhkan.
+    </p>
+
+    <button
+      class="btn btn-primary full"
+      data-close>
+      Selesai
+    </button>
+
+  </div>
+
+</div>
+
+
+<div
+  class="toast"
+  id="toast"
+  role="status"
+  aria-live="polite">
+</div>
+
+
+<!-- JANGAN DIHAPUS -->
+<script src="script.js"></script>
+
+</body>
+</html>
