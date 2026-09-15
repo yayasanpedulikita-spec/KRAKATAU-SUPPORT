@@ -63,3 +63,45 @@
   background-size:cover;
   background-position:center;
 }
+/* =========================================================
+   FOTO DOKUMENTASI
+   Jangan ubah panel/layout lainnya.
+   ========================================================= */
+
+.photo-food {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050104-N-9293K-436_Indonesian_children_wait_for_food_and_humanitarian_relief_at_Sultan_Iskandar_Muda_Air_Force_Base_in_Banda_Aceh,_Sumatra,_Indonesia.jpg");
+}
+
+.photo-water {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050111-N-9885M-129_Indonesian_kids_carry_bottles_of_drinking_water_in_a_wheelbarrow_after_receiving_it_from_U.S._Sailors_and_Marines_who_offloaded_relief_supplies_from_a_Landing_Craft_Air_Cushion_(LCAC).jpg");
+}
+
+.photo-mask {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Mask_a_child.jpg");
+}
+
+.photo-supplies {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050116-F-4884R-026_Air_crew_aboard_a_Marine_Corps_CH-46E_Sea_Knight_helicopter_unload_humanitarian_aid_and_disaster_relief_supplies_in_a_remote_region_on_the_island_of_Sumatra,_Indonesia.jpg");
+}
+
+.photo-logistic {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_091011-M-4689B-053_U.S._service_members_unload_ShelterBoxes_during_a_humanitarian_assistance_and_disaster_relief_operation_in_the_village_of_Hula_Banda,_Indonesia.jpg");
+}
+
+.photo-emergency {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Humanitarian_aid_DVIDS229387.jpg");
+}
+
+/* Foto besar bagian INFORMASI */
+.feature-photo {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg");
+}
+
+/* Galeri */
+.photo-2026 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg");
+}
+
+.photo-2022 {
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050106-N-4166B-378_Children_in_Lamno,_Sumatra,_Indonesia_are_all_smiles_after_receiving_food_and_water_flown-in_by_U.S._Navy_and_foreign_military_helicopters.jpg");
+}
