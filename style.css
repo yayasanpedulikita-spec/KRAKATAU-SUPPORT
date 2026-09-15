@@ -1,1400 +1,1471 @@
+/* =========================================================
+   YAYASAN MEMBANTU BERSAMA
+   PREMIUM STYLE — BAGIAN 1/2
+   ========================================================= */
+
 :root{
-–navy:#082844;
-–navy2:#0d3b5e;
-–blue:#17608f;
-–blue2:#2c7cab;
-–red:#ff3f3f;
-–red2:#e82e38;
-–ink:#102337;
-–muted:#647588;
-–line:#dce5ec;
-–soft:#f4f8fb;
-–white:#fff;
-–shadow:0 24px 70px rgba(8,40,68,.12);
-–shadow2:0 14px 35px rgba(8,40,68,.09);
-–radius:24px;
+  --navy:#082844;
+  --navy-2:#0d3b5e;
+  --blue:#17608f;
+  --blue-2:#2c7cab;
+  --red:#e9363f;
+  --red-dark:#c92531;
+  --cream:#fffaf5;
+  --white:#ffffff;
+  --text:#162536;
+  --muted:#667585;
+  --line:#e5ebf0;
+  --soft:#f4f7fa;
+  --shadow:0 18px 50px rgba(8,40,68,.10);
+  --shadow-lg:0 28px 80px rgba(8,40,68,.16);
+  --radius:24px;
+  --radius-sm:16px;
+  --container:1180px;
 }
 
 *{
-box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:Inter,Arial,sans-serif;
-color:var(–ink);
-background:#fff;
-line-height:1.65;
--webkit-font-smoothing:antialiased;
+  margin:0;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
 }
 
+body,
 button,
 input{
-font:inherit;
-}
-
-button{
-cursor:pointer;
-}
-
-a{
-color:inherit;
-text-decoration:none;
+  font-family:inherit;
 }
 
 img{
-max-width:100%;
-display:block;
+  max-width:100%;
+  display:block;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
 .container{
-width:min(1180px,calc(100% - 40px));
-margin:auto;
+  width:min(calc(100% - 40px),var(--container));
+  margin-inline:auto;
 }
 
-/* ================= HEADER ================= */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .site-header{
-position:sticky;
-top:0;
-z-index:100;
-background:rgba(255,255,255,.94);
-border-bottom:1px solid rgba(220,229,236,.8);
-backdrop-filter:blur(16px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(8,40,68,.08);
 }
 
 .header-inner{
-min-height:78px;
-display:flex;
-align-items:center;
-gap:28px;
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:12px;
-min-width:0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
 }
 
 .brand-logo{
-width:48px;
-height:48px;
-object-fit:contain;
-flex:none;
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  flex:none;
 }
 
-.brand-copy{
-display:flex;
-flex-direction:column;
-line-height:1.05;
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
 }
 
-.brand-copy small{
-font-size:8px;
-font-weight:800;
-letter-spacing:.18em;
-color:var(–blue);
+.brand-text strong{
+  color:var(--navy);
+  font-size:15px;
+  font-weight:850;
 }
 
-.brand-copy strong{
-font-size:16px;
-font-weight:900;
-color:var(–navy);
+.brand-text span{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:600;
 }
 
-.brand-copy strong i{
-color:var(–red);
-font-style:normal;
+.nav{
+  display:flex;
+  align-items:center;
+  gap:26px;
 }
 
-.brand-copy em{
-margin-top:4px;
-font-size:8px;
-font-style:normal;
-font-weight:600;
-color:var(–muted);
+.nav a{
+  color:#415466;
+  font-size:14px;
+  font-weight:700;
+  transition:.25s ease;
 }
 
-.desktop-nav{
-display:flex;
-align-items:center;
-gap:28px;
-margin-left:auto;
+.nav a:hover{
+  color:var(--blue);
 }
 
-.desktop-nav a{
-font-size:13px;
-font-weight:700;
-color:#53677a;
-transition:.2s ease;
+.header-donate{
+  padding:12px 20px;
+  border-radius:999px;
+  background:var(--red);
+  color:#fff !important;
+  box-shadow:0 10px 24px rgba(233,54,63,.22);
 }
 
-.desktop-nav a:hover{
-color:var(–navy);
+.header-donate:hover{
+  color:#fff !important;
+  background:var(--red-dark);
+  transform:translateY(-1px);
 }
 
-.header-cta{
-border:0;
-border-radius:999px;
-padding:13px 20px;
-color:#fff;
-background:var(–red);
-font-size:13px;
-font-weight:800;
-box-shadow:0 10px 25px rgba(255,63,63,.2);
-transition:.2s ease;
-}
-
-.header-cta:hover{
-background:var(–red2);
-transform:translateY(-1px);
-}
-
-/* ================= GENERAL BUTTON ================= */
+/* =========================================================
+   GLOBAL BUTTONS
+   ========================================================= */
 
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-min-height:52px;
-padding:0 24px;
-border:0;
-border-radius:14px;
-font-weight:800;
-font-size:14px;
-transition:.22s ease;
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:13px 22px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:800;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    background .22s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
 }
 
 .btn-primary{
-color:#fff;
-background:linear-gradient(135deg,var(–red),#ff5a4f);
-box-shadow:0 14px 28px rgba(255,63,63,.22);
+  background:var(--red);
+  color:#fff;
+  box-shadow:0 14px 28px rgba(233,54,63,.22);
 }
 
 .btn-primary:hover{
-transform:translateY(-2px);
-box-shadow:0 18px 34px rgba(255,63,63,.3);
+  background:var(--red-dark);
+  box-shadow:0 18px 34px rgba(233,54,63,.28);
 }
 
-.btn-ghost{
-color:#fff;
-border:1px solid rgba(255,255,255,.3);
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(8px);
+.btn-secondary{
+  background:#fff;
+  color:var(--navy);
+  border:1px solid rgba(8,40,68,.13);
 }
 
-.btn-ghost:hover{
-background:rgba(255,255,255,.16);
+.btn-secondary:hover{
+  box-shadow:0 12px 25px rgba(8,40,68,.10);
 }
 
-.btn.full{
-width:100%;
+.btn-blue{
+  background:var(--navy);
+  color:#fff;
+  box-shadow:0 14px 28px rgba(8,40,68,.18);
 }
 
-/* ================= HERO ================= */
+.btn-blue:hover{
+  background:var(--navy-2);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
-position:relative;
-min-height:650px;
-overflow:hidden;
-color:#fff;
-background:var(–navy);
+  position:relative;
+  min-height:680px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  isolation:isolate;
+  background:var(--navy);
 }
 
 .hero-media{
-position:absolute;
-inset:0;
-background-size:cover;
-background-position:center;
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050107-N-6074Y-122_Indonesian_children_of_a_village_just_inland_from_the_coast_of_Sumatra,_Indonesia,_celebrate_as_food_and_water_are_flown_to_their_village_by_a_U.S._Navy_MH-60S_Knighthawk_helicopter.jpg”);
-transform:scale(1.02);
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050107-N-6074Y-122_Indonesian_children_of_a_village_just_inland_from_the_coast_of_Sumatra,_Indonesia,_celebrate_as_food_and_water_are_flown_to_their_village_by_a_U.S._Navy_MH-60S_Knighthawk_helicopter.jpg");
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.02);
 }
 
-.hero-shade{
-position:absolute;
-inset:0;
-background:
-linear-gradient(90deg,rgba(3,22,38,.93) 0%,rgba(4,29,48,.78) 42%,rgba(4,29,48,.38) 72%,rgba(4,29,48,.55) 100%),
-linear-gradient(0deg,rgba(3,22,38,.7),transparent 45%);
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4,27,47,.92) 0%,
+      rgba(4,27,47,.76) 42%,
+      rgba(4,27,47,.34) 76%,
+      rgba(4,27,47,.18) 100%
+    );
 }
 
-.hero-glow{
-position:absolute;
-width:520px;
-height:520px;
-right:-170px;
-top:-220px;
-border-radius:50%;
-background:rgba(44,124,171,.22);
-filter:blur(10px);
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:120px;
+  background:linear-gradient(transparent,rgba(4,27,47,.30));
+  pointer-events:none;
 }
 
-.hero-inner{
-position:relative;
-z-index:2;
-min-height:650px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:50px;
-padding-top:50px;
-padding-bottom:55px;
+.hero-content{
+  width:min(720px,100%);
+  padding:90px 0 100px;
+  color:#fff;
 }
 
-.hero-copy{
-max-width:760px;
-}
-
-.pill{
-display:inline-flex;
-padding:8px 13px;
-border:1px solid rgba(255,255,255,.22);
-border-radius:999px;
-background:rgba(255,255,255,.08);
-font-size:10px;
-font-weight:800;
-letter-spacing:.12em;
-color:#eaf6ff;
-backdrop-filter:blur(10px);
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:18px;
+  padding:8px 13px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  backdrop-filter:blur(10px);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
 }
 
 .hero h1{
-margin:22px 0 20px;
-font-size:clamp(40px,5.3vw,72px);
-line-height:1.04;
-letter-spacing:-.045em;
-font-weight:900;
+  max-width:720px;
+  margin:0;
+  font-size:clamp(42px,6vw,72px);
+  line-height:1.04;
+  letter-spacing:-.045em;
+  font-weight:900;
 }
 
-.hero h1 em{
-color:#ff7770;
-font-style:normal;
+.hero h1 span{
+  color:#fff;
 }
 
-.hero-lead{
-max-width:680px;
-margin:0;
-color:rgba(255,255,255,.82);
-font-size:16px;
-line-height:1.75;
+.hero p{
+  max-width:620px;
+  margin:24px 0 0;
+  color:rgba(255,255,255,.86);
+  font-size:18px;
+  line-height:1.7;
 }
 
 .hero-actions{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
-margin-top:30px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
 }
 
-.trust-row{
-display:flex;
-flex-wrap:wrap;
-gap:34px;
-margin-top:38px;
-padding-top:25px;
-border-top:1px solid rgba(255,255,255,.16);
+.hero-actions .btn-secondary{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.28);
+  color:#fff;
+  backdrop-filter:blur(10px);
 }
 
-.trust-row div{
-display:flex;
-flex-direction:column;
+.hero-actions .btn-secondary:hover{
+  background:rgba(255,255,255,.20);
 }
 
-.trust-row strong{
-font-size:19px;
-font-weight:900;
+.hero-trust{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-top:30px;
+  color:rgba(255,255,255,.78);
+  font-size:12px;
+  font-weight:700;
 }
 
-.trust-row span{
-margin-top:3px;
-color:rgba(255,255,255,.58);
-font-size:11px;
+.hero-trust span{
+  display:flex;
+  align-items:center;
+  gap:7px;
 }
 
-.hero-note{
-width:220px;
-padding:20px;
-border:1px solid rgba(255,255,255,.16);
-border-radius:20px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(16px);
-box-shadow:0 20px 50px rgba(0,0,0,.15);
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.section{
+  padding:92px 0;
 }
 
-.hero-note span{
-display:block;
-margin-bottom:30px;
-color:#ff827a;
-font-size:12px;
-font-weight:900;
-letter-spacing:.1em;
+.section-soft{
+  background:var(--soft);
 }
 
-.hero-note b{
-display:block;
-font-size:14px;
+.section-cream{
+  background:var(--cream);
 }
 
-.hero-note small{
-display:block;
-margin-top:7px;
-color:rgba(255,255,255,.6);
-font-size:11px;
-line-height:1.6;
+.section-heading{
+  max-width:720px;
+  margin-bottom:42px;
 }
 
-/* ================= DONATION ================= */
+.section-heading.center{
+  margin-inline:auto;
+  text-align:center;
+}
 
-.donation-wrap{
-position:relative;
-z-index:5;
-margin-top:-55px;
+.section-kicker{
+  margin-bottom:10px;
+  color:var(--red);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  margin:0;
+  color:var(--navy);
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.12;
+  letter-spacing:-.035em;
+  font-weight:900;
+}
+
+.section-heading p{
+  margin:16px 0 0;
+  color:var(--muted);
+  font-size:16px;
+}
+
+/* =========================================================
+   DONATION SECTION
+   ========================================================= */
+
+.donation-section{
+  margin-top:-58px;
+  position:relative;
+  z-index:5;
 }
 
 .donation-card{
-display:grid;
-grid-template-columns:1.25fr .9fr .55fr;
-overflow:hidden;
-border-radius:28px;
-background:#fff;
-box-shadow:var(–shadow);
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:0;
+  overflow:hidden;
+  border-radius:28px;
+  background:#fff;
+  box-shadow:var(--shadow-lg);
 }
 
-.donation-main,
-.quick-donate,
-.qris-mini{
-padding:34px;
+.donation-copy{
+  padding:46px;
 }
 
-.donation-main{
-background:linear-gradient(145deg,#fff,#f7fbfd);
+.donation-copy h2{
+  margin:0;
+  color:var(--navy);
+  font-size:34px;
+  line-height:1.15;
+  letter-spacing:-.03em;
 }
 
-.quick-donate{
-border-left:1px solid var(–line);
-border-right:1px solid var(–line);
+.donation-copy p{
+  margin:14px 0 0;
+  color:var(--muted);
 }
 
-.qris-mini{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:#fbfdff;
+.donation-progress{
+  margin-top:30px;
 }
 
-.eyebrow,
-.mini-label{
-display:inline-block;
-color:var(–blue);
-font-size:10px;
-font-weight:900;
-letter-spacing:.15em;
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:9px;
+  font-size:13px;
+  font-weight:800;
 }
 
-.donation-main h2{
-margin:12px 0 14px;
-color:var(–navy);
-font-size:32px;
-line-height:1.15;
-letter-spacing:-.035em;
+.progress-top span:last-child{
+  color:var(--blue);
 }
 
-.donation-main p{
-margin:0;
-color:var(–muted);
-font-size:14px;
+.progress-bar{
+  height:10px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#e9eef2;
 }
 
-.progress-block{
-margin-top:28px;
+.progress-bar span{
+  display:block;
+  width:15.47%;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,var(--red),#ff6a68);
 }
 
-.progress-line{
-height:9px;
-overflow:hidden;
-border-radius:999px;
-background:#e7eef3;
+.donation-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:24px;
 }
 
-.progress-line span{
-display:block;
-height:100%;
-border-radius:inherit;
-background:linear-gradient(90deg,var(–blue),#39a3d0);
+.donation-stat{
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fbfcfd;
 }
 
-.progress-meta{
-display:flex;
-justify-content:space-between;
-gap:15px;
-margin-top:10px;
-color:var(–muted);
-font-size:11px;
+.donation-stat small{
+  display:block;
+  margin-bottom:4px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:700;
 }
 
-.progress-meta b{
-color:var(–navy);
+.donation-stat strong{
+  color:var(--navy);
+  font-size:20px;
+  font-weight:900;
 }
 
-.quick-donate h3{
-margin:10px 0 2px;
-color:var(–navy);
-font-size:19px;
+.donation-action{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:46px;
+  background:
+    radial-gradient(circle at top right,rgba(44,124,171,.18),transparent 42%),
+    linear-gradient(145deg,#f6fafc,#edf4f8);
 }
 
-.small{
-margin:0;
-color:var(–muted);
-font-size:11px;
+.qris-box{
+  width:min(310px,100%);
+  padding:24px;
+  text-align:center;
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 15px 40px rgba(8,40,68,.10);
 }
 
-.amount-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:8px;
-margin-top:17px;
+.qris-box img{
+  width:100%;
+  aspect-ratio:1;
+  object-fit:contain;
+  border-radius:14px;
+  background:#fff;
 }
 
-.amount-grid button{
-min-height:43px;
-border:1px solid var(–line);
-border-radius:11px;
-background:#fff;
-color:var(–navy);
-font-size:12px;
-font-weight:800;
-transition:.18s ease;
+.qris-box strong{
+  display:block;
+  margin-top:14px;
+  color:var(--navy);
+  font-size:14px;
 }
 
-.amount-grid button:hover,
-.amount-grid button.active{
-border-color:var(–blue);
-background:#eef8fd;
-color:var(–blue);
+.qris-box small{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:11px;
 }
 
-.custom-label{
-display:block;
-margin:17px 0 7px;
-color:var(–navy);
-font-size:11px;
-font-weight:800;
-}
+/* =========================================================
+   NEEDS / CARDS
+   ========================================================= */
 
-.custom-input{
-display:flex;
-align-items:center;
-min-height:48px;
-border:1px solid var(–line);
-border-radius:12px;
-background:#fff;
-overflow:hidden;
-}
-
-.custom-input span{
-padding-left:14px;
-color:var(–muted);
-font-size:13px;
-font-weight:800;
-}
-
-.custom-input input{
-width:100%;
-border:0;
-outline:0;
-padding:0 12px;
-color:var(–navy);
-background:transparent;
-font-weight:700;
-}
-
-.helper{
-display:block;
-margin-top:9px;
-color:#81909e;
-font-size:9px;
-line-height:1.5;
-}
-
-.qris-badge{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-width:58px;
-height:28px;
-margin-bottom:12px;
-border-radius:8px;
-color:#fff;
-background:#111;
-font-size:12px;
-font-weight:900;
-}
-
-.qris-mini strong{
-color:var(–navy);
-font-size:12px;
-}
-
-.qris-mini small{
-margin-top:3px;
-color:var(–muted);
-font-size:9px;
-}
-
-.qris-mini img{
-width:145px;
-height:145px;
-margin-top:16px;
-object-fit:contain;
-}
-
-/* ================= SECTION ================= */
-
-.section{
-padding:105px 0;
-}
-
-.why-head,
-.split-head{
-display:grid;
-grid-template-columns:1fr .8fr;
-gap:60px;
-align-items:end;
-margin-top:15px;
-}
-
-.section-title{
-margin:0;
-color:var(–navy);
-font-size:clamp(32px,4vw,50px);
-line-height:1.08;
-letter-spacing:-.045em;
-}
-
-.section-intro{
-margin:0;
-color:var(–muted);
-font-size:14px;
-line-height:1.8;
-}
-
-/* ================= WHY CARDS ================= */
-
-.info-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px;
-margin-top:45px;
-}
-
-.info-grid article{
-position:relative;
-min-height:255px;
-padding:28px;
-border:1px solid var(–line);
-border-radius:22px;
-background:#fff;
-box-shadow:var(–shadow2);
-transition:.25s ease;
-}
-
-.info-grid article:hover{
-transform:translateY(-5px);
-box-shadow:var(–shadow);
-}
-
-.icon-circle{
-display:flex;
-align-items:center;
-justify-content:center;
-width:48px;
-height:48px;
-border-radius:15px;
-color:#fff;
-background:var(–navy);
-font-size:19px;
-}
-
-.info-grid article > b{
-position:absolute;
-top:31px;
-right:28px;
-color:#c1ccd5;
-font-size:11px;
-}
-
-.info-grid h3{
-margin:25px 0 8px;
-color:var(–navy);
-font-size:19px;
-}
-
-.info-grid p{
-margin:0;
-color:var(–muted);
-font-size:13px;
-}
-
-/* ================= NEEDS ================= */
-
-.needs-section{
-background:var(–soft);
-}
-
-.needs-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-margin-top:45px;
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
 .need-card{
-overflow:hidden;
-border:1px solid var(–line);
-border-radius:22px;
-background:#fff;
-box-shadow:0 12px 35px rgba(8,40,68,.06);
-transition:.25s ease;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 8px 28px rgba(8,40,68,.06);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
 }
 
 .need-card:hover{
-transform:translateY(-5px);
-box-shadow:var(–shadow);
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
 }
 
-.photo{
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+.need-photo{
+  position:relative;
+  height:220px;
+  background-size:cover;
+  background-position:center;
 }
 
-.need-card .photo{
-height:210px;
-}
-
-.photo-food{
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050104-N-9293K-436_Indonesian_children_wait_for_food_and_humanitarian_relief_at_Sultan_Iskandar_Muda_Air_Force_Base_in_Banda_Aceh,_Sumatra,_Indonesia.jpg”);
-}
-
-.photo-water{
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050106-N-6817C-442_Indonesian_children_smile_and_cheer_as_U.S.Navy_helicopters_from_USS_Abraham_Lincoln(CVN_72)_fly-in_purified_water_and_relief_supplies_to_a_small_village_on_the_Island_of_Sumatra,_Indonesia.jpg”);
-}
-
-.photo-mask{
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/Serah_terima_peralatan_medis_dari_Republik_Rakyat_Tiongkok_atas_pandemi_COVID-19.jpg”);
-}
-
-.photo-supplies{
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050116-F-4884R-026_Air_crew_aboard_a_Marine_Corps_CH-46E_Sea_Knight_helicopter_unload_humanitarian_aid_and_disaster_relief_supplies_in_a_remote_region_on_the_island_of_Sumatra,_Indonesia.jpg”);
-}
-
-.photo-logistic{
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_091011-M-4689B-053_U.S._service_members_unload_ShelterBoxes_during_a_humanitarian_assistance_and_disaster_relief_operation_in_the_village_of_Hula_Banda,_Indonesia.jpg”);
-}
-
-.photo-emergency{
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/Aid_sent_for_disaster_management_in_West_Sumatra.jpg”);
+.need-photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 55%,rgba(0,0,0,.25));
 }
 
 .need-content{
-padding:24px;
-}
-
-.need-number{
-display:block;
-color:var(–red);
-font-size:10px;
-font-weight:900;
-letter-spacing:.1em;
+  padding:23px;
 }
 
 .need-content h3{
-margin:7px 0 8px;
-color:var(–navy);
-font-size:21px;
+  margin:0;
+  color:var(--navy);
+  font-size:19px;
+  line-height:1.25;
 }
 
 .need-content p{
-margin:0;
-color:var(–muted);
-font-size:12px;
-line-height:1.7;
+  margin:9px 0 0;
+  color:var(--muted);
+  font-size:14px;
 }
 
-.need-content small{
-display:block;
-margin-top:17px;
-padding-top:14px;
-border-top:1px solid var(–line);
-color:#7a8997;
-font-size:10px;
+.photo-food{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050104-N-9293K-436_Indonesian_children_wait_for_food_and_humanitarian_relief_at_Sultan_Iskandar_Muda_Air_Force_Base_in_Banda_Aceh,_Sumatra,_Indonesia.jpg");
 }
 
-/* ================= INFORMATION BANNER ================= */
-
-.information-banner{
-padding:70px 0;
-background:#fff;
+.photo-water{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050106-N-6817C-442_Indonesian_children_smile_and_cheer_as_U.S._Navy_helicopters_from_USS_Abraham_Lincoln_(CVN_72)_fly-in_purified_water_and_relief_supplies_to_a_small_village_on_the_Island_of_Sumatra,_Indonesia.jpg");
 }
 
-.banner-inner{
-display:grid;
-grid-template-columns:.8fr 1.35fr auto;
-gap:35px;
-align-items:center;
-padding:25px;
-border-radius:28px;
-background:linear-gradient(135deg,#eef7fb,#f8fbfd);
-border:1px solid var(–line);
+.photo-mask{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Serah_terima_peralatan_medis_dari_Republik_Rakyat_Tiongkok_atas_pandemi_COVID-19.jpg");
 }
 
-.banner-photo{
-height:190px;
-border-radius:16px;
-background:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/Tagana_Indonesia.jpg”) center/contain no-repeat;
-background-color:#f3f7fa;
+.photo-supplies{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050116-F-4884R-026_Air_crew_aboard_a_Marine_Corps_CH-46E_Sea_Knight_helicopter_unload_humanitarian_aid_and_disaster_relief_supplies_in_a_remote_region_on_the_island_of_Sumatra,_Indonesia.jpg");
+}
+
+.photo-logistic{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_091011-M-4689B-053_U.S._service_members_unload_ShelterBoxes_during_a_humanitarian_assistance_and_disaster_relief_operation_in_the_village_of_Hula_Banda,_Indonesia.jpg");
+}
+
+.photo-emergency{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Aid_sent_for_disaster_management_in_West_Sumatra.jpg");
+}
+
+/* =========================================================
+   YAYASAN MEMBANTU BERSAMA
+   PREMIUM STYLE — BAGIAN 2/2
+   ========================================================= */
+
+/* =========================================================
+   INFO / STORY / BANNER
+   ========================================================= */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.info-card{
+  padding:32px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 8px 30px rgba(8,40,68,.05);
+}
+
+.info-card h3{
+  margin:0;
+  color:var(--navy);
+  font-size:22px;
+  line-height:1.25;
+}
+
+.info-card p{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.info-list{
+  display:grid;
+  gap:13px;
+  margin-top:22px;
+  padding:0;
+  list-style:none;
+}
+
+.info-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  color:#405365;
+  font-size:14px;
+}
+
+.info-list li::before{
+  content:"✓";
+  width:22px;
+  height:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  border-radius:50%;
+  background:#eaf5fa;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+}
+
+.banner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  overflow:hidden;
+  min-height:330px;
+  border-radius:26px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.banner-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:42px;
 }
 
 .banner-copy h2{
-margin:8px 0 10px;
-color:var(–navy);
-font-size:25px;
-line-height:1.2;
-letter-spacing:-.025em;
+  margin:0;
+  color:var(--navy);
+  font-size:34px;
+  line-height:1.15;
+  letter-spacing:-.03em;
 }
 
 .banner-copy p{
-margin:0 0 10px;
-color:var(–muted);
-font-size:12px;
+  margin:14px 0 0;
+  color:var(--muted);
 }
 
-.banner-copy a{
-color:var(–blue);
-font-size:11px;
-font-weight:800;
+.banner-photo{
+  min-height:330px;
+  height:100%;
+  background:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Tagana_Indonesia.jpg") center/contain no-repeat;
+  background-color:#f3f7fa;
 }
 
-.banner-btn{
-white-space:nowrap;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery-section{
-background:#fff;
-}
-
-.gallery-section > .container > .section-intro{
-max-width:720px;
-margin-top:17px;
-}
+/* =========================================================
+   GALLERY
+   ========================================================= */
 
 .gallery{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
 }
 
-.gallery figure{
-margin:0;
-overflow:hidden;
-border-radius:22px;
-background:#f6f9fb;
-border:1px solid var(–line);
-box-shadow:var(–shadow2);
+.gallery-item{
+  position:relative;
+  min-height:310px;
+  overflow:hidden;
+  border-radius:24px;
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 10px 32px rgba(8,40,68,.10);
 }
 
-.gallery .photo{
-height:360px;
+.gallery-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    transparent 42%,
+    rgba(4,27,47,.76)
+  );
+}
+
+.gallery-caption{
+  position:absolute;
+  left:25px;
+  right:25px;
+  bottom:23px;
+  z-index:2;
+  color:#fff;
+}
+
+.gallery-caption strong{
+  display:block;
+  font-size:18px;
+  line-height:1.25;
+}
+
+.gallery-caption span{
+  display:block;
+  margin-top:5px;
+  color:rgba(255,255,255,.82);
+  font-size:12px;
 }
 
 .photo-2026{
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050123-N-9885M-136_Indonesian_children_gather_around_a_MH-53E_Sea_Dragon_helicopter_as_air_crewmen_offload_relief_supplies_in_Lamno,_Indonesia.jpg”);
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050123-N-9885M-136_Indonesian_children_gather_around_a_MH-53E_Sea_Dragon_helicopter_as_air_crewmen_offload_relief_supplies_in_Lamno,_Indonesia.jpg");
 }
 
 .photo-2022{
-background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050109-N-4166B-141_Indonesian_children_smile_as_they_receive_much-needed_bottles_of_water_flown-in_by_a_Navy_Seahawk_helicopter.jpg”);
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050109-N-4166B-141_Indonesian_children_smile_as_they_receive_much-needed_bottles_of_water_flown-in_by_a_Navy_Seahawk_helicopter.jpg");
 }
 
-.gallery figcaption{
-padding:15px 18px;
-color:var(–muted);
-font-size:10px;
-}
-
-/* ================= TRANSPARENCY ================= */
+/* =========================================================
+   TRANSPARENCY
+   ========================================================= */
 
 .transparency{
-background:var(–soft);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.trust-card{
-display:grid;
-grid-template-columns:.8fr .7fr 1.5fr;
-gap:0;
-margin-top:38px;
-overflow:hidden;
-border:1px solid var(–line);
-border-radius:22px;
-background:#fff;
-box-shadow:var(–shadow2);
+.transparency-card{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 8px 28px rgba(8,40,68,.05);
 }
 
-.trust-card > div{
-min-height:130px;
-padding:25px;
+.transparency-card .number{
+  color:var(--red);
+  font-size:32px;
+  line-height:1;
+  font-weight:900;
 }
 
-.trust-card > div + div{
-border-left:1px solid var(–line);
+.transparency-card h3{
+  margin:13px 0 0;
+  color:var(--navy);
+  font-size:17px;
 }
 
-.trust-card b{
-display:block;
-margin-bottom:8px;
-color:var(–navy);
-font-size:11px;
+.transparency-card p{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:13px;
 }
 
-.trust-card span{
-color:var(–muted);
-font-size:12px;
-line-height:1.65;
-}
-
-.disclaimer{
-margin:18px 0 0;
-color:#7c8b99;
-font-size:10px;
-}
-
-/* ================= FINAL CTA ================= */
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
 
 .final-cta{
-padding:35px 0 80px;
-background:var(–soft);
+  position:relative;
+  overflow:hidden;
+  padding:72px 30px;
+  border-radius:30px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(44,124,171,.30),
+      transparent 38%
+    ),
+    linear-gradient(135deg,var(--navy),#0b476c);
+  color:#fff;
+  text-align:center;
+  box-shadow:var(--shadow-lg);
 }
 
-.final-card{
-display:grid;
-grid-template-columns:auto 1fr auto;
-align-items:center;
-gap:25px;
-padding:38px;
-border-radius:28px;
-color:#fff;
-background:
-radial-gradient(circle at 90% 0%,rgba(44,124,171,.4),transparent 35%),
-linear-gradient(135deg,var(–navy),var(–navy2));
-box-shadow:var(–shadow);
+.final-cta::after{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  right:-100px;
+  bottom:-150px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.10);
 }
 
-.heart{
-display:flex;
-align-items:center;
-justify-content:center;
-width:60px;
-height:60px;
-border-radius:18px;
-background:rgba(255,255,255,.1);
-color:#ff716a;
-font-size:24px;
+.final-cta h2{
+  position:relative;
+  z-index:1;
+  max-width:700px;
+  margin:0 auto;
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.12;
+  letter-spacing:-.035em;
 }
 
-.final-card .eyebrow{
-color:#8ed0ef;
+.final-cta p{
+  position:relative;
+  z-index:1;
+  max-width:610px;
+  margin:17px auto 0;
+  color:rgba(255,255,255,.80);
 }
 
-.final-card h2{
-margin:7px 0 0;
-max-width:720px;
-font-size:27px;
-line-height:1.25;
-letter-spacing:-.025em;
+.final-cta .btn{
+  position:relative;
+  z-index:2;
+  margin-top:27px;
 }
 
-/* ================= FOOTER ================= */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
-footer{
-color:rgba(255,255,255,.7);
-background:#061e32;
+.site-footer{
+  margin-top:80px;
+  padding:55px 0 100px;
+  background:#061f34;
+  color:#fff;
 }
 
 .footer-inner{
-display:flex;
-justify-content:space-between;
-gap:35px;
-padding:45px 0;
+  display:grid;
+  grid-template-columns:1.3fr .7fr .7fr;
+  gap:45px;
 }
 
 .footer-brand{
-display:flex;
-align-items:center;
-gap:13px;
+  display:flex;
+  align-items:center;
+  gap:13px;
 }
 
 .footer-brand img{
-width:45px;
-height:45px;
-object-fit:contain;
+  width:48px;
+  height:48px;
+  object-fit:contain;
 }
 
-.footer-brand b{
-display:block;
-color:#fff;
-font-size:13px;
+.footer-brand strong{
+  display:block;
+  font-size:15px;
 }
 
-.footer-brand p{
-margin:3px 0 0;
-font-size:10px;
+.footer-brand span{
+  display:block;
+  margin-top:4px;
+  color:rgba(255,255,255,.58);
+  font-size:11px;
 }
 
-.footer-links{
-display:flex;
-flex-wrap:wrap;
-align-items:center;
-justify-content:flex-end;
-gap:18px;
+.footer-description{
+  max-width:470px;
+  margin:18px 0 0;
+  color:rgba(255,255,255,.62);
+  font-size:13px;
 }
 
-.footer-links a{
-font-size:10px;
-font-weight:700;
+.footer-column h4{
+  margin:0 0 14px;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
 }
 
-.footer-links a:hover{
-color:#fff;
+.footer-column a{
+  display:block;
+  margin:9px 0;
+  color:rgba(255,255,255,.62);
+  font-size:13px;
+  transition:.2s ease;
 }
 
-.copyright{
-padding:17px 20px;
-border-top:1px solid rgba(255,255,255,.08);
-text-align:center;
-color:rgba(255,255,255,.4);
-font-size:9px;
+.footer-column a:hover{
+  color:#fff;
 }
 
-/* ================= STICKY CTA ================= */
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:42px;
+  padding-top:23px;
+  border-top:1px solid rgba(255,255,255,.10);
+  color:rgba(255,255,255,.45);
+  font-size:11px;
+}
+
+/* =========================================================
+   STICKY DONATION CTA
+   ========================================================= */
 
 .sticky-cta{
-position:fixed;
-right:20px;
-bottom:20px;
-z-index:90;
+  position:fixed;
+  left:20px;
+  right:20px;
+  bottom:18px;
+  z-index:90;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  max-width:720px;
+  margin:auto;
+  padding:10px 12px 10px 20px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  background:rgba(8,40,68,.94);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 20px 50px rgba(0,0,0,.22);
+  color:#fff;
 }
 
-.sticky-cta button{
-min-height:50px;
-padding:0 20px;
-border:0;
-border-radius:999px;
-color:#fff;
-background:var(–red);
-font-size:12px;
-font-weight:900;
-box-shadow:0 15px 35px rgba(255,63,63,.3);
+.sticky-cta span{
+  font-size:12px;
+  font-weight:700;
 }
 
-/* ================= MODALS ================= */
+.sticky-cta .btn{
+  min-height:42px;
+  padding:10px 20px;
+  flex:none;
+}
+
+/* =========================================================
+   MODALS
+   ========================================================= */
 
 .modal{
-position:fixed;
-inset:0;
-z-index:200;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:20px;
-opacity:0;
-visibility:hidden;
-background:rgba(2,16,27,.68);
-backdrop-filter:blur(8px);
-transition:.2s ease;
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(3,20,34,.72);
+  opacity:0;
+  visibility:hidden;
+  transition:.22s ease;
 }
 
 .modal.open{
-opacity:1;
-visibility:visible;
+  opacity:1;
+  visibility:visible;
 }
 
-.modal-panel{
-position:relative;
-width:min(470px,100%);
-max-height:calc(100vh - 40px);
-overflow:auto;
-padding:34px;
-border-radius:25px;
-background:#fff;
-box-shadow:0 30px 90px rgba(0,0,0,.28);
-transform:translateY(12px) scale(.98);
-transition:.25s ease;
+.modal-box{
+  width:min(500px,100%);
+  max-height:90vh;
+  overflow:auto;
+  padding:32px;
+  border-radius:26px;
+  background:#fff;
+  box-shadow:0 30px 90px rgba(0,0,0,.30);
+  transform:translateY(15px) scale(.98);
+  transition:.22s ease;
 }
 
-.modal.open .modal-panel{
-transform:none;
+.modal.open .modal-box{
+  transform:translateY(0) scale(1);
 }
 
-.close{
-position:absolute;
-top:14px;
-right:14px;
-width:36px;
-height:36px;
-border:0;
-border-radius:50%;
-color:var(–navy);
-background:#eef3f6;
-font-size:22px;
-line-height:1;
+.modal-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
 }
 
-.modal-panel h2{
-margin:8px 0 5px;
-color:var(–navy);
-font-size:28px;
-line-height:1.15;
-letter-spacing:-.035em;
+.modal-head h2{
+  margin:0;
+  color:var(--navy);
+  font-size:25px;
+  line-height:1.2;
 }
 
-.modal-sub{
-margin:0;
-color:var(–muted);
-font-size:12px;
+.modal-head p{
+  margin:7px 0 0;
+  color:var(--muted);
+  font-size:13px;
 }
 
-.modal-grid{
-margin-top:25px;
+.modal-close{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  border-radius:50%;
+  background:#f1f5f7;
+  color:#496073;
+  font-size:20px;
 }
 
-.micro{
-margin:12px 0 0;
-text-align:center;
-color:#84919c;
-font-size:9px;
+.amount-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:25px;
 }
 
-.qris-panel{
-text-align:center;
+.amount-btn{
+  min-height:48px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:800;
+  transition:.2s ease;
 }
 
-.pay-amount{
-margin:15px 0;
-padding:12px;
-border-radius:12px;
-color:var(–navy);
-background:#f2f7fa;
-font-size:11px;
+.amount-btn:hover{
+  border-color:var(--blue-2);
+  background:#f5fafc;
 }
 
-.qris{
-width:260px;
-max-width:80%;
-margin:10px auto 20px;
-object-fit:contain;
+.amount-btn.active{
+  border-color:var(--red);
+  background:#fff2f2;
+  color:var(--red-dark);
 }
 
-.pay-steps{
-margin:0 0 20px;
-padding-left:20px;
-text-align:left;
-color:var(–muted);
-font-size:11px;
-line-height:1.8;
+.amount-input{
+  width:100%;
+  height:50px;
+  margin-top:13px;
+  padding:0 16px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  outline:none;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:700;
+  transition:.2s ease;
 }
 
-.center{
-text-align:center;
+.amount-input:focus{
+  border-color:var(--blue-2);
+  box-shadow:0 0 0 4px rgba(44,124,171,.10);
 }
 
-.thanks-icon{
-display:flex;
-align-items:center;
-justify-content:center;
-width:70px;
-height:70px;
-margin:5px auto 18px;
-border-radius:22px;
-color:#fff;
-background:var(–red);
-font-size:28px;
-box-shadow:0 15px 35px rgba(255,63,63,.22);
+.modal-actions{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
 }
 
-/* ================= TOAST ================= */
+.modal-actions .btn{
+  flex:1;
+}
+
+.qris-modal-content{
+  text-align:center;
+}
+
+.qris-modal-content img{
+  width:min(330px,100%);
+  margin:22px auto 0;
+  border-radius:16px;
+}
+
+.qris-amount{
+  margin-top:15px;
+  color:var(--red);
+  font-size:26px;
+  font-weight:900;
+}
+
+.qris-recipient{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* =========================================================
+   TOAST
+   ========================================================= */
 
 .toast{
-position:fixed;
-left:50%;
-bottom:25px;
-z-index:300;
-max-width:calc(100% - 40px);
-padding:12px 18px;
-border-radius:12px;
-color:#fff;
-background:var(–navy);
-box-shadow:var(–shadow);
-font-size:11px;
-font-weight:700;
-opacity:0;
-visibility:hidden;
-transform:translate(-50%,15px);
-transition:.22s ease;
+  position:fixed;
+  left:50%;
+  bottom:90px;
+  z-index:300;
+  max-width:calc(100% - 40px);
+  padding:13px 18px;
+  border-radius:999px;
+  background:var(--navy);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  box-shadow:0 15px 35px rgba(0,0,0,.20);
+  opacity:0;
+  visibility:hidden;
+  transform:translate(-50%,12px);
+  transition:.25s ease;
 }
 
 .toast.show{
-opacity:1;
-visibility:visible;
-transform:translate(-50%,0);
+  opacity:1;
+  visibility:visible;
+  transform:translate(-50%,0);
 }
 
-/* ================= RESPONSIVE ================= */
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
-@media(max-width:1050px){
-
-.donation-card{
-grid-template-columns:1fr 1fr;
+:focus-visible{
+  outline:3px solid rgba(44,124,171,.35);
+  outline-offset:3px;
 }
 
-.qris-mini{
-grid-column:1/-1;
-border-top:1px solid var(–line);
+::selection{
+  background:rgba(44,124,171,.20);
 }
 
-.qris-mini img{
-width:125px;
-height:125px;
-}
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-.banner-inner{
-grid-template-columns:.7fr 1.3fr;
-}
+@media (max-width:980px){
 
-.banner-btn{
-grid-column:2;
-justify-self:start;
-}
+  .nav{
+    gap:15px;
+  }
 
-}
+  .donation-card{
+    grid-template-columns:1fr;
+  }
 
-@media(max-width:800px){
+  .donation-action{
+    padding:38px;
+  }
 
-.container{
-width:min(100% - 28px,620px);
-}
+  .cards-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-.header-inner{
-min-height:68px;
-gap:10px;
-}
+  .transparency{
+    grid-template-columns:1fr 1fr;
+  }
 
-.desktop-nav{
-display:none;
-}
-
-.header-cta{
-margin-left:auto;
-padding:11px 14px;
-font-size:11px;
-}
-
-.brand-copy strong{
-font-size:14px;
-}
-
-.hero{
-min-height:650px;
-}
-
-.hero-inner{
-min-height:650px;
-display:block;
-padding-top:70px;
-}
-
-.hero h1{
-font-size:43px;
-}
-
-.hero-lead{
-font-size:14px;
-}
-
-.hero-note{
-display:none;
-}
-
-.trust-row{
-gap:20px;
-}
-
-.trust-row strong{
-font-size:16px;
-}
-
-.donation-wrap{
-margin-top:-30px;
-}
-
-.donation-card{
-display:block;
-}
-
-.donation-main,
-.quick-donate,
-.qris-mini{
-padding:27px;
-}
-
-.quick-donate{
-border-top:1px solid var(–line);
-border-right:0;
-border-left:0;
-}
-
-.qris-mini{
-border-top:1px solid var(–line);
-}
-
-.section{
-padding:75px 0;
-}
-
-.why-head,
-.split-head{
-grid-template-columns:1fr;
-gap:18px;
-}
-
-.info-grid,
-.needs-grid{
-grid-template-columns:1fr;
-}
-
-.need-card .photo{
-height:240px;
-}
-
-.banner-inner{
-grid-template-columns:1fr;
-}
-
-.banner-btn{
-grid-column:auto;
-justify-self:stretch;
-width:100%;
-}
-
-.gallery{
-grid-template-columns:1fr;
-}
-
-.gallery .photo{
-height:280px;
-}
-
-.trust-card{
-grid-template-columns:1fr;
-}
-
-.trust-card > div + div{
-border-left:0;
-border-top:1px solid var(–line);
-}
-
-.final-card{
-grid-template-columns:1fr;
-padding:28px;
-}
-
-.final-card .btn{
-width:100%;
-}
-
-.footer-inner{
-flex-direction:column;
-}
-
-.footer-links{
-justify-content:flex-start;
-}
-
-.sticky-cta{
-right:12px;
-bottom:12px;
-left:12px;
-}
-
-.sticky-cta button{
-width:100%;
-}
+  .footer-inner{
+    grid-template-columns:1fr 1fr;
+  }
 
 }
 
-@media(max-width:480px){
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-.brand-logo{
-width:42px;
-height:42px;
+@media (max-width:700px){
+
+  .container{
+    width:min(calc(100% - 28px),var(--container));
+  }
+
+  .site-header{
+    position:relative;
+  }
+
+  .header-inner{
+    min-height:70px;
+  }
+
+  .brand-logo{
+    width:42px;
+    height:42px;
+  }
+
+  .brand-text span{
+    display:none;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .header-donate{
+    padding:10px 16px;
+    font-size:12px;
+  }
+
+  .hero{
+    min-height:620px;
+  }
+
+  .hero::before{
+    background:
+      linear-gradient(
+        180deg,
+        rgba(4,27,47,.72),
+        rgba(4,27,47,.90)
+      );
+  }
+
+  .hero-content{
+    padding:75px 0 90px;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero p{
+    font-size:15px;
+    line-height:1.65;
+  }
+
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .hero-trust{
+    gap:10px 15px;
+  }
+
+  .donation-section{
+    margin-top:-38px;
+  }
+
+  .donation-copy{
+    padding:28px 22px;
+  }
+
+  .donation-copy h2{
+    font-size:28px;
+  }
+
+  .donation-stats{
+    grid-template-columns:1fr;
+  }
+
+  .donation-action{
+    padding:28px 22px;
+  }
+
+  .section{
+    padding:65px 0;
+  }
+
+  .section-heading{
+    margin-bottom:28px;
+  }
+
+  .section-heading h2{
+    font-size:31px;
+  }
+
+  .cards-grid{
+    grid-template-columns:1fr;
+  }
+
+  .need-photo{
+    height:210px;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .info-card{
+    padding:25px 21px;
+  }
+
+  .banner{
+    grid-template-columns:1fr;
+  }
+
+  .banner-copy{
+    padding:28px 23px;
+  }
+
+  .banner-copy h2{
+    font-size:28px;
+  }
+
+  .banner-photo{
+    min-height:260px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-item{
+    min-height:260px;
+  }
+
+  .transparency{
+    grid-template-columns:1fr;
+  }
+
+  .final-cta{
+    padding:48px 22px;
+    border-radius:23px;
+  }
+
+  .final-cta h2{
+    font-size:31px;
+  }
+
+  .site-footer{
+    margin-top:55px;
+    padding:45px 0 100px;
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:7px;
+  }
+
+  .sticky-cta{
+    left:10px;
+    right:10px;
+    bottom:10px;
+    padding:8px 9px 8px 15px;
+  }
+
+  .sticky-cta span{
+    font-size:10px;
+  }
+
+  .sticky-cta .btn{
+    min-height:39px;
+    padding:9px 16px;
+    font-size:11px;
+  }
+
+  .modal{
+    align-items:flex-end;
+    padding:10px;
+  }
+
+  .modal-box{
+    max-height:92vh;
+    padding:24px 20px;
+    border-radius:24px 24px 18px 18px;
+  }
+
+  .amount-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .modal-actions{
+    flex-direction:column;
+  }
+
 }
 
-.brand-copy em{
-display:none;
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width:420px){
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero-content{
+    padding-top:60px;
+  }
+
+  .hero-trust{
+    font-size:10px;
+  }
+
+  .qris-box{
+    padding:18px;
+  }
+
+  .sticky-cta span{
+    max-width:130px;
+  }
+
 }
 
-.header-cta{
-padding:10px 11px;
-}
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
-.hero{
-min-height:680px;
-}
+@media (prefers-reduced-motion:reduce){
 
-.hero-inner{
-min-height:680px;
-padding-top:60px;
-}
+  html{
+    scroll-behavior:auto;
+  }
 
-.hero h1{
-font-size:36px;
-}
-
-.hero-actions{
-flex-direction:column;
-}
-
-.hero-actions .btn{
-width:100%;
-}
-
-.trust-row{
-display:grid;
-grid-template-columns:1fr 1fr;
-}
-
-.trust-row div:last-child{
-grid-column:1/-1;
-}
-
-.donation-main h2{
-font-size:27px;
-}
-
-.section-title{
-font-size:34px;
-}
-
-.modal-panel{
-padding:28px 20px;
-}
+  *,
+  *::before,
+  *::after{
+    transition:none !important;
+    animation:none !important;
+  }
 
 }
