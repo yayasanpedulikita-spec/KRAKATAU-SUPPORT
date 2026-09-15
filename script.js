@@ -95,7 +95,7 @@
 
   window.addEventListener("error",e=>{
     if(e.target?.tagName==="IMG" && e.target.classList.contains("qris")){
-      toast("QRIS gagal dimuat. Periksa assets/qris.jpeg.");
+      toast("QRIS gagal dimuat. Periksa file IMG_5690.jpeg.");
     }
   },true);
 })();
