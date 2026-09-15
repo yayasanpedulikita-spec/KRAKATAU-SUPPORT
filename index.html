@@ -1,481 +1,1427 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yayasan Membantu Bersama — Bersama Kita Membantu</title>
-  <meta name="description" content="Yayasan Membantu Bersama hadir membantu masyarakat, anak-anak, dan keluarga yang terdampak bencana Gunung Anak Krakatau.">
-  <!-- Meta Pixel -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '940490405780353');
-  fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=940490405780353&ev=PageView&noscript=1"/>
-  </noscript>
-  <link rel="stylesheet" href="style.css">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#b31325">
+<meta name="description" content="Yayasan Membantu Bersama — Bersama Kita Membantu. Mari hadir dan berbagi untuk sesama.">
+<title>Yayasan Membantu Bersama — Bersama Kita Membantu</title>
 
-  <link rel="stylesheet" href="style.css">
+<!-- META PIXEL — JANGAN DIUBAH -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '940490405780353');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=940490405780353&ev=PageView&noscript=1"/></noscript>
 
-  <title>Yayasan Membantu Bersama</title>
+<style>
+:root{
+  --red:#b31325;
+  --red-dark:#820b19;
+  --red-soft:#fff1f3;
+  --ink:#171717;
+  --muted:#676767;
+  --line:#ece7e7;
+  --white:#fff;
+  --cream:#fffaf9;
+  --shadow:0 18px 55px rgba(43,12,16,.11);
+  --radius:24px;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:#fff;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+body:has(.modal.open){overflow:hidden}
+img{max-width:100%;display:block}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:15px;top:15px;z-index:9999;background:#fff;padding:10px 14px;border-radius:8px}
+
+/* TOP BAR */
+.topbar{
+  background:#151515;
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.02em;
+}
+.topbar-inner{
+  min-height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+.topbar strong{color:#fff}
+.topbar span:last-child{opacity:.75}
+
+/* NAV */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.94);
+  border-bottom:1px solid rgba(0,0,0,.06);
+  backdrop-filter:blur(18px);
+}
+.nav-inner{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  min-width:0;
+}
+.brand img{
+  width:48px;height:48px;object-fit:contain;
+  flex:0 0 auto;
+}
+.brand-copy{line-height:1.15}
+.brand-copy strong{
+  display:block;
+  font-size:15px;
+  font-weight:850;
+  letter-spacing:-.02em;
+}
+.brand-copy small{
+  display:block;
+  color:#777;
+  font-size:10px;
+  margin-top:4px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  color:#555;
+  font-size:13px;
+  font-weight:700;
+}
+.nav-links a{transition:.2s}
+.nav-links a:hover{color:var(--red)}
+.btn{
+  border:0;
+  border-radius:999px;
+  min-height:48px;
+  padding:0 22px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:9px;
+  font-weight:800;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{
+  background:var(--red);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(179,19,37,.22);
+}
+.btn-red:hover{background:var(--red-dark)}
+.btn-light{
+  background:#fff;
+  color:var(--red);
+  border:1px solid rgba(179,19,37,.15);
+}
+.btn-white{
+  background:#fff;color:var(--ink);
+}
+.btn-block{width:100%}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:#18080b;
+}
+.hero-media{
+  position:absolute;
+  inset:0;
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050107-N-6074Y-122_Indonesian_children_of_a_village_just_inland_from_the_coast_of_Sumatra,_Indonesia,_celebrate_as_food_and_water_are_flown_to_their_village_by_a_U.S._Navy_MH-60S_Knighthawk_helicopter.jpg");
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.01);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(16,7,9,.88) 0%,rgba(16,7,9,.67) 43%,rgba(16,7,9,.18) 78%,rgba(16,7,9,.2)),
+    linear-gradient(0deg,rgba(0,0,0,.45),transparent 45%);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  width:min(100%,760px);
+  padding:90px 0 105px;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:8px 13px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.09);
+  backdrop-filter:blur(10px);
+  border-radius:999px;
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.dot{
+  width:7px;height:7px;border-radius:50%;background:#fff;
+}
+.hero h1{
+  max-width:760px;
+  margin:20px 0 18px;
+  font-size:clamp(42px,6vw,74px);
+  line-height:.98;
+  letter-spacing:-.055em;
+  font-weight:900;
+}
+.hero h1 em{font-style:normal;color:#ffb5bd}
+.hero-lead{
+  max-width:650px;
+  margin:0 0 29px;
+  color:rgba(255,255,255,.86);
+  font-size:17px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{
+  margin-top:20px;
+  font-size:11px;
+  color:rgba(255,255,255,.68);
+}
+
+/* PROGRESS CARD */
+.progress-wrap{margin-top:-58px;position:relative;z-index:4}
+.progress-card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+  padding:25px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:18px;
+}
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+}
+.progress-label{font-size:12px;color:#777;font-weight:750}
+.progress-value{font-size:29px;font-weight:900;letter-spacing:-.04em}
+.progress-target{font-size:12px;color:#777;text-align:right}
+.progress-track{
+  height:11px;
+  background:#f0eded;
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:13px;
+}
+.progress-fill{
+  width:15.47%;
+  height:100%;
+  background:linear-gradient(90deg,var(--red),#e34859);
+  border-radius:inherit;
+}
+.progress-percent{
+  align-self:center;
+  color:var(--red);
+  font-size:25px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  margin-top:15px;
+  font-size:11px;
+  color:#777;
+}
+.stats strong{color:#222;font-size:13px}
+
+/* SECTION */
+.section{padding:92px 0}
+.section-soft{background:var(--cream)}
+.section-head{
+  max-width:720px;
+  margin-bottom:38px;
+}
+.kicker{
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:11px;
+  font-weight:900;
+}
+.section h2{
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.04;
+  letter-spacing:-.045em;
+  margin:9px 0 13px;
+}
+.section-head p{margin:0;color:var(--muted);font-size:15px}
+
+/* STORY */
+.story{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:60px;
+  align-items:center;
+}
+.story-copy p{color:#626262;font-size:15px}
+.story-points{
+  display:grid;
+  gap:14px;
+  margin-top:28px;
+}
+.point{
+  display:flex;gap:13px;align-items:flex-start;
+}
+.point-icon{
+  width:35px;height:35px;flex:0 0 35px;
+  display:grid;place-items:center;
+  background:var(--red-soft);color:var(--red);
+  border-radius:11px;font-weight:900;
+}
+.point strong{display:block;font-size:14px}
+.point span{display:block;color:#777;font-size:12px;margin-top:2px}
+.story-visual{
+  min-height:420px;
+  border-radius:30px;
+  background:
+    linear-gradient(180deg,transparent 45%,rgba(0,0,0,.55)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050104-N-9293K-436_Indonesian_children_wait_for_food_and_humanitarian_relief_at_Sultan_Iskandar_Muda_Air_Force_Base_in_Banda_Aceh,_Sumatra,_Indonesia.jpg") center/cover;
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.visual-caption{
+  position:absolute;bottom:22px;left:22px;right:22px;
+  color:#fff;font-size:12px;
+}
+.visual-caption strong{display:block;font-size:16px;margin-bottom:3px}
+
+/* IMPACT GRID */
+.impact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.impact-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+}
+.impact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.impact-photo{
+  height:230px;
+  background-size:cover;
+  background-position:center;
+}
+.photo-food{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050104-N-9293K-436_Indonesian_children_wait_for_food_and_humanitarian_relief_at_Sultan_Iskandar_Muda_Air_Force_Base_in_Banda_Aceh,_Sumatra,_Indonesia.jpg");
+}
+.photo-water{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050106-N-6817C-442_Indonesian_children_smile_and_cheer_as_U.S._Navy_helicopters_from_USS_Abraham_Lincoln_(CVN_72)_fly-in_purified_water_and_relief_supplies_to_a_small_village_on_the_Island_of_Sumatra,_Indonesia.jpg");
+}
+.photo-mask{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Serah_terima_peralatan_medis_dari_Republik_Rakyat_Tiongkok_atas_pandemi_COVID-19.jpg");
+}
+.photo-supplies{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050116-F-4884R-026_Air_crew_aboard_a_Marine_Corps_CH-46E_Sea_Knight_helicopter_unload_humanitarian_aid_and_disaster_relief_supplies_in_a_remote_region_on_the_island_of_Sumatra,_Indonesia.jpg");
+}
+.photo-logistic{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_091011-M-4689B-053_U.S._service_members_unload_ShelterBoxes_during_a_humanitarian_assistance_and_disaster_relief_operation_in_the_village_of_Hula_Banda,_Indonesia.jpg");
+}
+.photo-emergency{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Aid_sent_for_disaster_management_in_West_Sumatra.jpg");
+}
+.impact-body{padding:21px}
+.impact-body .tag{
+  display:inline-block;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.impact-body h3{margin:7px 0 7px;font-size:20px;letter-spacing:-.025em}
+.impact-body p{margin:0;color:#747474;font-size:13px}
+
+/* BANNER */
+.banner{
+  min-height:350px;
+  border-radius:30px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:#f5f0f0;
+}
+.banner-photo{
+  position:absolute;
+  inset:0;
+  background:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Tagana_Indonesia.jpg") center/contain no-repeat;
+  background-color:#eee;
+}
+.banner:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(20,8,11,.88),rgba(20,8,11,.48),rgba(20,8,11,.08));
+}
+.banner-content{
+  position:relative;z-index:2;
+  padding:55px;color:#fff;max-width:680px;
+}
+.banner h2{font-size:clamp(30px,4vw,48px);line-height:1.03;margin:8px 0 12px;letter-spacing:-.045em}
+.banner p{color:rgba(255,255,255,.82);font-size:14px}
+
+/* MORE STORIES */
+.photo-2026{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050123-N-9885M-136_Indonesian_children_gather_around_a_MH-53E_Sea_Dragon_helicopter_as_air_crewmen_offload_relief_supplies_in_Lamno,_Indonesia.jpg");
+}
+.photo-2022{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050109-N-4166B-141_Indonesian_children_smile_as_they_receive_much-needed_bottles_of_water_flown-in_by_a_Navy_Seahawk_helicopter.jpg");
+}
+.memory-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.memory-card{
+  min-height:360px;
+  border-radius:25px;
+  overflow:hidden;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+}
+.memory-card:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.72),transparent 65%);
+}
+.memory-card .memory-text{
+  position:absolute;z-index:2;bottom:23px;left:23px;right:23px;color:#fff;
+}
+.memory-text span{
+  font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;opacity:.8;
+}
+.memory-text h3{margin:5px 0 0;font-size:22px;letter-spacing:-.03em}
+
+/* HOW */
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.how-card{
+  padding:27px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+}
+.how-number{
+  width:42px;height:42px;
+  border-radius:13px;
+  display:grid;place-items:center;
+  background:var(--red);color:#fff;font-weight:900;
+  margin-bottom:20px;
+}
+.how-card h3{margin:0 0 7px;font-size:18px}
+.how-card p{margin:0;color:#777;font-size:13px}
+
+/* DONATION CTA */
+.donation-section{
+  background:linear-gradient(135deg,#8e0c1b,#bd172b);
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+.donation-section:before{
+  content:"";
+  position:absolute;
+  width:500px;height:500px;
+  border:90px solid rgba(255,255,255,.05);
+  border-radius:50%;
+  right:-190px;top:-220px;
+}
+.donation-inner{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 430px;
+  gap:65px;
+  align-items:center;
+}
+.donation-copy h2{
+  font-size:clamp(34px,4.5vw,57px);
+  line-height:1;
+  letter-spacing:-.05em;
+  margin:9px 0 18px;
+}
+.donation-copy p{max-width:600px;color:rgba(255,255,255,.8);font-size:15px}
+.donation-card{
+  background:#fff;color:var(--ink);
+  border-radius:28px;padding:27px;
+  box-shadow:0 25px 70px rgba(0,0,0,.2);
+}
+.donation-card h3{margin:0 0 4px;font-size:20px}
+.donation-card .sub{margin:0 0 20px;color:#777;font-size:12px}
+.amount-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+.amount-btn{
+  min-height:46px;
+  border-radius:12px;
+  border:1px solid #e5dddd;
+  background:#fff;
+  color:#444;
+  font-weight:800;
+  font-size:12px;
+}
+.amount-btn:hover,.amount-btn.active{
+  background:var(--red-soft);
+  border-color:var(--red);
+  color:var(--red);
+}
+.field-label{
+  display:block;font-size:11px;font-weight:800;color:#555;margin:17px 0 7px;
+}
+.input{
+  width:100%;height:48px;
+  border:1px solid #ddd5d5;
+  border-radius:12px;
+  padding:0 14px;
+  outline:none;
+}
+.input:focus{border-color:var(--red);box-shadow:0 0 0 4px rgba(179,19,37,.08)}
+.helper{font-size:10px;color:#888;margin:7px 0 15px}
+
+/* QRIS */
+.qris-wrap{
+  text-align:center;
+}
+.qris{
+  width:min(100%,330px);
+  margin:15px auto 17px;
+  border-radius:18px;
+  border:1px solid #e8e2e2;
+}
+.qris-recipient{
+  font-size:14px;font-weight:900;
+}
+.qris-nmid{
+  color:#777;font-size:11px;margin-top:2px;
+}
+.amount-display{
+  margin:13px auto;
+  background:var(--red-soft);
+  color:var(--red);
+  border-radius:12px;
+  padding:10px;
+  font-weight:900;
+}
+
+/* NOTICE */
+.notice{
+  padding:18px 20px;
+  background:#faf7f7;
+  border:1px solid var(--line);
+  border-radius:16px;
+  color:#737373;
+  font-size:11px;
+  margin-top:20px;
+}
+.notice strong{color:#333}
+
+/* FOOTER */
+.footer{
+  background:#151515;color:#fff;padding:60px 0 95px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:45px;
+}
+.footer-brand{display:flex;gap:13px;align-items:center;margin-bottom:16px}
+.footer-brand img{width:48px;height:48px;object-fit:contain}
+.footer h3{margin:0 0 12px;font-size:14px}
+.footer p,.footer li{color:#999;font-size:12px}
+.footer p{max-width:470px}
+.footer ul{padding:0;margin:0;list-style:none;display:grid;gap:7px}
+.footer-bottom{
+  margin-top:40px;padding-top:20px;
+  border-top:1px solid #292929;
+  color:#777;font-size:10px;
+}
+
+/* STICKY CTA */
+.sticky-cta{
+  position:fixed;
+  z-index:90;
+  bottom:16px;left:50%;
+  transform:translateX(-50%);
+  width:min(calc(100% - 30px),420px);
+  display:flex;align-items:center;gap:10px;
+  padding:8px 9px 8px 17px;
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:999px;
+  box-shadow:0 15px 45px rgba(0,0,0,.18);
+  backdrop-filter:blur(18px);
+}
+.sticky-cta span{flex:1;font-size:11px;font-weight:800}
+.sticky-cta .btn{min-height:43px;padding:0 19px}
+
+/* MODALS */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(10,5,6,.7);
+  backdrop-filter:blur(7px);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s;
+}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-box{
+  width:min(100%,510px);
+  max-height:calc(100vh - 40px);
+  overflow:auto;
+  background:#fff;
+  border-radius:28px;
+  padding:28px;
+  position:relative;
+  transform:translateY(14px) scale(.98);
+  transition:.2s;
+}
+.modal.open .modal-box{transform:none}
+.close{
+  position:absolute;right:15px;top:15px;
+  width:38px;height:38px;border:0;
+  border-radius:50%;background:#f5f1f1;color:#555;
+  font-size:22px;line-height:1;
+}
+.modal-title{padding-right:45px}
+.modal-title h2{margin:0;font-size:25px;letter-spacing:-.04em}
+.modal-title p{margin:5px 0 20px;color:#777;font-size:12px}
+.thanks{text-align:center;padding:20px 10px}
+.thanks-mark{
+  width:70px;height:70px;margin:0 auto 18px;
+  display:grid;place-items:center;
+  border-radius:50%;background:var(--red-soft);
+  color:var(--red);font-size:32px;font-weight:900;
+}
+.thanks h2{margin:0;font-size:28px;letter-spacing:-.04em}
+.thanks p{color:#777;font-size:13px}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  left:50%;bottom:85px;
+  z-index:1200;
+  transform:translate(-50%,15px);
+  background:#171717;color:#fff;
+  padding:12px 18px;border-radius:999px;
+  font-size:12px;font-weight:750;
+  opacity:0;pointer-events:none;
+  transition:.25s;
+  box-shadow:0 12px 35px rgba(0,0,0,.2);
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .story,.donation-inner{grid-template-columns:1fr;gap:35px}
+  .story-visual{min-height:370px}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .how-grid{grid-template-columns:1fr}
+  .donation-inner{gap:35px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .container{width:min(calc(100% - 28px),var(--max))}
+  .topbar-inner{min-height:32px;font-size:9px}
+  .topbar span:last-child{display:none}
+  .nav-inner{min-height:67px}
+  .brand img{width:40px;height:40px}
+  .brand-copy strong{font-size:13px}
+  .brand-copy small{font-size:8px}
+  .nav .btn{min-height:40px;padding:0 15px;font-size:11px}
+  .hero{min-height:650px}
+  .hero-content{padding:75px 0 115px}
+  .hero h1{font-size:44px}
+  .hero-lead{font-size:14px}
+  .progress-wrap{margin-top:-45px}
+  .progress-card{grid-template-columns:1fr;padding:19px}
+  .progress-percent{font-size:18px}
+  .section{padding:68px 0}
+  .impact-grid{grid-template-columns:1fr}
+  .impact-photo{height:245px}
+  .memory-grid{grid-template-columns:1fr}
+  .memory-card{min-height:310px}
+  .banner{min-height:390px}
+  .banner-content{padding:30px}
+  .amount-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .footer{padding-bottom:100px}
+  .modal-box{padding:23px;border-radius:23px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition:none!important}
+}
+</style>
 </head>
-
 <body>
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a href="#home" class="brand">
-      <img src="logo-yayasan.png" alt="Logo Yayasan Membantu Bersama" class="brand-logo">
-      <span class="brand-text">
+
+<a class="skip" href="#main">Lewati ke konten</a>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <strong>BERSAMA KITA MEMBANTU</strong>
+    <span>Kepedulian kecil dapat menjadi harapan besar.</span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#">
+      <img src="logo-yayasan.png" alt="Logo Yayasan Membantu Bersama">
+      <span class="brand-copy">
         <strong>Yayasan Membantu Bersama</strong>
         <small>Bersama Kita Membantu</small>
       </span>
     </a>
-    <nav class="main-nav">
-      <a href="#tentang">Tentang</a>
-      <a href="#kebutuhan">Kebutuhan</a>
-      <a href="#galeri">Galeri</a>
-      <a href="#transparansi">Transparansi</a>
+
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#cerita">Cerita</a>
+      <a href="#dampak">Dampak</a>
+      <a href="#cara">Cara Membantu</a>
     </nav>
-    <button class="btn btn-primary nav-donate" data-open-donate>
-      Donasi Sekarang
-    </button>
+
+    <button class="btn btn-red" data-open-donate>Donasi Sekarang</button>
   </div>
 </header>
-<main>
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-media"></div>
-  <div class="hero-overlay"></div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="hero-media" aria-hidden="true"></div>
   <div class="container hero-content">
-    <div class="hero-copy">
-      <span class="eyebrow">AKSI KEMANUSIAAN</span>
-      <h1>
-        Bersama Kita Bantu
-        <span>Anak &amp; Keluarga Terdampak Bencana</span>
-      </h1>
-      <p>
-        Ketika bencana Gunung Anak Krakatau berdampak pada kehidupan
-        masyarakat, anak-anak dan keluarga membutuhkan bantuan nyata.
-        Mari hadir bersama untuk membantu memenuhi kebutuhan mereka.
-      </p>
-      <div class="hero-actions">
-        <button class="btn btn-primary btn-large" data-open-donate>
-          Saya Mau Berdonasi
-        </button>
-        <a href="#tentang" class="btn btn-light btn-large">
-          Kenali Gerakan Ini
-        </a>
-      </div>
-      <div class="hero-trust">
-        <span>✓ Bantuan kemanusiaan</span>
-        <span>✓ Transparansi donasi</span>
-        <span>✓ Kepedulian bersama</span>
-      </div>
+    <span class="eyebrow"><i class="dot"></i> Gerakan kepedulian</span>
+    <h1>Ketika kita <em>peduli,</em> harapan punya jalan.</h1>
+    <p class="hero-lead">
+      Tidak semua orang membutuhkan banyak. Kadang mereka hanya membutuhkan
+      seseorang yang memilih untuk tidak berpaling. Mari hadir bersama untuk
+      membantu kebutuhan pangan, air, perlengkapan, medis, dan bantuan darurat.
+    </p>
+    <div class="hero-actions">
+      <button class="btn btn-red" data-open-donate>💗 Saya Mau Membantu</button>
+      <a class="btn btn-white" href="#cerita">Lihat Cerita</a>
+    </div>
+    <div class="hero-note">
+      Setiap bantuan disalurkan dengan semangat kepedulian dan kemanusiaan.
     </div>
   </div>
 </section>
-<!-- DONATION -->
-<section class="donation-section">
+
+<section class="progress-wrap">
   <div class="container">
-    <div class="donation-card">
-      <div class="donation-copy">
-        <span class="section-kicker">DUKUNG SEKARANG</span>
-        <h2>
-          Satu Donasi Bisa Menjadi
-          <span>Satu Harapan</span>
-        </h2>
-        <p>
-          Tidak ada bantuan yang terlalu kecil ketika dilakukan
-          bersama-sama. Dukungan Anda membantu menghadirkan kebutuhan
-          dasar dan bantuan kemanusiaan bagi mereka yang terdampak.
-        </p>
-        <div class="progress-info">
+    <div class="progress-card">
+      <div>
+        <div class="progress-top">
           <div>
-            <strong>Rp4.640.000</strong>
-            <span>terkumpul</span>
+            <div class="progress-label">Dana terkumpul</div>
+            <div class="progress-value">Rp4.640.000</div>
           </div>
-          <div class="progress-target">
-            <strong>Rp30.000.000</strong>
-            <span>target</span>
-          </div>
+          <div class="progress-target">Target<br><strong>Rp30.000.000</strong></div>
         </div>
-        <div class="progress-bar">
-          <span style="width:15.47%"></span>
+        <div class="progress-track">
+          <div class="progress-fill"></div>
         </div>
-        <div class="progress-percent">
-          15,47% dari target donasi
+        <div class="stats">
+          <span><strong>15,47%</strong> tercapai</span>
+          <span>Target bantuan <strong>Rp30 juta</strong></span>
         </div>
       </div>
-      <div class="donation-action">
-        <h3>Pilih nominal donasi</h3>
-        <div class="amount-grid">
-          <button type="button" data-amount="10000">Rp10.000</button>
-          <button type="button" data-amount="25000">Rp25.000</button>
-          <button type="button" data-amount="50000">Rp50.000</button>
-          <button type="button" data-amount="100000">Rp100.000</button>
+      <div class="progress-percent">15,47%</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cerita">
+  <div class="container story">
+    <div class="story-copy">
+      <div class="kicker">Mengapa kita peduli</div>
+      <h2>Satu kepedulian bisa berarti sangat besar bagi seseorang.</h2>
+      <p>
+        Di balik kebutuhan yang terlihat sederhana, ada keluarga dan manusia
+        yang sedang berusaha melewati masa sulit. Pangan, air bersih,
+        perlengkapan, dukungan medis, dan logistik bukan sekadar barang.
+        Semuanya adalah bagian dari kesempatan untuk kembali berdiri.
+      </p>
+      <p>
+        Karena itu, kami mengajak siapa pun yang tergerak untuk mengambil bagian.
+        Tidak harus besar. Yang penting adalah kepedulian yang nyata.
+      </p>
+
+      <div class="story-points">
+        <div class="point">
+          <div class="point-icon">✓</div>
+          <div><strong>Bantuan yang berarti</strong><span>Setiap donasi menjadi bagian dari ikhtiar membantu sesama.</span></div>
         </div>
-        <label for="customAmount">Nominal lainnya</label>
-        <div class="input-money">
-          <span>Rp</span>
-          <input
-            id="customAmount"
-            type="number"
-            min="10000"
-            step="1000"
-            placeholder="Masukkan nominal">
+        <div class="point">
+          <div class="point-icon">♥</div>
+          <div><strong>Berangkat dari kemanusiaan</strong><span>Kepedulian tidak mengenal jarak ketika kita memilih untuk hadir.</span></div>
         </div>
-        <button class="btn btn-primary btn-full" data-continue>
-          Lanjutkan Donasi
-        </button>
-        <small>
-          Minimal donasi Rp10.000 melalui QRIS.
-        </small>
+        <div class="point">
+          <div class="point-icon">+</div>
+          <div><strong>Semua orang bisa ikut</strong><span>Mulai dari Rp10.000, kamu sudah ikut menyalakan harapan.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-visual">
+      <div class="visual-caption">
+        <strong>Harapan dimulai dari kepedulian.</strong>
+        Dokumentasi kemanusiaan digunakan sebagai ilustrasi kepedulian.
       </div>
     </div>
   </div>
 </section>
-<!-- ABOUT -->
-<section class="section" id="tentang">
+
+<section class="section section-soft" id="dampak">
   <div class="container">
-    <div class="section-heading">
-      <span class="section-kicker">MENGAPA KAMI HADIR</span>
-      <h2>Kepedulian yang Berangkat dari Kebutuhan Nyata</h2>
+    <div class="section-head">
+      <div class="kicker">Kebutuhan yang kami perjuangkan</div>
+      <h2>Bantuan yang dekat dengan kebutuhan manusia.</h2>
       <p>
-        Kami percaya bahwa bantuan kemanusiaan bukan hanya tentang
-        memberi sesuatu, tetapi tentang memastikan mereka yang sedang
-        menghadapi masa sulit tidak merasa sendirian.
+        Kami menempatkan cerita dan kebutuhan kemanusiaan sebagai pengingat
+        bahwa bantuan sederhana dapat membawa arti yang besar.
       </p>
     </div>
-    <div class="why-grid">
-      <article class="why-card">
-        <div class="why-icon">01</div>
-        <h3>Peduli Anak</h3>
-        <p>
-          Anak-anak merupakan salah satu kelompok yang paling membutuhkan
-          perhatian ketika terjadi bencana.
-        </p>
+
+    <div class="impact-grid">
+
+      <article class="impact-card">
+        <div class="impact-photo photo-food" role="img" aria-label="Dokumentasi bantuan pangan"></div>
+        <div class="impact-body">
+          <span class="tag">01 · Pangan</span>
+          <h3>Pangan untuk hari ini</h3>
+          <p>
+            Makanan adalah kebutuhan paling mendasar. Kepedulian kita dapat
+            membantu menghadirkan rasa aman ketika keadaan sedang sulit.
+          </p>
+        </div>
       </article>
-      <article class="why-card">
-        <div class="why-icon">02</div>
-        <h3>Bantu Keluarga</h3>
-        <p>
-          Dukungan kebutuhan dasar membantu keluarga melewati masa
-          pemulihan dengan lebih kuat.
-        </p>
+
+      <article class="impact-card">
+        <div class="impact-photo photo-water" role="img" aria-label="Dokumentasi bantuan air"></div>
+        <div class="impact-body">
+          <span class="tag">02 · Air</span>
+          <h3>Air untuk kehidupan</h3>
+          <p>
+            Air bersih adalah kebutuhan dasar. Bantuan yang tepat dapat menjadi
+            dukungan penting bagi mereka yang membutuhkan.
+          </p>
+        </div>
       </article>
-      <article class="why-card">
-        <div class="why-icon">03</div>
-        <h3>Gerakan Bersama</h3>
-        <p>
-          Kepedulian yang dilakukan bersama dapat berubah menjadi
-          bantuan yang jauh lebih besar.
-        </p>
+
+      <article class="impact-card">
+        <div class="impact-photo photo-mask" role="img" aria-label="Dokumentasi perlengkapan medis"></div>
+        <div class="impact-body">
+          <span class="tag">03 · Masker & medis</span>
+          <h3>Perlindungan dan kesehatan</h3>
+          <p>
+            Perlengkapan kesehatan membantu menjaga perlindungan dan mendukung
+            upaya kemanusiaan dalam berbagai keadaan.
+          </p>
+        </div>
       </article>
+
+      <article class="impact-card">
+        <div class="impact-photo photo-supplies" role="img" aria-label="Dokumentasi perlengkapan bantuan"></div>
+        <div class="impact-body">
+          <span class="tag">04 · Perlengkapan</span>
+          <h3>Perlengkapan yang dibutuhkan</h3>
+          <p>
+            Dalam kondisi sulit, perlengkapan sederhana dapat menjadi sangat
+            berarti untuk membantu aktivitas dan kebutuhan sehari-hari.
+          </p>
+        </div>
+      </article>
+
+      <article class="impact-card">
+        <div class="impact-photo photo-logistic" role="img" aria-label="Dokumentasi logistik bantuan"></div>
+        <div class="impact-body">
+          <span class="tag">05 · Logistik</span>
+          <h3>Bantuan harus sampai</h3>
+          <p>
+            Logistik menjadi penghubung antara niat baik dan bantuan yang dapat
+            benar-benar diterima di tempat yang membutuhkan.
+          </p>
+        </div>
+      </article>
+
+      <article class="impact-card">
+        <div class="impact-photo photo-emergency" role="img" aria-label="Dokumentasi bantuan darurat"></div>
+        <div class="impact-body">
+          <span class="tag">06 · Darurat</span>
+          <h3>Hadir ketika dibutuhkan</h3>
+          <p>
+            Saat keadaan berubah cepat, kepedulian dan kesiapan bantuan menjadi
+            sangat berarti bagi kemanusiaan.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="notice">
+      <strong>Catatan penting:</strong>
+      Beberapa foto digunakan sebagai dokumentasi kemanusiaan dan ilustrasi
+      kepedulian. Foto tidak dimaksudkan untuk menyatakan bahwa orang-orang
+      dalam foto merupakan penerima bantuan dari kampanye ini.
     </div>
   </div>
 </section>
-<!-- NEEDS -->
-<section class="section section-soft" id="kebutuhan">
-  <div class="container">
-    <div class="section-heading">
-      <span class="section-kicker">KEBUTUHAN BANTUAN</span>
-      <h2>Hal Sederhana yang Sangat Berarti</h2>
-      <p>
-        Donasi digunakan untuk mendukung berbagai kebutuhan kemanusiaan
-        sesuai kondisi dan prioritas di lapangan.
-      </p>
-    </div>
-    <div class="needs-grid">
-      <article class="need-card">
-        <div class="need-photo photo-food"></div>
-        <div class="need-body">
-          <span>Makanan</span>
-          <h3>Pangan untuk keluarga</h3>
-          <p>
-            Membantu memenuhi kebutuhan makanan bagi masyarakat terdampak.
-          </p>
-        </div>
-      </article>
-      <article class="need-card">
-        <div class="need-photo photo-water"></div>
-        <div class="need-body">
-          <span>Air Bersih</span>
-          <h3>Kebutuhan air</h3>
-          <p>
-            Mendukung akses terhadap air minum dan kebutuhan dasar.
-          </p>
-        </div>
-      </article>
-      <article class="need-card">
-        <div class="need-photo photo-mask"></div>
-        <div class="need-body">
-          <span>Kesehatan</span>
-          <h3>Perlengkapan kesehatan</h3>
-          <p>
-            Membantu menyediakan perlengkapan kesehatan yang dibutuhkan.
-          </p>
-        </div>
-      </article>
-      <article class="need-card">
-        <div class="need-photo photo-supplies"></div>
-        <div class="need-body">
-          <span>Perlengkapan</span>
-          <h3>Kebutuhan sehari-hari</h3>
-          <p>
-            Dukungan untuk kebutuhan penting selama masa tanggap bencana.
-          </p>
-        </div>
-      </article>
-      <article class="need-card">
-        <div class="need-photo photo-logistic"></div>
-        <div class="need-body">
-          <span>Logistik</span>
-          <h3>Distribusi bantuan</h3>
-          <p>
-            Mendukung proses pengadaan dan penyaluran bantuan.
-          </p>
-        </div>
-      </article>
-      <article class="need-card">
-        <div class="need-photo photo-emergency"></div>
-        <div class="need-body">
-          <span>Darurat</span>
-          <h3>Respons kemanusiaan</h3>
-          <p>
-            Bantuan dapat diarahkan pada kebutuhan paling mendesak.
-          </p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-<!-- INFORMATION BANNER -->
+
 <section class="section">
   <div class="container">
-    <div class="info-banner">
-      <div class="banner-photo"></div>
-      <div class="banner-copy">
-        <span class="section-kicker">BERSAMA LEBIH KUAT</span>
-        <h2>Kepedulian Tidak Mengenal Batas</h2>
+    <div class="banner">
+      <div class="banner-photo" aria-hidden="true"></div>
+      <div class="banner-content">
+        <div class="kicker" style="color:#ffb5bd">Kepedulian bersama</div>
+        <h2>Jangan biarkan kepedulian berhenti sebagai niat.</h2>
         <p>
-          Saat satu keluarga membutuhkan pertolongan, kepedulian kita
-          dapat menjadi alasan mereka untuk kembali berharap.
+          Ketika banyak orang mengambil satu langkah kecil, langkah-langkah itu
+          dapat menjadi dukungan yang jauh lebih besar.
         </p>
-        <button class="btn btn-primary" data-open-donate>
-          Dukung Sekarang
-        </button>
+        <button class="btn btn-white" data-open-donate>Mulai Berdonasi</button>
       </div>
     </div>
   </div>
 </section>
-<!-- GALLERY -->
-<section class="section section-soft" id="galeri">
+
+<section class="section section-soft">
   <div class="container">
-    <div class="section-heading">
-      <span class="section-kicker">GALERI KEMANUSIAAN</span>
-      <h2>Karena Setiap Bantuan Berarti</h2>
+    <div class="section-head">
+      <div class="kicker">Jejak kemanusiaan</div>
+      <h2>Karena membantu berarti memilih untuk peduli.</h2>
       <p>
-        Dokumentasi visual digunakan untuk menggambarkan semangat
-        kemanusiaan dan kepedulian terhadap masyarakat terdampak bencana.
+        Dokumentasi berikut menjadi pengingat akan semangat gotong royong dan
+        bantuan kemanusiaan yang pernah hadir untuk masyarakat Indonesia.
       </p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item photo-2026">
-        <div>
-          <span>Dokumentasi</span>
-          <strong>Distribusi bantuan kemanusiaan</strong>
+
+    <div class="memory-grid">
+      <article class="memory-card photo-2026">
+        <div class="memory-text">
+          <span>Dokumentasi kemanusiaan</span>
+          <h3>Bantuan dan harapan untuk sesama</h3>
         </div>
-      </div>
-      <div class="gallery-item photo-2022">
-        <div>
-          <span>Dokumentasi</span>
-          <strong>Bantuan kebutuhan dasar</strong>
+      </article>
+
+      <article class="memory-card photo-2022">
+        <div class="memory-text">
+          <span>Dokumentasi kemanusiaan</span>
+          <h3>Air bersih menjadi bagian dari kepedulian</h3>
         </div>
-      </div>
+      </article>
     </div>
-    <p class="image-disclaimer">
-      Beberapa foto digunakan sebagai dokumentasi kemanusiaan dan
-      ilustrasi kepedulian. Foto tidak dimaksudkan untuk menyatakan bahwa
-      orang-orang dalam foto merupakan penerima bantuan dari kampanye ini.
-    </p>
-  </div>
-</section>
-<!-- TRANSPARENCY -->
-<section class="section" id="transparansi">
-  <div class="container">
-    <div class="section-heading">
-      <span class="section-kicker">TRANSPARANSI</span>
-      <h2>Kepercayaan Adalah Amanah</h2>
-      <p>
-        Kami ingin setiap dukungan diberikan dengan rasa percaya dan
-        tanggung jawab.
-      </p>
-    </div>
-    <div class="transparency-grid">
-      <div class="transparency-card">
-        <strong>Rp4.640.000</strong>
-        <span>Total donasi terkumpul</span>
-      </div>
-      <div class="transparency-card">
-        <strong>Rp30.000.000</strong>
-        <span>Target donasi</span>
-      </div>
-      <div class="transparency-card">
-        <strong>15,47%</strong>
-        <span>Progress saat ini</span>
-      </div>
-    </div>
+
     <div class="notice">
-      <strong>Catatan informasi</strong>
-      <p>
-        Situs ini merupakan halaman informasi dan penggalangan dukungan
-        kemanusiaan. Situs ini bukan situs resmi PVMBG, BMKG, maupun BNPB.
-        Informasi kebencanaan resmi sebaiknya merujuk kepada instansi
-        pemerintah terkait.
-      </p>
+      <strong>Catatan dokumentasi:</strong>
+      Foto-foto pada halaman ini merupakan dokumentasi/ilustrasi kemanusiaan
+      dan tidak boleh ditafsirkan sebagai bukti bahwa subjek foto adalah
+      penerima manfaat kampanye saat ini.
     </div>
   </div>
 </section>
-<!-- FINAL CTA -->
-<section class="final-cta">
+
+<section class="section" id="cara">
   <div class="container">
-    <div class="final-cta-inner">
-      <span class="section-kicker">MARI BERGERAK BERSAMA</span>
-      <h2>
-        Jangan Biarkan Mereka
-        <span>Menghadapi Masa Sulit Sendirian</span>
-      </h2>
-      <p>
-        Satu langkah kecil dari Anda dapat menjadi bagian dari harapan
-        yang lebih besar bagi anak-anak dan keluarga terdampak.
-      </p>
-      <button class="btn btn-primary btn-large" data-open-donate>
-        Saya Mau Membantu
-      </button>
+    <div class="section-head">
+      <div class="kicker">Cara membantu</div>
+      <h2>Tiga langkah sederhana untuk ikut berbagi.</h2>
+      <p>Proses donasi dibuat sederhana agar kamu dapat langsung mengambil bagian.</p>
+    </div>
+
+    <div class="how-grid">
+      <article class="how-card">
+        <div class="how-number">01</div>
+        <h3>Pilih nominal</h3>
+        <p>Pilih nominal donasi yang tersedia atau masukkan nominal yang kamu inginkan.</p>
+      </article>
+      <article class="how-card">
+        <div class="how-number">02</div>
+        <h3>Bayar melalui QRIS</h3>
+        <p>Gunakan aplikasi pembayaran yang mendukung QRIS untuk menyelesaikan donasi.</p>
+      </article>
+      <article class="how-card">
+        <div class="how-number">03</div>
+        <h3>Jadilah bagian dari kebaikan</h3>
+        <p>Setelah pembayaran selesai, konfirmasi melalui tombol yang tersedia.</p>
+      </article>
     </div>
   </div>
 </section>
+
+<section class="section donation-section" id="donasi">
+  <div class="container donation-inner">
+    <div class="donation-copy">
+      <div class="kicker" style="color:#ffb5bd">Saatnya mengambil langkah</div>
+      <h2>Kebaikanmu mungkin kecil bagimu. Tapi bisa berarti besar bagi orang lain.</h2>
+      <p>
+        Tidak perlu menunggu mampu memberi banyak. Jika hati tergerak,
+        Rp10.000 pun adalah sebuah bentuk kepedulian.
+      </p>
+      <button class="btn btn-white" data-open-donate>💗 Saya Mau Membantu</button>
+    </div>
+
+    <div class="donation-card">
+      <h3>Buat donasi kamu</h3>
+      <p class="sub">Pilih nominal atau masukkan sendiri.</p>
+
+      <div class="amount-grid">
+        <button class="amount-btn active" data-amount="10000">Rp10.000</button>
+        <button class="amount-btn" data-amount="25000">Rp25.000</button>
+        <button class="amount-btn" data-amount="50000">Rp50.000</button>
+        <button class="amount-btn" data-amount="100000">Rp100.000</button>
+        <button class="amount-btn" data-amount="250000">Rp250.000</button>
+        <button class="amount-btn" data-amount="500000">Rp500.000</button>
+      </div>
+
+      <label class="field-label" for="customAmount">Atau masukkan nominal sendiri</label>
+      <input class="input" id="customAmount" type="number" min="10000" step="1000" placeholder="Contoh: 75000">
+      <div class="helper">Minimal donasi Rp10.000.</div>
+      <button class="btn btn-red btn-block" data-continue>Lanjut ke QRIS →</button>
+    </div>
+  </div>
+</section>
+
 </main>
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <img src="logo-yayasan.png" alt="">
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
       <div>
-        <strong>Yayasan Membantu Bersama</strong>
-        <p>Bersama Kita Membantu</p>
+        <div class="footer-brand">
+          <img src="logo-yayasan.png" alt="Logo Yayasan Membantu Bersama">
+          <strong>Yayasan Membantu Bersama</strong>
+        </div>
+        <p>
+          Bersama Kita Membantu. Sebuah ajakan untuk menjaga kepedulian,
+          gotong royong, dan semangat membantu sesama.
+        </p>
+      </div>
+
+      <div>
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="#cerita">Cerita</a></li>
+          <li><a href="#dampak">Dampak</a></li>
+          <li><a href="#cara">Cara Membantu</a></li>
+          <li><a href="#donasi">Donasi</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Informasi</h3>
+        <ul>
+          <li>Minimum donasi Rp10.000</li>
+          <li>Metode: QRIS</li>
+          <li>Penerima: SAKU PEDULI SESAMA</li>
+          <li>NMID: ID1026584497741</li>
+        </ul>
       </div>
     </div>
-    <div class="footer-copy">
-      <p>
-        Kepedulian kita hari ini dapat menjadi harapan bagi mereka yang
-        sedang membutuhkan.
-      </p>
+
+    <div class="footer-bottom">
+      <div class="notice" style="margin:0;background:#1d1d1d;border-color:#303030;color:#888">
+        Situs ini bukan situs resmi PVMBG, BMKG, atau BNPB. Informasi dan
+        dokumentasi pada halaman ini tidak dimaksudkan untuk mewakili lembaga
+        pemerintah tersebut.
+      </div>
+      <p style="margin:20px 0 0">© Yayasan Membantu Bersama. Bersama Kita Membantu.</p>
     </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© 2026 Yayasan Membantu Bersama</span>
-    <span>Gerakan kepedulian kemanusiaan</span>
   </div>
 </footer>
-<!-- STICKY CTA -->
+
 <div class="sticky-cta">
-  <button class="btn btn-primary btn-full" data-open-donate>
-    Donasi Sekarang
-  </button>
+  <span>💗 Ikut membantu sesama hari ini</span>
+  <button class="btn btn-red" data-open-donate>Donasi</button>
 </div>
-<!-- DONATION MODAL -->
-<div class="modal" id="donationModal" aria-hidden="true">
+
+<!-- MODAL DONASI -->
+<div class="modal" id="donationModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="donationTitle">
   <div class="modal-box">
-    <button class="modal-close" data-close aria-label="Tutup">
-      ×
-    </button>
-    <span class="section-kicker">DONASI</span>
-    <h2>Berapa yang ingin Anda donasikan?</h2>
-    <p>
-      Pilih nominal donasi atau masukkan nominal Anda sendiri.
-    </p>
-    <div class="amount-grid modal-amounts">
-      <button type="button" data-amount="10000">Rp10.000</button>
-      <button type="button" data-amount="25000">Rp25.000</button>
-      <button type="button" data-amount="50000">Rp50.000</button>
-      <button type="button" data-amount="100000">Rp100.000</button>
+    <button class="close" type="button" data-close aria-label="Tutup">×</button>
+
+    <div class="modal-title">
+      <h2 id="donationTitle">Pilih donasi kamu</h2>
+      <p>Setiap nominal berarti. Minimum donasi Rp10.000.</p>
     </div>
-    <label for="modalAmount">Nominal lainnya</label>
-    <div class="input-money">
-      <span>Rp</span>
-      <input
-        id="modalAmount"
-        type="number"
-        min="10000"
-        step="1000"
-        placeholder="Masukkan nominal">
+
+    <div class="amount-grid">
+      <button class="amount-btn active" data-amount="10000">Rp10.000</button>
+      <button class="amount-btn" data-amount="25000">Rp25.000</button>
+      <button class="amount-btn" data-amount="50000">Rp50.000</button>
+      <button class="amount-btn" data-amount="100000">Rp100.000</button>
+      <button class="amount-btn" data-amount="250000">Rp250.000</button>
+      <button class="amount-btn" data-amount="500000">Rp500.000</button>
     </div>
-    <button class="btn btn-primary btn-full" data-modal-continue>
-      Lanjut ke QRIS
-    </button>
+
+    <label class="field-label" for="modalAmount">Nominal lainnya</label>
+    <input class="input" id="modalAmount" type="number" min="10000" step="1000" placeholder="Masukkan nominal">
+    <div class="helper">Minimal donasi Rp10.000.</div>
+
+    <button class="btn btn-red btn-block" data-modal-continue>Lanjut ke QRIS →</button>
   </div>
 </div>
-<!-- QRIS MODAL -->
-<div class="modal" id="qrisModal" aria-hidden="true">
-  <div class="modal-box qris-modal-box">
-    <button class="modal-close" data-close aria-label="Tutup">
-      ×
-    </button>
-    <span class="section-kicker">PEMBAYARAN QRIS</span>
-    <h2>Scan QRIS untuk Berdonasi</h2>
-    <p>
-      Nominal donasi Anda:
-      <strong id="qrisAmount">Rp10.000</strong>
-    </p>
+
+<!-- MODAL QRIS -->
+<div class="modal" id="qrisModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qrisTitle">
+  <div class="modal-box">
+    <button class="close" type="button" data-close aria-label="Tutup">×</button>
+
+    <div class="modal-title">
+      <h2 id="qrisTitle">Selesaikan donasi</h2>
+      <p>Scan QRIS berikut menggunakan aplikasi pembayaran kamu.</p>
+    </div>
+
     <div class="qris-wrap">
-      <img
-        src="qris.jpeg"
-        alt="QRIS SAKU PEDULI SESAMA"
-        class="qris">
+      <img class="qris" src="qris.jpeg" alt="QRIS SAKU PEDULI SESAMA">
+      <div class="qris-recipient">SAKU PEDULI SESAMA</div>
+      <div class="qris-nmid">NMID: ID1026584497741</div>
+      <div class="amount-display">
+        Nominal donasi: <span id="qrisAmount">Rp10.000</span>
+      </div>
+      <button class="btn btn-red btn-block" data-paid>Saya Sudah Transfer</button>
     </div>
-    <div class="qris-info">
-      <strong>SAKU PEDULI SESAMA</strong>
-      <span>NMID: ID1026584497741</span>
+
+    <div class="notice">
+      Pastikan nama penerima pada aplikasi pembayaran sesuai dengan
+      <strong>SAKU PEDULI SESAMA</strong> sebelum menyelesaikan pembayaran.
     </div>
-    <button class="btn btn-primary btn-full" data-paid>
-      Saya Sudah Berdonasi
-    </button>
   </div>
 </div>
-<!-- THANKS MODAL -->
-<div class="modal" id="thanksModal" aria-hidden="true">
-  <div class="modal-box thanks-box">
-    <button class="modal-close" data-close aria-label="Tutup">
-      ×
-    </button>
-    <div class="thanks-icon">♥</div>
-    <span class="section-kicker">TERIMA KASIH</span>
-    <h2>Terima Kasih Sudah Peduli</h2>
-    <p>
-      Dukungan Anda adalah bagian dari gerakan kemanusiaan untuk membantu
-      mereka yang sedang membutuhkan.
-    </p>
-    <button class="btn btn-primary btn-full" data-close>
-      Kembali ke Halaman
-    </button>
+
+<!-- MODAL TERIMA KASIH -->
+<div class="modal" id="thanksModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="thanksTitle">
+  <div class="modal-box">
+    <button class="close" type="button" data-close aria-label="Tutup">×</button>
+
+    <div class="thanks">
+      <div class="thanks-mark">♥</div>
+      <h2 id="thanksTitle">Terima kasih.</h2>
+      <p>
+        Terima kasih sudah memilih untuk peduli. Semoga kebaikan yang kamu
+        berikan menjadi manfaat dan kembali sebagai kebaikan untuk banyak orang.
+      </p>
+      <button class="btn btn-red" data-close>Tutup</button>
+    </div>
   </div>
 </div>
-<!-- TOAST -->
-<div id="toast" class="toast"></div>
-<script src="script.js"></script>
-<script src="script.js"></script>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  "use strict";
+
+  const MIN = 10000;
+  let selectedAmount = 10000;
+
+  const $ = (s, root = document) => root.querySelector(s);
+  const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+
+  function rupiah(n){
+    return "Rp" + Number(n).toLocaleString("id-ID");
+  }
+
+  function track(name, params = {}){
+    try{
+      if(typeof window.fbq === "function"){
+        window.fbq("trackCustom", name, params);
+      }
+    }catch(_){}
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event:name,
+      ...params
+    });
+  }
+
+  function toast(message){
+    const el = $("#toast");
+    if(!el) return;
+
+    el.textContent = message;
+    el.classList.add("show");
+
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => {
+      el.classList.remove("show");
+    }, 2800);
+  }
+
+  function openModal(id){
+    const modal = document.getElementById(id);
+    if(!modal) return;
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(target){
+    const modal = typeof target === "string"
+      ? document.getElementById(target)
+      : target;
+
+    if(!modal) return;
+
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+
+    if(!$(".modal.open")){
+      document.body.style.overflow = "";
+    }
+  }
+
+  function chooseAmount(amount){
+    selectedAmount = Number(amount);
+
+    $$("[data-amount]").forEach(btn => {
+      btn.classList.toggle(
+        "active",
+        Number(btn.dataset.amount) === selectedAmount
+      );
+    });
+
+    const modalInput = $("#modalAmount");
+    const mainInput = $("#customAmount");
+
+    if(modalInput) modalInput.value = "";
+    if(mainInput) mainInput.value = "";
+
+    track("DonateAmountSelected", {
+      amount:selectedAmount
+    });
+  }
+
+  $$("[data-amount]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      chooseAmount(btn.dataset.amount);
+    });
+  });
+
+  $$("[data-open-donate]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      openModal("donationModal");
+      track("DonateInitiated");
+    });
+  });
+
+  function readAmount(id){
+    const input = $(id);
+
+    if(input){
+      const raw = Number(input.value || 0);
+
+      if(raw >= MIN){
+        return raw;
+      }
+
+      if(input.value !== ""){
+        return 0;
+      }
+    }
+
+    return selectedAmount >= MIN ? selectedAmount : 0;
+  }
+
+  function goToQRIS(amount){
+    if(amount < MIN){
+      toast("Minimal donasi Rp10.000");
+      return;
+    }
+
+    selectedAmount = amount;
+
+    const amountEl = $("#qrisAmount");
+    if(amountEl){
+      amountEl.textContent = rupiah(amount);
+    }
+
+    closeModal("donationModal");
+    openModal("qrisModal");
+
+    track("QRISViewed", {
+      amount
+    });
+  }
+
+  const continueMain = $("[data-continue]");
+  if(continueMain){
+    continueMain.addEventListener("click", () => {
+      goToQRIS(readAmount("#customAmount"));
+    });
+  }
+
+  const continueModal = $("[data-modal-continue]");
+  if(continueModal){
+    continueModal.addEventListener("click", () => {
+      goToQRIS(readAmount("#modalAmount"));
+    });
+  }
+
+  $$("[data-close]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      closeModal(btn.closest(".modal"));
+    });
+  });
+
+  $$(".modal").forEach(modal => {
+    modal.addEventListener("click", e => {
+      if(e.target === modal){
+        closeModal(modal);
+      }
+    });
+  });
+
+  document.addEventListener("keydown", e => {
+    if(e.key === "Escape"){
+      const open = $(".modal.open");
+      if(open){
+        closeModal(open);
+      }
+    }
+  });
+
+  const paidButton = $("[data-paid]");
+
+  if(paidButton){
+    paidButton.addEventListener("click", () => {
+      track("DonationCompleted", {
+        amount:selectedAmount,
+        method:"QRIS",
+        recipient:"SAKU PEDULI SESAMA"
+      });
+
+      closeModal("qrisModal");
+      openModal("thanksModal");
+    });
+  }
+
+  /* Navigasi smooth dengan offset sticky */
+  $$('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      const id = link.getAttribute("href");
+
+      if(!id || id === "#") return;
+
+      const target = document.querySelector(id);
+
+      if(target){
+        e.preventDefault();
+
+        const navHeight = $(".nav")?.offsetHeight || 0;
+        const top =
+          target.getBoundingClientRect().top +
+          window.scrollY -
+          navHeight -
+          15;
+
+        window.scrollTo({
+          top,
+          behavior:"smooth"
+        });
+      }
+    });
+  });
+
+  /* Enter pada input nominal */
+  ["#customAmount","#modalAmount"].forEach(id => {
+    const input = $(id);
+
+    if(input){
+      input.addEventListener("keydown", e => {
+        if(e.key === "Enter"){
+          e.preventDefault();
+
+          if(id === "#customAmount"){
+            goToQRIS(readAmount("#customAmount"));
+          }else{
+            goToQRIS(readAmount("#modalAmount"));
+          }
+        }
+      });
+    }
+  });
+
+  /* Validasi QRIS */
+  window.addEventListener("error", e => {
+    if(
+      e.target?.tagName === "IMG" &&
+      e.target.classList.contains("qris")
+    ){
+      toast("QRIS gagal dimuat. Periksa file qris.jpeg.");
+    }
+  }, true);
+
+  /* Tracking landing page */
+  track("LandingPageView");
+
+})();
+</script>
+
 </body>
 </html>
