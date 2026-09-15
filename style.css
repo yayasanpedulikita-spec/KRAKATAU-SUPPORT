@@ -104,15 +104,18 @@ img{display:block;max-width:100%}
 
 .photo-food{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050104-N-9293K-436_Indonesian_children_wait_for_food_and_humanitarian_relief_at_Sultan_Iskandar_Muda_Air_Force_Base_in_Banda_Aceh,_Sumatra,_Indonesia.jpg")}
 .photo-water{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050106-N-6817C-442_Indonesian_children_smile_and_cheer_as_U.S._Navy_helicopters_from_USS_Abraham_Lincoln_(CVN_72)_fly-in_purified_water_and_relief_supplies_to_a_small_village_on_the_Island_of_Sumatra,_Indonesia.jpg")}
-.photo-mask{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050104-N-9293K-436_Indonesian_children_wait_for_food_and_humanitarian_relief_at_Sultan_Iskandar_Muda_Air_Force_Base_in_Banda_Aceh,_Sumatra,_Indonesia.jpg")}
+.photo-mask{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Serah_terima_peralatan_medis_dari_Republik_Rakyat_Tiongkok_atas_pandemi_COVID-19.jpg")}
 .photo-supplies{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050116-F-4884R-026_Air_crew_aboard_a_Marine_Corps_CH-46E_Sea_Knight_helicopter_unload_humanitarian_aid_and_disaster_relief_supplies_in_a_remote_region_on_the_island_of_Sumatra,_Indonesia.jpg")}
 .photo-logistic{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_091011-M-4689B-053_U.S._service_members_unload_ShelterBoxes_during_a_humanitarian_assistance_and_disaster_relief_operation_in_the_village_of_Hula_Banda,_Indonesia.jpg")}
-.photo-emergency{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050106-N-6817C-442_Indonesian_children_smile_and_cheer_as_U.S._Navy_helicopters_from_USS_Abraham_Lincoln_(CVN_72)_fly-in_purified_water_and_relief_supplies_to_a_small_village_on_the_Island_of_Sumatra,_Indonesia.jpg")}
+
+.photo-emergency{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Aid_sent_for_disaster_management_in_West_Sumatra.jpg")}
 
 .information-banner{background:#f3f7fa}
 .banner-inner{min-height:190px;display:grid;grid-template-columns:240px 1fr auto;gap:28px;align-items:center}
 
-.banner-photo{height:190px;background:url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg") center/contain no-repeat;background-color:#f3f7fa}
+
+.banner-photo{height:190px;background:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Anak_Krakatau_eruption_by_Sentinel-3_ESA525525.jpg") center/contain no-repeat;background-color:#f3f7fa}
+
 
 .banner-copy h2{margin:5px 0;font-size:25px;line-height:1.1}
 .banner-copy p{font-size:11px;color:var(--muted);max-width:600px}
@@ -121,8 +124,13 @@ img{display:block;max-width:100%}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
 .gallery figure{margin:0;border:1px solid var(--line);border-radius:15px;overflow:hidden}
 .gallery .photo{height:330px}
-.photo-2026{background-image:url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg")}
-.photo-2022{background-image:url("https://upload.wikimedia.org/wikipedia/commons/a/a8/Anak_Krakatau.jpg")}
+
+.photo-2026{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Anak_Krakatau_2026-09-05_0648Z.png")}
+
+
+.photo-2022{background-image:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Tagana_Indonesia.jpg")}
+
+
 .gallery figcaption{padding:12px;font-size:10px;color:#667f91}
 
 .transparency{background:#f7fafc}
