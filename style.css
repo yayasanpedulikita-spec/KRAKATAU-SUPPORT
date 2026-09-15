@@ -1,0 +1,1400 @@
+:root{
+–navy:#082844;
+–navy2:#0d3b5e;
+–blue:#17608f;
+–blue2:#2c7cab;
+–red:#ff3f3f;
+–red2:#e82e38;
+–ink:#102337;
+–muted:#647588;
+–line:#dce5ec;
+–soft:#f4f8fb;
+–white:#fff;
+–shadow:0 24px 70px rgba(8,40,68,.12);
+–shadow2:0 14px 35px rgba(8,40,68,.09);
+–radius:24px;
+}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Inter,Arial,sans-serif;
+color:var(–ink);
+background:#fff;
+line-height:1.65;
+-webkit-font-smoothing:antialiased;
+}
+
+button,
+input{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+a{
+color:inherit;
+text-decoration:none;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.container{
+width:min(1180px,calc(100% - 40px));
+margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+.site-header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(255,255,255,.94);
+border-bottom:1px solid rgba(220,229,236,.8);
+backdrop-filter:blur(16px);
+}
+
+.header-inner{
+min-height:78px;
+display:flex;
+align-items:center;
+gap:28px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+min-width:0;
+}
+
+.brand-logo{
+width:48px;
+height:48px;
+object-fit:contain;
+flex:none;
+}
+
+.brand-copy{
+display:flex;
+flex-direction:column;
+line-height:1.05;
+}
+
+.brand-copy small{
+font-size:8px;
+font-weight:800;
+letter-spacing:.18em;
+color:var(–blue);
+}
+
+.brand-copy strong{
+font-size:16px;
+font-weight:900;
+color:var(–navy);
+}
+
+.brand-copy strong i{
+color:var(–red);
+font-style:normal;
+}
+
+.brand-copy em{
+margin-top:4px;
+font-size:8px;
+font-style:normal;
+font-weight:600;
+color:var(–muted);
+}
+
+.desktop-nav{
+display:flex;
+align-items:center;
+gap:28px;
+margin-left:auto;
+}
+
+.desktop-nav a{
+font-size:13px;
+font-weight:700;
+color:#53677a;
+transition:.2s ease;
+}
+
+.desktop-nav a:hover{
+color:var(–navy);
+}
+
+.header-cta{
+border:0;
+border-radius:999px;
+padding:13px 20px;
+color:#fff;
+background:var(–red);
+font-size:13px;
+font-weight:800;
+box-shadow:0 10px 25px rgba(255,63,63,.2);
+transition:.2s ease;
+}
+
+.header-cta:hover{
+background:var(–red2);
+transform:translateY(-1px);
+}
+
+/* ================= GENERAL BUTTON ================= */
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-height:52px;
+padding:0 24px;
+border:0;
+border-radius:14px;
+font-weight:800;
+font-size:14px;
+transition:.22s ease;
+}
+
+.btn-primary{
+color:#fff;
+background:linear-gradient(135deg,var(–red),#ff5a4f);
+box-shadow:0 14px 28px rgba(255,63,63,.22);
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+box-shadow:0 18px 34px rgba(255,63,63,.3);
+}
+
+.btn-ghost{
+color:#fff;
+border:1px solid rgba(255,255,255,.3);
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(8px);
+}
+
+.btn-ghost:hover{
+background:rgba(255,255,255,.16);
+}
+
+.btn.full{
+width:100%;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+position:relative;
+min-height:650px;
+overflow:hidden;
+color:#fff;
+background:var(–navy);
+}
+
+.hero-media{
+position:absolute;
+inset:0;
+background-size:cover;
+background-position:center;
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050107-N-6074Y-122_Indonesian_children_of_a_village_just_inland_from_the_coast_of_Sumatra,_Indonesia,_celebrate_as_food_and_water_are_flown_to_their_village_by_a_U.S._Navy_MH-60S_Knighthawk_helicopter.jpg”);
+transform:scale(1.02);
+}
+
+.hero-shade{
+position:absolute;
+inset:0;
+background:
+linear-gradient(90deg,rgba(3,22,38,.93) 0%,rgba(4,29,48,.78) 42%,rgba(4,29,48,.38) 72%,rgba(4,29,48,.55) 100%),
+linear-gradient(0deg,rgba(3,22,38,.7),transparent 45%);
+}
+
+.hero-glow{
+position:absolute;
+width:520px;
+height:520px;
+right:-170px;
+top:-220px;
+border-radius:50%;
+background:rgba(44,124,171,.22);
+filter:blur(10px);
+}
+
+.hero-inner{
+position:relative;
+z-index:2;
+min-height:650px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:50px;
+padding-top:50px;
+padding-bottom:55px;
+}
+
+.hero-copy{
+max-width:760px;
+}
+
+.pill{
+display:inline-flex;
+padding:8px 13px;
+border:1px solid rgba(255,255,255,.22);
+border-radius:999px;
+background:rgba(255,255,255,.08);
+font-size:10px;
+font-weight:800;
+letter-spacing:.12em;
+color:#eaf6ff;
+backdrop-filter:blur(10px);
+}
+
+.hero h1{
+margin:22px 0 20px;
+font-size:clamp(40px,5.3vw,72px);
+line-height:1.04;
+letter-spacing:-.045em;
+font-weight:900;
+}
+
+.hero h1 em{
+color:#ff7770;
+font-style:normal;
+}
+
+.hero-lead{
+max-width:680px;
+margin:0;
+color:rgba(255,255,255,.82);
+font-size:16px;
+line-height:1.75;
+}
+
+.hero-actions{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:30px;
+}
+
+.trust-row{
+display:flex;
+flex-wrap:wrap;
+gap:34px;
+margin-top:38px;
+padding-top:25px;
+border-top:1px solid rgba(255,255,255,.16);
+}
+
+.trust-row div{
+display:flex;
+flex-direction:column;
+}
+
+.trust-row strong{
+font-size:19px;
+font-weight:900;
+}
+
+.trust-row span{
+margin-top:3px;
+color:rgba(255,255,255,.58);
+font-size:11px;
+}
+
+.hero-note{
+width:220px;
+padding:20px;
+border:1px solid rgba(255,255,255,.16);
+border-radius:20px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(16px);
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+.hero-note span{
+display:block;
+margin-bottom:30px;
+color:#ff827a;
+font-size:12px;
+font-weight:900;
+letter-spacing:.1em;
+}
+
+.hero-note b{
+display:block;
+font-size:14px;
+}
+
+.hero-note small{
+display:block;
+margin-top:7px;
+color:rgba(255,255,255,.6);
+font-size:11px;
+line-height:1.6;
+}
+
+/* ================= DONATION ================= */
+
+.donation-wrap{
+position:relative;
+z-index:5;
+margin-top:-55px;
+}
+
+.donation-card{
+display:grid;
+grid-template-columns:1.25fr .9fr .55fr;
+overflow:hidden;
+border-radius:28px;
+background:#fff;
+box-shadow:var(–shadow);
+}
+
+.donation-main,
+.quick-donate,
+.qris-mini{
+padding:34px;
+}
+
+.donation-main{
+background:linear-gradient(145deg,#fff,#f7fbfd);
+}
+
+.quick-donate{
+border-left:1px solid var(–line);
+border-right:1px solid var(–line);
+}
+
+.qris-mini{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:#fbfdff;
+}
+
+.eyebrow,
+.mini-label{
+display:inline-block;
+color:var(–blue);
+font-size:10px;
+font-weight:900;
+letter-spacing:.15em;
+}
+
+.donation-main h2{
+margin:12px 0 14px;
+color:var(–navy);
+font-size:32px;
+line-height:1.15;
+letter-spacing:-.035em;
+}
+
+.donation-main p{
+margin:0;
+color:var(–muted);
+font-size:14px;
+}
+
+.progress-block{
+margin-top:28px;
+}
+
+.progress-line{
+height:9px;
+overflow:hidden;
+border-radius:999px;
+background:#e7eef3;
+}
+
+.progress-line span{
+display:block;
+height:100%;
+border-radius:inherit;
+background:linear-gradient(90deg,var(–blue),#39a3d0);
+}
+
+.progress-meta{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-top:10px;
+color:var(–muted);
+font-size:11px;
+}
+
+.progress-meta b{
+color:var(–navy);
+}
+
+.quick-donate h3{
+margin:10px 0 2px;
+color:var(–navy);
+font-size:19px;
+}
+
+.small{
+margin:0;
+color:var(–muted);
+font-size:11px;
+}
+
+.amount-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px;
+margin-top:17px;
+}
+
+.amount-grid button{
+min-height:43px;
+border:1px solid var(–line);
+border-radius:11px;
+background:#fff;
+color:var(–navy);
+font-size:12px;
+font-weight:800;
+transition:.18s ease;
+}
+
+.amount-grid button:hover,
+.amount-grid button.active{
+border-color:var(–blue);
+background:#eef8fd;
+color:var(–blue);
+}
+
+.custom-label{
+display:block;
+margin:17px 0 7px;
+color:var(–navy);
+font-size:11px;
+font-weight:800;
+}
+
+.custom-input{
+display:flex;
+align-items:center;
+min-height:48px;
+border:1px solid var(–line);
+border-radius:12px;
+background:#fff;
+overflow:hidden;
+}
+
+.custom-input span{
+padding-left:14px;
+color:var(–muted);
+font-size:13px;
+font-weight:800;
+}
+
+.custom-input input{
+width:100%;
+border:0;
+outline:0;
+padding:0 12px;
+color:var(–navy);
+background:transparent;
+font-weight:700;
+}
+
+.helper{
+display:block;
+margin-top:9px;
+color:#81909e;
+font-size:9px;
+line-height:1.5;
+}
+
+.qris-badge{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:58px;
+height:28px;
+margin-bottom:12px;
+border-radius:8px;
+color:#fff;
+background:#111;
+font-size:12px;
+font-weight:900;
+}
+
+.qris-mini strong{
+color:var(–navy);
+font-size:12px;
+}
+
+.qris-mini small{
+margin-top:3px;
+color:var(–muted);
+font-size:9px;
+}
+
+.qris-mini img{
+width:145px;
+height:145px;
+margin-top:16px;
+object-fit:contain;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+padding:105px 0;
+}
+
+.why-head,
+.split-head{
+display:grid;
+grid-template-columns:1fr .8fr;
+gap:60px;
+align-items:end;
+margin-top:15px;
+}
+
+.section-title{
+margin:0;
+color:var(–navy);
+font-size:clamp(32px,4vw,50px);
+line-height:1.08;
+letter-spacing:-.045em;
+}
+
+.section-intro{
+margin:0;
+color:var(–muted);
+font-size:14px;
+line-height:1.8;
+}
+
+/* ================= WHY CARDS ================= */
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+margin-top:45px;
+}
+
+.info-grid article{
+position:relative;
+min-height:255px;
+padding:28px;
+border:1px solid var(–line);
+border-radius:22px;
+background:#fff;
+box-shadow:var(–shadow2);
+transition:.25s ease;
+}
+
+.info-grid article:hover{
+transform:translateY(-5px);
+box-shadow:var(–shadow);
+}
+
+.icon-circle{
+display:flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+border-radius:15px;
+color:#fff;
+background:var(–navy);
+font-size:19px;
+}
+
+.info-grid article > b{
+position:absolute;
+top:31px;
+right:28px;
+color:#c1ccd5;
+font-size:11px;
+}
+
+.info-grid h3{
+margin:25px 0 8px;
+color:var(–navy);
+font-size:19px;
+}
+
+.info-grid p{
+margin:0;
+color:var(–muted);
+font-size:13px;
+}
+
+/* ================= NEEDS ================= */
+
+.needs-section{
+background:var(–soft);
+}
+
+.needs-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:45px;
+}
+
+.need-card{
+overflow:hidden;
+border:1px solid var(–line);
+border-radius:22px;
+background:#fff;
+box-shadow:0 12px 35px rgba(8,40,68,.06);
+transition:.25s ease;
+}
+
+.need-card:hover{
+transform:translateY(-5px);
+box-shadow:var(–shadow);
+}
+
+.photo{
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.need-card .photo{
+height:210px;
+}
+
+.photo-food{
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050104-N-9293K-436_Indonesian_children_wait_for_food_and_humanitarian_relief_at_Sultan_Iskandar_Muda_Air_Force_Base_in_Banda_Aceh,_Sumatra,_Indonesia.jpg”);
+}
+
+.photo-water{
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050106-N-6817C-442_Indonesian_children_smile_and_cheer_as_U.S.Navy_helicopters_from_USS_Abraham_Lincoln(CVN_72)_fly-in_purified_water_and_relief_supplies_to_a_small_village_on_the_Island_of_Sumatra,_Indonesia.jpg”);
+}
+
+.photo-mask{
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/Serah_terima_peralatan_medis_dari_Republik_Rakyat_Tiongkok_atas_pandemi_COVID-19.jpg”);
+}
+
+.photo-supplies{
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050116-F-4884R-026_Air_crew_aboard_a_Marine_Corps_CH-46E_Sea_Knight_helicopter_unload_humanitarian_aid_and_disaster_relief_supplies_in_a_remote_region_on_the_island_of_Sumatra,_Indonesia.jpg”);
+}
+
+.photo-logistic{
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_091011-M-4689B-053_U.S._service_members_unload_ShelterBoxes_during_a_humanitarian_assistance_and_disaster_relief_operation_in_the_village_of_Hula_Banda,_Indonesia.jpg”);
+}
+
+.photo-emergency{
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/Aid_sent_for_disaster_management_in_West_Sumatra.jpg”);
+}
+
+.need-content{
+padding:24px;
+}
+
+.need-number{
+display:block;
+color:var(–red);
+font-size:10px;
+font-weight:900;
+letter-spacing:.1em;
+}
+
+.need-content h3{
+margin:7px 0 8px;
+color:var(–navy);
+font-size:21px;
+}
+
+.need-content p{
+margin:0;
+color:var(–muted);
+font-size:12px;
+line-height:1.7;
+}
+
+.need-content small{
+display:block;
+margin-top:17px;
+padding-top:14px;
+border-top:1px solid var(–line);
+color:#7a8997;
+font-size:10px;
+}
+
+/* ================= INFORMATION BANNER ================= */
+
+.information-banner{
+padding:70px 0;
+background:#fff;
+}
+
+.banner-inner{
+display:grid;
+grid-template-columns:.8fr 1.35fr auto;
+gap:35px;
+align-items:center;
+padding:25px;
+border-radius:28px;
+background:linear-gradient(135deg,#eef7fb,#f8fbfd);
+border:1px solid var(–line);
+}
+
+.banner-photo{
+height:190px;
+border-radius:16px;
+background:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/Tagana_Indonesia.jpg”) center/contain no-repeat;
+background-color:#f3f7fa;
+}
+
+.banner-copy h2{
+margin:8px 0 10px;
+color:var(–navy);
+font-size:25px;
+line-height:1.2;
+letter-spacing:-.025em;
+}
+
+.banner-copy p{
+margin:0 0 10px;
+color:var(–muted);
+font-size:12px;
+}
+
+.banner-copy a{
+color:var(–blue);
+font-size:11px;
+font-weight:800;
+}
+
+.banner-btn{
+white-space:nowrap;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-section{
+background:#fff;
+}
+
+.gallery-section > .container > .section-intro{
+max-width:720px;
+margin-top:17px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+margin-top:40px;
+}
+
+.gallery figure{
+margin:0;
+overflow:hidden;
+border-radius:22px;
+background:#f6f9fb;
+border:1px solid var(–line);
+box-shadow:var(–shadow2);
+}
+
+.gallery .photo{
+height:360px;
+}
+
+.photo-2026{
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050123-N-9885M-136_Indonesian_children_gather_around_a_MH-53E_Sea_Dragon_helicopter_as_air_crewmen_offload_relief_supplies_in_Lamno,_Indonesia.jpg”);
+}
+
+.photo-2022{
+background-image:url(“https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Navy_050109-N-4166B-141_Indonesian_children_smile_as_they_receive_much-needed_bottles_of_water_flown-in_by_a_Navy_Seahawk_helicopter.jpg”);
+}
+
+.gallery figcaption{
+padding:15px 18px;
+color:var(–muted);
+font-size:10px;
+}
+
+/* ================= TRANSPARENCY ================= */
+
+.transparency{
+background:var(–soft);
+}
+
+.trust-card{
+display:grid;
+grid-template-columns:.8fr .7fr 1.5fr;
+gap:0;
+margin-top:38px;
+overflow:hidden;
+border:1px solid var(–line);
+border-radius:22px;
+background:#fff;
+box-shadow:var(–shadow2);
+}
+
+.trust-card > div{
+min-height:130px;
+padding:25px;
+}
+
+.trust-card > div + div{
+border-left:1px solid var(–line);
+}
+
+.trust-card b{
+display:block;
+margin-bottom:8px;
+color:var(–navy);
+font-size:11px;
+}
+
+.trust-card span{
+color:var(–muted);
+font-size:12px;
+line-height:1.65;
+}
+
+.disclaimer{
+margin:18px 0 0;
+color:#7c8b99;
+font-size:10px;
+}
+
+/* ================= FINAL CTA ================= */
+
+.final-cta{
+padding:35px 0 80px;
+background:var(–soft);
+}
+
+.final-card{
+display:grid;
+grid-template-columns:auto 1fr auto;
+align-items:center;
+gap:25px;
+padding:38px;
+border-radius:28px;
+color:#fff;
+background:
+radial-gradient(circle at 90% 0%,rgba(44,124,171,.4),transparent 35%),
+linear-gradient(135deg,var(–navy),var(–navy2));
+box-shadow:var(–shadow);
+}
+
+.heart{
+display:flex;
+align-items:center;
+justify-content:center;
+width:60px;
+height:60px;
+border-radius:18px;
+background:rgba(255,255,255,.1);
+color:#ff716a;
+font-size:24px;
+}
+
+.final-card .eyebrow{
+color:#8ed0ef;
+}
+
+.final-card h2{
+margin:7px 0 0;
+max-width:720px;
+font-size:27px;
+line-height:1.25;
+letter-spacing:-.025em;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+color:rgba(255,255,255,.7);
+background:#061e32;
+}
+
+.footer-inner{
+display:flex;
+justify-content:space-between;
+gap:35px;
+padding:45px 0;
+}
+
+.footer-brand{
+display:flex;
+align-items:center;
+gap:13px;
+}
+
+.footer-brand img{
+width:45px;
+height:45px;
+object-fit:contain;
+}
+
+.footer-brand b{
+display:block;
+color:#fff;
+font-size:13px;
+}
+
+.footer-brand p{
+margin:3px 0 0;
+font-size:10px;
+}
+
+.footer-links{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:flex-end;
+gap:18px;
+}
+
+.footer-links a{
+font-size:10px;
+font-weight:700;
+}
+
+.footer-links a:hover{
+color:#fff;
+}
+
+.copyright{
+padding:17px 20px;
+border-top:1px solid rgba(255,255,255,.08);
+text-align:center;
+color:rgba(255,255,255,.4);
+font-size:9px;
+}
+
+/* ================= STICKY CTA ================= */
+
+.sticky-cta{
+position:fixed;
+right:20px;
+bottom:20px;
+z-index:90;
+}
+
+.sticky-cta button{
+min-height:50px;
+padding:0 20px;
+border:0;
+border-radius:999px;
+color:#fff;
+background:var(–red);
+font-size:12px;
+font-weight:900;
+box-shadow:0 15px 35px rgba(255,63,63,.3);
+}
+
+/* ================= MODALS ================= */
+
+.modal{
+position:fixed;
+inset:0;
+z-index:200;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+opacity:0;
+visibility:hidden;
+background:rgba(2,16,27,.68);
+backdrop-filter:blur(8px);
+transition:.2s ease;
+}
+
+.modal.open{
+opacity:1;
+visibility:visible;
+}
+
+.modal-panel{
+position:relative;
+width:min(470px,100%);
+max-height:calc(100vh - 40px);
+overflow:auto;
+padding:34px;
+border-radius:25px;
+background:#fff;
+box-shadow:0 30px 90px rgba(0,0,0,.28);
+transform:translateY(12px) scale(.98);
+transition:.25s ease;
+}
+
+.modal.open .modal-panel{
+transform:none;
+}
+
+.close{
+position:absolute;
+top:14px;
+right:14px;
+width:36px;
+height:36px;
+border:0;
+border-radius:50%;
+color:var(–navy);
+background:#eef3f6;
+font-size:22px;
+line-height:1;
+}
+
+.modal-panel h2{
+margin:8px 0 5px;
+color:var(–navy);
+font-size:28px;
+line-height:1.15;
+letter-spacing:-.035em;
+}
+
+.modal-sub{
+margin:0;
+color:var(–muted);
+font-size:12px;
+}
+
+.modal-grid{
+margin-top:25px;
+}
+
+.micro{
+margin:12px 0 0;
+text-align:center;
+color:#84919c;
+font-size:9px;
+}
+
+.qris-panel{
+text-align:center;
+}
+
+.pay-amount{
+margin:15px 0;
+padding:12px;
+border-radius:12px;
+color:var(–navy);
+background:#f2f7fa;
+font-size:11px;
+}
+
+.qris{
+width:260px;
+max-width:80%;
+margin:10px auto 20px;
+object-fit:contain;
+}
+
+.pay-steps{
+margin:0 0 20px;
+padding-left:20px;
+text-align:left;
+color:var(–muted);
+font-size:11px;
+line-height:1.8;
+}
+
+.center{
+text-align:center;
+}
+
+.thanks-icon{
+display:flex;
+align-items:center;
+justify-content:center;
+width:70px;
+height:70px;
+margin:5px auto 18px;
+border-radius:22px;
+color:#fff;
+background:var(–red);
+font-size:28px;
+box-shadow:0 15px 35px rgba(255,63,63,.22);
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+position:fixed;
+left:50%;
+bottom:25px;
+z-index:300;
+max-width:calc(100% - 40px);
+padding:12px 18px;
+border-radius:12px;
+color:#fff;
+background:var(–navy);
+box-shadow:var(–shadow);
+font-size:11px;
+font-weight:700;
+opacity:0;
+visibility:hidden;
+transform:translate(-50%,15px);
+transition:.22s ease;
+}
+
+.toast.show{
+opacity:1;
+visibility:visible;
+transform:translate(-50%,0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1050px){
+
+.donation-card{
+grid-template-columns:1fr 1fr;
+}
+
+.qris-mini{
+grid-column:1/-1;
+border-top:1px solid var(–line);
+}
+
+.qris-mini img{
+width:125px;
+height:125px;
+}
+
+.banner-inner{
+grid-template-columns:.7fr 1.3fr;
+}
+
+.banner-btn{
+grid-column:2;
+justify-self:start;
+}
+
+}
+
+@media(max-width:800px){
+
+.container{
+width:min(100% - 28px,620px);
+}
+
+.header-inner{
+min-height:68px;
+gap:10px;
+}
+
+.desktop-nav{
+display:none;
+}
+
+.header-cta{
+margin-left:auto;
+padding:11px 14px;
+font-size:11px;
+}
+
+.brand-copy strong{
+font-size:14px;
+}
+
+.hero{
+min-height:650px;
+}
+
+.hero-inner{
+min-height:650px;
+display:block;
+padding-top:70px;
+}
+
+.hero h1{
+font-size:43px;
+}
+
+.hero-lead{
+font-size:14px;
+}
+
+.hero-note{
+display:none;
+}
+
+.trust-row{
+gap:20px;
+}
+
+.trust-row strong{
+font-size:16px;
+}
+
+.donation-wrap{
+margin-top:-30px;
+}
+
+.donation-card{
+display:block;
+}
+
+.donation-main,
+.quick-donate,
+.qris-mini{
+padding:27px;
+}
+
+.quick-donate{
+border-top:1px solid var(–line);
+border-right:0;
+border-left:0;
+}
+
+.qris-mini{
+border-top:1px solid var(–line);
+}
+
+.section{
+padding:75px 0;
+}
+
+.why-head,
+.split-head{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.info-grid,
+.needs-grid{
+grid-template-columns:1fr;
+}
+
+.need-card .photo{
+height:240px;
+}
+
+.banner-inner{
+grid-template-columns:1fr;
+}
+
+.banner-btn{
+grid-column:auto;
+justify-self:stretch;
+width:100%;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery .photo{
+height:280px;
+}
+
+.trust-card{
+grid-template-columns:1fr;
+}
+
+.trust-card > div + div{
+border-left:0;
+border-top:1px solid var(–line);
+}
+
+.final-card{
+grid-template-columns:1fr;
+padding:28px;
+}
+
+.final-card .btn{
+width:100%;
+}
+
+.footer-inner{
+flex-direction:column;
+}
+
+.footer-links{
+justify-content:flex-start;
+}
+
+.sticky-cta{
+right:12px;
+bottom:12px;
+left:12px;
+}
+
+.sticky-cta button{
+width:100%;
+}
+
+}
+
+@media(max-width:480px){
+
+.brand-logo{
+width:42px;
+height:42px;
+}
+
+.brand-copy em{
+display:none;
+}
+
+.header-cta{
+padding:10px 11px;
+}
+
+.hero{
+min-height:680px;
+}
+
+.hero-inner{
+min-height:680px;
+padding-top:60px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero-actions{
+flex-direction:column;
+}
+
+.hero-actions .btn{
+width:100%;
+}
+
+.trust-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+
+.trust-row div:last-child{
+grid-column:1/-1;
+}
+
+.donation-main h2{
+font-size:27px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.modal-panel{
+padding:28px 20px;
+}
+
+}
