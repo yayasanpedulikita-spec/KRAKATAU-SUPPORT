@@ -6,7 +6,7 @@ File utama:
 2. style.css
 3. script.js
 4. logo-yayasan.png
-5. IMG_5690.jpeg
+5. qris.jpeg
 
 Meta Pixel tetap menggunakan ID:
 940490405780353
