@@ -111,7 +111,9 @@ img{display:block;max-width:100%}
 
 .information-banner{background:#f3f7fa}
 .banner-inner{min-height:190px;display:grid;grid-template-columns:240px 1fr auto;gap:28px;align-items:center}
-.banner-photo{height:190px;background:url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg") center/cover}
+
+.banner-photo{height:190px;background:url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Mount_Anak_Krakatau_continuous_eruption_and_lava_fountain%2C_5_September_2026.jpg") center/contain no-repeat;background-color:#f3f7fa}
+
 .banner-copy h2{margin:5px 0;font-size:25px;line-height:1.1}
 .banner-copy p{font-size:11px;color:var(--muted);max-width:600px}
 .banner-copy a{font-size:11px;font-weight:800;color:#17608f}
